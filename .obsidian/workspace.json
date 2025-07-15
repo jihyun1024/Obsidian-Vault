@@ -48,7 +48,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -207,11 +207,11 @@
       "markdown-importer:마크다운 형식 불러오기 열기": false
     }
   },
-  "active": "decbddf1388dc70c",
+  "active": "bd67373baa49b4c4",
   "lastOpenFiles": [
+    "1. Project/DF&C 인턴십/Retro Steganography/메시지 추출 알고리즘 파악.md",
     "1. Project/DF&C 인턴십/Retro Steganography/메시지 은닉 알고리즘 파악.md",
     "1. Project/DF&C 인턴십/Retro Steganography/참고 자료/GZIP Algorithm.md",
-    "1. Project/DF&C 인턴십/Retro Steganography/메시지 추출 알고리즘 파악.md",
     "1. Project/DF&C 인턴십/Retro Steganography/참고 자료/bitmap.getPixels.md",
     "Attached file/Pasted image 20250713134409.png",
     "4. Archive/FaS 활동 내역/FaS 동아리 활동 내역 메인 문서.md",
