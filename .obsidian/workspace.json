@@ -18,37 +18,8 @@
               "icon": "lucide-git-fork",
               "title": "그래프 뷰"
             }
-          },
-          {
-            "id": "decbddf1388dc70c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/DF&C 인턴십/Retro Steganography/메시지 추출 알고리즘 파악.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "메시지 추출 알고리즘 파악"
-            }
-          },
-          {
-            "id": "bd67373baa49b4c4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/DF&C 인턴십/Retro Steganography/메시지 은닉 알고리즘 파악.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "메시지 은닉 알고리즘 파악"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -121,8 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Reverse Engineering/Reverse Engineering.md",
-                "collapseAll": true,
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -131,7 +101,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Reverse Engineering 의 백링크"
+              "title": "백링크"
             }
           },
           {
@@ -187,8 +157,7 @@
               "title": "Calendar"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -207,10 +176,11 @@
       "markdown-importer:마크다운 형식 불러오기 열기": false
     }
   },
-  "active": "bd67373baa49b4c4",
+  "active": "beb4330d96d37625",
   "lastOpenFiles": [
-    "1. Project/DF&C 인턴십/Retro Steganography/메시지 추출 알고리즘 파악.md",
     "1. Project/DF&C 인턴십/Retro Steganography/메시지 은닉 알고리즘 파악.md",
+    "1. Project/DF&C 인턴십/Retro Steganography/메시지 추출 알고리즘 파악.md",
+    "1. Project/DF&C 인턴십/Retro Steganography/메시지 추출 도구 제작 (Python).md",
     "1. Project/DF&C 인턴십/Retro Steganography/참고 자료/GZIP Algorithm.md",
     "1. Project/DF&C 인턴십/Retro Steganography/참고 자료/bitmap.getPixels.md",
     "Attached file/Pasted image 20250713134409.png",
