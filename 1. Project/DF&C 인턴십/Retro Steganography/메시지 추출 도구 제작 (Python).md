@@ -122,7 +122,7 @@ def extract_message(image: Image):
                     except Exception:
                         return 'Error: Failed to decompress message!'
                 else:
-                    return hidden_data.decode('utf-8', errors='replace')
+                    return hidden_data.decode('utf-8', errors='replace'), message_length
             break
     return None
   
@@ -146,9 +146,10 @@ def main():
 
     try:
         with Image.open(file_name) as image:
-            message = extract_message(image)
+            message, length = extract_message(image)
             if message:
-                print('Decoded Message:\n', message)
+                print('Decoded Message: ', message)
+                print('Message Length (byte): ', length)
             else:
                 print('Error: No valid hidden message found.')
     except Exception as e:
