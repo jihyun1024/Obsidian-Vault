@@ -1,6 +1,6 @@
 https://developer.android.com/reference/android/graphics/Bitmap
 
-Android의 Bitmap 클래스에서 제공하는 메서드로, 비트맵의 여러 픽셀을 한 번에 배열로 가져올 수 있는 기능을 제공한다. 
+Android의 [[Bitmap]] 클래스에서 제공하는 메서드로, 비트맵의 여러 픽셀을 한 번에 배열로 가져올 수 있는 기능을 제공한다. 
 이는 `getPixel()`보다 훨씬 효율적이며, 이미지 처리나 분석 작업에서 자주 사용한다. 
 
 ### 주요 기능
