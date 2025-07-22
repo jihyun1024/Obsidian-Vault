@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Project/DF&C 인턴십/RagnaLocker 랜섬웨어 분석.md",
+                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RagnaLocker 랜섬웨어 분석"
+              "title": "Ragnar Locker 랜섬웨어 분석"
             }
           }
         ],
@@ -194,6 +194,15 @@
   },
   "active": "a5b9245f97a8b3b3",
   "lastOpenFiles": [
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
+    "Bridgefy 애플리케이션 분석.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ghidra로 코드 흐름 파악 (정적 분석).md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/복호화 가능성 탐색.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/암호화 방식 분석.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/스냅샷 설정 후 실행.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 코드 흐름 파악 (동적 분석).md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석",
+    "Welcome.md",
     "3. Resource/도구 사용법/x64dbg/x64dbg 사용법.md",
     "3. Resource/도구 사용법/x64dbg/x64dbg를 이용한 동적 분석 환경 설정.md",
     "4. Archive/Dreamhack/Dreamhack 학습.md",
@@ -202,7 +211,6 @@
     "3. Resource/프로그래밍 언어/Assembly/분기 명령어.md",
     "4. Archive/Dreamhack/Assembly Language",
     "3. Resource/프로그래밍 언어/Assembly/데이터 이동 명령어.md",
-    "1. Project/DF&C 인턴십/RagnaLocker 랜섬웨어 분석.md",
     "1. Project/DF&C 인턴십/DF&C 인턴십.md",
     "4. Archive/Dreamhack/Assembly Language/컴퓨터 과학 기초.md",
     "4. Archive/Dreamhack/Assembly Language/컴퓨터 아키텍처 기초.md",
@@ -219,14 +227,7 @@
     "4. Archive/FaS 활동 내역/비밀번호 뭐였지 분석/비밀번호 관리자 애플리케이션 메인 문서.md",
     "4. Archive/FaS 활동 내역/비밀번호 뭐였지 분석/비밀번호 관리 애플리케이션 관련 논문 요약.md",
     "4. Archive/FaS 활동 내역/스테가노그래피/스테가노그래피 개요.md",
-    "4. Archive/FaS 활동 내역/스테가노그래피/PNG 파일 구조 및 LSB 코드 작성.md",
-    "4. Archive/FaS 활동 내역/스테가노그래피/Steganomaster APK 분석 및 복호화 코드 작성.md",
-    "4. Archive/FaS 활동 내역/파일 시스템 (Ext4).md",
-    "4. Archive/Archive.md",
     "4. Archive/Dreamhack",
-    "4. Archive/Retro Steganography/Retro Steganography 분석.md",
-    "3. Resource/도구 사용법/x64dbg/x64dbg 메인 문서.md",
-    "3. Resource/도구 사용법/Ghidra 메인 문서.md",
     "Attached file/Pasted image 20250717170753.png",
     "Attached file/Pasted image 20250717170724.png",
     "Attached file/Pasted image 20250717170416.png",
@@ -239,7 +240,6 @@
     "4. Archive/Retro Steganography/참고 자료",
     "Attached file/플래시 스토리지 기반 Ext4 파일시스템의 효율적인 파일 삭제 기법.pdf",
     "Attached file/안드로이드 운영체제의 Ext4 파일 시스템에서 삭제 파일 카빙 기법.pdf",
-    "Attached file/Journaling of Journal 기반 SQLite 파일 복구 기법 1.pdf",
     "디지털포렌식.canvas"
   ]
 }
