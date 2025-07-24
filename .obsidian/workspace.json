@@ -37,10 +37,14 @@
             "id": "74fdd29ac8146e44",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "3. Resource/도구 사용법/x64dbg/x64dbg 사용 방법.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "새 탭"
+              "title": "x64dbg 사용 방법"
             }
           }
         ],
@@ -216,7 +220,7 @@
     "Attached file/Pasted image 20250725040841.png",
     "Attached file/Pasted image 20250725040812.png",
     "Attached file/Pasted image 20250725035004.png",
-    "3. Resource/도구 사용법/x64dbg/x64dbg 사용법.md",
+    "3. Resource/도구 사용법/x64dbg/x64dbg 사용 방법.md",
     "3. Resource/도구 사용법/GDB/GDB.md",
     "3. Resource/도구 사용법/GDB",
     "3. Resource/도구 사용법/x64dbg/x64dbg.md",
