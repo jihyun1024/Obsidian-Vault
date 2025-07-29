@@ -8,10 +8,17 @@
 [[Ghidra로 코드 흐름 파악 (정적 분석)]]
 ### 행위 분석 및 복호화 가능성 탐색
 [[스냅샷 설정 후 실행]]
-[[암호화 방식 분석]]
 [[복호화 가능성 탐색]]
 ### 분석 결과
+참고자료와 동적 분석으로 파악한 사실에 의하면, Ragnar Locker 랜섬웨어는 다음과 같이 진행된다. 
+![[Pasted image 20250729173558.png]]
+여기서, 제외 대상인 언어는 Azerbaijani, Armenian, Belorussian, Kazakh, Kyrgyz, Moldavian, Tajik, Russian, Turkmen, Uzbek, Ukrainian, Georgian 총 12개이다. 
 
+또한, 파일 암호화 과정은 다음과 같다. 
+![[Pasted image 20250729173923.png]]
+이 때 랜섬웨어 실행, 운영체제 실행과 관련된 파일 또는 폴더를 제외한 모든 파일을 암호화하며, 암호화 제외 대상 목록은 다음과 같다. 
+![[Pasted image 20250729174153.png]]
 ### 참고자료
 [키 재사용 공격을 통한 Ragnar Locker 랜섬웨어 감염 파일 복호화 및 활용 방안 연구](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE10551540)
 ['It's very scary': Small banks quietly hit by ransomware attacks.](https://research.ebsco.com/c/eg7l4x/search/details/62ppjgwwxv?db=bth)
+[스트림 암호 기반 랜섬웨어에 대한 기술적 분석 동향](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11077406)
