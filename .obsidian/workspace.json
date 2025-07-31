@@ -20,7 +20,7 @@
             }
           },
           {
-            "id": "47b4e2e4430dcf93",
+            "id": "2560c62a00f103d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,9 +32,23 @@
               "icon": "lucide-file",
               "title": "x64dbg로 코드 흐름 파악 (동적 분석)"
             }
+          },
+          {
+            "id": "b1e845e79a80b774",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2. Area/2025 통합수련회/7월 31일 조장모임.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7월 31일 조장모임"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -192,13 +206,17 @@
       "markdown-importer:마크다운 형식 불러오기 열기": false
     }
   },
-  "active": "47b4e2e4430dcf93",
+  "active": "b1e845e79a80b774",
   "lastOpenFiles": [
+    "2. Area/2025 통합수련회/7월 30일 조장모임.md",
+    "2. Area/2025 통합수련회/7월 31일 조장모임.md",
+    "2. Area/2025 통합수련회/2025 통합수련회.md",
     "2. Area/2025 통합수련회/2025 통합수련회 찬양팀 콘티.md",
+    "2. Area/2025 통합수련회/7월 26일 조장모임.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 코드 흐름 파악 (동적 분석).md",
     "Attached file/2025 통합수련회 찬양+기도회 통합 악보.pdf",
     "3. Resource/프로그래밍 언어/Python/Python.md",
     "3. Resource/프로그래밍 언어/Java/Java.md",
-    "2. Area/2025 통합수련회/2025 통합수련회.md",
     "Attached file/Pasted image 20250729211833.png",
     "1. Project/DF&C 인턴십/랜섬웨어 분석/Ghidra로 코드 흐름 파악 (정적 분석).md",
     "3. Resource/프로그래밍 언어/Assembly/Assembly.md",
@@ -208,10 +226,7 @@
     "1. Project/Proton Pass 분석/Proton Pass 분석.md",
     "4. Archive/FaS 활동 내역/비밀번호 뭐였지 분석/비밀번호 관리자 애플리케이션.md",
     "4. Archive/FaS 활동 내역/FaS 동아리 활동 내역.md",
-    "2. Area/2025 통합수련회/7월 30일 조장모임.md",
-    "2. Area/2025 통합수련회/7월 26일 조장모임.md",
     "Attached file/Pasted image 20250729205147.png",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 코드 흐름 파악 (동적 분석).md",
     "2. Area/2025 통합수련회",
     "Welcome.md",
     "1. Project/Project.md",
