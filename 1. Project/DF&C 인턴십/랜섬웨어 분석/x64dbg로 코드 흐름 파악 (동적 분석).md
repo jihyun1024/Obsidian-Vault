@@ -38,23 +38,58 @@ psapi.dll
 ![[Pasted image 20250726135008.png]]
 이후 라그나로커 시작 지점으로 다시 돌아와 컴퓨터 자체의 이름과 Username을 받고 다음 함수를 실행할 준비를 한다. 
 
-`ragnar_locker.5921C0`함수로 넘어가 보면 아래의 사진에서 보이듯이 [VirtualAlloc](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc)함수를 사용해 현재 프로세스의 가상 메모리를 할당하며, [RegOpenKeyExW](https://learn.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regopenkeyexw)함수를 이용해 [[레지스트리]]의 키를 연다. 
-그리고 나서 [RegQueryValueExW](https://learn.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regqueryvalueexw)함수를 사용해 열었던 [[레지스트리]] 키와 연관된 지정된 값/이름에 대한 유형과 데이터를 검색하고, [RegCloseKey](https://learn.microsoft.com/en-us/windows/win32/api/winreg/nf-winreg-regclosekey)함수를 사용해 열었던 [[레지스트리]]의 키를 닫는다. 
-![[Pasted image 20250726135207.png]]
-이후 해당 작업이 전부 끝나고 나면 이 함수를 호출하기 이전의 메인함수로 돌아가 다음 코드를 시작하며, 이후의 코드에서 `push eax`가 실행될 때마다 각각 사용자의 이름(USERNAME), 컴퓨터의 이름이 eax 레지스터에 push되는 것을 확인할 수 있었다. 
-![[Pasted image 20250726135954.png]]
+`ragnar_locker.5921C0`함수로 넘어가 보면 [VirtualAlloc](https://learn.microsoft.com/ko-kr/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc)함수를 사용해 현재 프로세스의 가상 메모리를 할당하며, [RegOpenKeyExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regopenkeyexw)함수를 이용해 [[레지스트리]]의 키를 연다. 
+그리고 나서 [RegQueryValueExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regqueryvalueexw)함수를 이용해 열었던 레지스트리 키와 연관된 지정된 값/이름에 대한 유형과 데이터를 검색하고, [RegCloseKey](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regclosekey)함수를 사용해 열었던 레지스트리의 키를 닫는다. 
+![[KakaoTalk_20250805_221734510_01.png]]
+이후 해당 작업이 전부 끝나면 이 함수를 호출하기 이전의 메인함수로 돌아가 다음 코드를 시작하며, 이후의 코드에서 `push eax`가 실행될 때마다 각각 사용자의 이름(USERNAME), 컴퓨터의 이름이 EAX 레지스터가 가리키는 주소의 값에 push되는 것을 확인할 수 있었다. 
+![[KakaoTalk_20250805_221734510.png]]
 
-그 다음은 `ragnar_locker.592240` 함수를 실행해 보자. 스크린샷에서도 보이듯이 esi 레지스터에는 현재 Windows 버전이, eax 레지스터에는 컴퓨터의 이름이, edi 레지스터에는 시리얼 코드 비슷한 문자열이 각각 보이는 것을 확인했다. 
+이제`ragnar_locker.592240` 함수를 실행해 보자. 스크린샷에서도 보이듯이 esi 레지스터가 가리키는 메모리 주소의 값에는 현재 Windows 버전이, eax 레지스터가 가리키는 메모리 주소의 값에는 컴퓨터의 이름이, edi 레지스터가 가리키는 메모리 주소의 값에는 시리얼 코드 비슷한 문자열이 각각 보이는 것을 확인했다. 
 이 코드에서는 앞서 나왔던 VirtualAlloc 함수와`lstrlenW` 함수, `wsprintfW`함수가 사용되었는데, 이는 각각 지정된 문자열의 길이를 결정하고, 지정된 버퍼에 서식이 지정된 데이터를 쓰는 함수이다. 
 ![[Pasted image 20250726140128.png]]
 따라서 `ragnar_locker.592240` 함수는 `lstrlenW`함수로 입력된 문자열의 길이를 계산하고, 루프에서 정의된 반복문대로 움직이며 간단한 해시값이나 무결성 체크 등의 연산을 수행하는 함수로 추측된다. 
-그 뒤에도 4번 정도 `ragnar_locker.592240`함수를 더 수행하는 코드가 있으며, 이 코드를 수행한 뒤, `wsprintfW`함수를 호출해 ESP에 `A6A64009-6FAB6FDA-780E09FA-818CD995-10352210`의 해시값 비슷한 것을 저장한다. 
+그 뒤에도 4번 정도 `ragnar_locker.592240`함수를 더 수행하는 코드가 있으며, 이 코드를 수행한 뒤, `wsprintfW`함수를 호출해 ESP 레지스터가 가리키는 메모리 주소의 값에 `A6A64009-6FAB6FDA-780E09FA-818CD995-10352210`의 해시값 비슷한 것을 저장한다. 
 ![[Pasted image 20250726140355.png]]
 
 그 밑으로 수많은 함수가 사용되고 있는, Ragnar Locker 랜섬웨어에서 메인 기능을 담당하는 것처럼 보이는 코드가 등장한다. 하나하나 분석해 보자. 
 ![[Pasted image 20250726140432.png]]
-먼저, [CreateEventW](https://learn.microsoft.com/ko-kr/windows/win32/api/synchapi/nf-synchapi-createeventw), [GetLastError](https://learn.microsoft.com/ko-kr/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror), [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess), [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess), [CloseHandle](https://learn.microsoft.com/ko-kr/windows/win32/api/handleapi/nf-handleapi-closehandle) 함수들을 사용하고, 함수의 반환값을 특정 값과 비교하는 방식으로 현재 랜섬웨어 프로세스를 관리하며, `while`반복문을 0xFAE9과 비교하는 방식으로 인덱스를 1씩 늘려 가며 (inc esi, cmp esi, FAE9) 동작한다.
+먼저, [CreateEventW](https://learn.microsoft.com/ko-kr/windows/win32/api/synchapi/nf-synchapi-createeventw), [GetLastError](https://learn.microsoft.com/ko-kr/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror), [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess), [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess), [CloseHandle](https://learn.microsoft.com/ko-kr/windows/win32/api/handleapi/nf-handleapi-closehandle) 함수들을 사용하고, 함수의 반환값을 특정 값과 비교하는 방식으로 현재 랜섬웨어 프로세스를 관리하며, 
+[GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수로 현재 실행 중인 프로세스들을 받아 와 [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수를 사용해 현재 실행 중인 프로세스들을 강제로 정지한다. 해당 작업은`while`반복문을 0xFAE9과 비교하는 방식으로 인덱스를 1씩 늘려 가며 (inc esi, cmp esi, FAE9) 동작한다.
 그 뒤에 `ragnar_locker.5931D0`와 `ragnar_locker.5920E0` 함수가 2개씩 나온다. 
 하나씩 알아보자. 
 
-먼저 `ragnar_locker.5931D0`함수를 call하는 지점에 중단점을 걸고 F7으로 들어가서 분석해 보면 그 안에서도 여러 함수들을 추가로 호출한다. 
+---
+### ragnar_locker.5931D0 함수 분석
+먼저 `ragnar_locker.5931D0`함수를 call하는 지점에 중단점을 걸고 F7으로 들어가서 분석해 보면 그 안에서도 함수 에필로그 부분까지 여러 함수들을 추가로 호출한다. 
+호출하는 함수는 다음과 같다. 
+1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 
+2. [CryptGenRandom](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptgenrandom) 함수: 지정한 버퍼에 지정한 바이트 수 만큼의 난수를 넣어 반환한다. 
+3. [CryptReleaseContext](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext) 함수: CSP의 키 컨테이너의 핸들을 해제한다. 
+4. `ragnar_locker.597240`함수
+	![[Pasted image 20250805165437.png]]
+	별도의 함수 호출 없이 EAX 레지스터가 가리키는 메모리 주소에 4바이트 값을 16번, 총 64바이트의 값을 저장하며, 각각의 값은 사진과 같이 실행파일 내에 하드코딩 되어 있었다. 
+5. `ragnar_locker.5972F0`함수
+	![[Pasted image 20250805165946.png]]
+	아직 어셈블리어에 대한 이해가 완벽하지 않아 이 함수는 별 다른 역할을 하지 않는 함수처럼 보였다. 
+6. `ragnar_locker.596F30`함수
+	이 함수에서는 쭉 내려가다가 다시 여러 함수들을 호출한다. 
+	![[Pasted image 20250805171032.png]]
+	1. `ragnar_locker.593290` 함수
+		![[Pasted image 20250805171542.png]]
+		`ret`명령어로 반환하기 전까지 `mov, sub, xor, add`등의 연산을 많이 수행한다. 
+	2. `ragnar_locker.5974F0` 함수 (4번 수행)
+		![[Pasted image 20250805191659.png]]
+		실행하면 `cmp cl,40`, `cmp cl,20`, `mov eax,edx`, `xor edx,edx`, `and cl,1F`, `shr eax,cl`, `ret`의 명령어를 순서대로 수행하고 함수 밖으로 나온다. 
+	3. 그 뒤로 `mov` 명령어와 `shr`명령어 두 개만을 사용해 연산을 많이 한 뒤 `ret`명령어로 반환한다.
+7. `ragnar_locker.597430`함수 
+	![[Pasted image 20250805193525.png]]
+	`push`명령어와 `mov`, `and`, `rep`, `shr`, `cld`명령어를 사용해 간단한 연산을 한 뒤 반환한다. 
+### ragnar_locker.5920E0 함수 분석
+![[Pasted image 20250805193812.png]]
+이 함수에서는 별도의 함수 호출 없이 함수 에필로그까지 반복문을 사용해 특정 연산을 하고, 특정한 연산이 끝나면 함수 에필로그를 통해 함수 바깥으로 나간다. 
+이 때 처음 반복문은 EAX 레지스터의 값이 256이 될 때까지 실행하고, 두 번째 반복문은 ESI 레지스터의 값이 256이 될 때까지 실행한다. 
+실행을 전부 끝내면 EAX 레지스터가 가리키는 메모리 주소에 아래 사진처럼 64바이트 값이 저장되어 있다. 
+![[Pasted image 20250805195857.png]]
+
+---
+그 뒤로 [OpenSCManagerA](https://learn.microsoft.com/ko-kr/windows/win32/api/winsvc/nf-winsvc-openscmanagera)함수를 사용해 해당 컴퓨터에서 [[서비스 제어 관리자]]에 대한 연결을 설정하고 해당 서비스 제어 관리자 데이터 베이스를 연다. 
