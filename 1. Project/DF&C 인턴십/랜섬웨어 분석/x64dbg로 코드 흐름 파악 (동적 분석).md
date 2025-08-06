@@ -32,7 +32,7 @@ psapi.dll
 그러면 이렇게 엄청나게 많은 귀찮은 코드가 있는데, 분기나 함수 호출 등 의미있는 코드가 나올 때까지 계속 F8으로 넘어가 보자. 
 계속 넘어가고 또 넘어가 보면...
 ![[Pasted image 20250726134823.png]]
-다음처럼 [GetLocaleInfow](https://learn.microsoft.com/en-us/windows/win32/api/winnls/nf-winnls-getlocaleinfow)함수를 사용해 사용자의 국가, 언어 등을 받아와 EAX 레지스터에 영문 문자열로 저장하며, 이를 아래의 중단점이 2개 쳐져 있는 반복문을 이용해 여러 나라의 언어와 비교한다. 이때 비교하는 언어는 Azerbaijani, Armenian, Belorussian, Kazakh, Kyrgyz, Moldavian, Tajik, Russian, Turkmen, Uzbek, Ukrainian, Georgian 총 12개이다. (해당 언어들은 소련의 일부였다는 공통점이 있다)
+다음처럼 [GetLocaleInfow](https://learn.microsoft.com/en-us/windows/win32/api/winnls/nf-winnls-getlocaleinfow)함수를 사용해 사용자의 국가, 언어 등을 받아와 EAX 레지스터에 영문 문자열로 저장하며, 이를 반복문을 이용해 여러 나라의 언어와 비교한다. 이때 비교하는 언어는 Azerbaijani, Armenian, Belorussian, Kazakh, Kyrgyz, Moldavian, Tajik, Russian, Turkmen, Uzbek, Ukrainian, Georgian 총 12개이다. (해당 언어들은 소련의 일부였다는 공통점이 있다)
 이후 함수 에필로그를 통해 함수 밖으로 나간다. 
 
 ![[Pasted image 20250726135008.png]]
@@ -41,7 +41,7 @@ psapi.dll
 `ragnar_locker.5921C0`함수로 넘어가 보면 [VirtualAlloc](https://learn.microsoft.com/ko-kr/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc)함수를 사용해 현재 프로세스의 가상 메모리를 할당하며, [RegOpenKeyExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regopenkeyexw)함수를 이용해 [[레지스트리]]의 키를 연다. 
 그리고 나서 [RegQueryValueExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regqueryvalueexw)함수를 이용해 열었던 레지스트리 키와 연관된 지정된 값/이름에 대한 유형과 데이터를 검색하고, [RegCloseKey](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regclosekey)함수를 사용해 열었던 레지스트리의 키를 닫는다. 
 ![[KakaoTalk_20250805_221734510_01.png]]
-이후 해당 작업이 전부 끝나면 이 함수를 호출하기 이전의 메인함수로 돌아가 다음 코드를 시작하며, 이후의 코드에서 `push eax`가 실행될 때마다 각각 사용자의 이름(USERNAME), 컴퓨터의 이름이 EAX 레지스터가 가리키는 주소의 값에 push되는 것을 확인할 수 있었다. 
+이후 해당 작업이 전부 끝나면 이 함수를 호출하기 이전의 메인 함수로 돌아가 다음 코드를 시작하며, 이후의 코드에서 `push eax`가 실행될 때마다 각각 사용자의 이름(USERNAME), 컴퓨터의 이름이 EAX 레지스터가 가리키는 주소의 값에 push되는 것을 확인할 수 있었다. 
 ![[KakaoTalk_20250805_221734510.png]]
 
 이제`ragnar_locker.592240` 함수를 실행해 보자. 스크린샷에서도 보이듯이 esi 레지스터가 가리키는 메모리 주소의 값에는 현재 Windows 버전이, eax 레지스터가 가리키는 메모리 주소의 값에는 컴퓨터의 이름이, edi 레지스터가 가리키는 메모리 주소의 값에는 시리얼 코드 비슷한 문자열이 각각 보이는 것을 확인했다. 
@@ -51,7 +51,7 @@ psapi.dll
 그 뒤에도 4번 정도 `ragnar_locker.592240`함수를 더 수행하는 코드가 있으며, 이 코드를 수행한 뒤, `wsprintfW`함수를 호출해 ESP 레지스터가 가리키는 메모리 주소의 값에 `A6A64009-6FAB6FDA-780E09FA-818CD995-10352210`의 해시값 비슷한 것을 저장한다. 
 ![[Pasted image 20250726140355.png]]
 
-그 밑으로 수많은 함수가 사용되고 있는, Ragnar Locker 랜섬웨어에서 메인 기능을 담당하는 것처럼 보이는 코드가 등장한다. 하나하나 분석해 보자. 
+그 밑으로 수많은 함수가 사용되고 있는, Ragnar Locker 랜섬웨어에서 메인 기능을 담당하는 것처럼 보이는 코드가 등장한다. 하나하나 분석해 보자.
 ![[Pasted image 20250726140432.png]]
 먼저, [CreateEventW](https://learn.microsoft.com/ko-kr/windows/win32/api/synchapi/nf-synchapi-createeventw), [GetLastError](https://learn.microsoft.com/ko-kr/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror), [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess), [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess), [CloseHandle](https://learn.microsoft.com/ko-kr/windows/win32/api/handleapi/nf-handleapi-closehandle) 함수들을 사용하고, 함수의 반환값을 특정 값과 비교하는 방식으로 현재 랜섬웨어 프로세스를 관리하며, 
 [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수로 현재 실행 중인 프로세스들을 받아 와 [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수를 사용해 현재 실행 중인 프로세스들을 강제로 정지한다. 해당 작업은`while`반복문을 0xFAE9과 비교하는 방식으로 인덱스를 1씩 늘려 가며 (inc esi, cmp esi, FAE9) 동작한다.
@@ -59,7 +59,7 @@ psapi.dll
 하나씩 알아보자. 
 
 ---
-### ragnar_locker.5931D0 함수 분석
+### ragnar_locker.5931D0 함수 분석 (2번 수행)
 먼저 `ragnar_locker.5931D0`함수를 call하는 지점에 중단점을 걸고 F7으로 들어가서 분석해 보면 그 안에서도 함수 에필로그 부분까지 여러 함수들을 추가로 호출한다. 
 호출하는 함수는 다음과 같다. 
 1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 
@@ -84,7 +84,7 @@ psapi.dll
 7. `ragnar_locker.597430`함수 
 	![[Pasted image 20250805193525.png]]
 	`push`명령어와 `mov`, `and`, `rep`, `shr`, `cld`명령어를 사용해 간단한 연산을 한 뒤 반환한다. 
-### ragnar_locker.5920E0 함수 분석
+### ragnar_locker.5920E0 함수 분석 (2번 수행)
 ![[Pasted image 20250805193812.png]]
 이 함수에서는 별도의 함수 호출 없이 함수 에필로그까지 반복문을 사용해 특정 연산을 하고, 특정한 연산이 끝나면 함수 에필로그를 통해 함수 바깥으로 나간다. 
 이 때 처음 반복문은 EAX 레지스터의 값이 256이 될 때까지 실행하고, 두 번째 반복문은 ESI 레지스터의 값이 256이 될 때까지 실행한다. 
@@ -94,7 +94,7 @@ psapi.dll
 ---
 그 뒤로 [OpenSCManagerA](https://learn.microsoft.com/ko-kr/windows/win32/api/winsvc/nf-winsvc-openscmanagera)함수를 사용해 해당 컴퓨터에서 [[서비스 제어 관리자]]에 대한 연결을 설정하고 해당 서비스 제어 관리자 데이터 베이스를 연다. 
 그 밑으로는 [GetModuleFileNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew)함수로 Ragnar Locker 랜섬웨어 파일 경로를 EAX 레지스터가 가리키는 주소에 저장하며,![[Pasted image 20250806134016.png]]
-[PathFindFileNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew)함수, [GetWindowsDirectoryW](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getwindowsdirectoryw)함수를 사용해 현재 실행 중인 컴퓨터의 `Windows`디렉터리의 경로를 문자열 형태로 반환해 EAX 레지스터가 가리키는 주소에 저장한다. 
+[PathFindFileNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew)함수, [GetWindowsDirectoryW](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getwindowsdirectoryw)함수를 사용해 현재 실행 중인 컴퓨터의 `Windows`디렉터리의 경로를 문자열 형태로 반환해 아래처럼 EAX 레지스터가 가리키는 주소에 저장한다. 
 ![[Pasted image 20250806134605.png]]
 
 이후 [QueryDosDeviceW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-querydosdevicew)함수를 사용해 `\\Device\\HarddiskVolume3`경로를 얻어 와서 저장하며, 해당 경로는 Windows 운영체제에서 사용하는 디바이스 경로 중 하나로, 커널 수준에서 물리적 또는 논리적 디스크를 식별하기 위해 사용한다. 
@@ -103,7 +103,7 @@ psapi.dll
 
 그 뒤로도 다시 한 번 `OpenProcess`, `TerminateProcess`, `CloseHandle` 함수들과 반복문을 사용해 현재 실행 중인 프로세스들을 강제로 종료한다.
 ![[Pasted image 20250806142351.png]]
-해당 반복문을 몇 번 실행하다 나중에는 파란색 분기 안으로 들어가는데, 
+위의 사진에서 해당 반복문을 몇 번 실행하다 나중에는 파란색 분기 안으로 들어가는데, 
 이 때 `\\Device\\HarddiskVolume3\\System32\\svchost32.exe`와 `dllhost.exe`, `RuntimeBroker.exe`, `explorer.exe`, `shellhost.exe`등의 응용 프로그램과 프로그램의 스냅샷 등을 순회한다. 
 
 `ragnar_locker.591000`으로 EIP를 설정하고 F7으로 들어가 분석하면 다음과 같은 사진이 나온다. 
@@ -123,5 +123,7 @@ psapi.dll
 그런 뒤 `GetComputerNameW`함수로 실행 컴퓨터의 이름을 받아 오고 `ragnar_locker.592240`함수를 실행하고 해당 함수가 끝나면 `lstcpyW`와 `lstcatW`함수를 실행해 랜섬노트의 이름처럼 보이는 `RGNR_818CD995.txt`를 지정하고, [CryptBinaryToStringA](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptbinarytostringa)함수로 바이트 배열을 형식이 지정된 문자열로 변형한다. 
 그 다음 `CreateFileW`함수를 이용해 지정된 랜섬노트의 이름으로 랜섬노트 파일을 만들고, 랜섬노트에 들어갈 내용들을 기록한다. ![[Pasted image 20250806171218.png]]
 
-그 다음 `ragnar_locker.591950`함수로 들어가 보면 다음과 같은 사진이 나온다. 
+랜섬노트까지 만들고 나서 `ragnar_locker.591950`함수로 들어가 보면 다음과 같은 사진이 나온다. 
 ![[Pasted image 20250806171609.png]]
+[FindFirstFileW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-findfirstfilew)함수와 [GetFullPathNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-getfullpathnamew)함수가 사진 속에서 같이 사용된 것으로 보아 해당 함수는 반복문을 돌리면서 [FindNextFileW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-findnextfilew)등의 함수와 같이 사용해 디렉터리 내의 모든 파일이나 폴더를 반복적으로 검색하여 암호화할 파일을 찾는 함수로 유추할 수 있다. 
+이에 대해 실행을 하면서 더 자세하게 분석해 보자. 
