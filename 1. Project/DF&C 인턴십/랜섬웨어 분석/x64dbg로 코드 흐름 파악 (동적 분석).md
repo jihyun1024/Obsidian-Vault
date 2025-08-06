@@ -1,4 +1,4 @@
-x64dbg에 라그나로커 랜섬웨어를 물려 놓고 F9 키를 3번 정도 누르면 함수 프롤로그를 발견할 수 있다. 
+x64dbg에 라그나로커 랜섬웨어를 물려 놓고 F9 키를 3번 정도 누르면 [[함수 프롤로그 & 에필로그|함수 프롤로그]]를 발견할 수 있다. 
 ```
 push ebx
 mov ebx, esp
@@ -93,3 +93,35 @@ psapi.dll
 
 ---
 그 뒤로 [OpenSCManagerA](https://learn.microsoft.com/ko-kr/windows/win32/api/winsvc/nf-winsvc-openscmanagera)함수를 사용해 해당 컴퓨터에서 [[서비스 제어 관리자]]에 대한 연결을 설정하고 해당 서비스 제어 관리자 데이터 베이스를 연다. 
+그 밑으로는 [GetModuleFileNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew)함수로 Ragnar Locker 랜섬웨어 파일 경로를 EAX 레지스터가 가리키는 주소에 저장하며,![[Pasted image 20250806134016.png]]
+[PathFindFileNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew)함수, [GetWindowsDirectoryW](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getwindowsdirectoryw)함수를 사용해 현재 실행 중인 컴퓨터의 `Windows`디렉터리의 경로를 문자열 형태로 반환해 EAX 레지스터가 가리키는 주소에 저장한다. 
+![[Pasted image 20250806134605.png]]
+
+이후 [QueryDosDeviceW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-querydosdevicew)함수를 사용해 `\\Device\\HarddiskVolume3`경로를 얻어 와서 저장하며, 해당 경로는 Windows 운영체제에서 사용하는 디바이스 경로 중 하나로, 커널 수준에서 물리적 또는 논리적 디스크를 식별하기 위해 사용한다. 
+![[Pasted image 20250806140851.png]]
+해당 경로는 볼륨 섀도 복사본을 삭제하는 과정에서 나타날 수 있는데, 그 이유는 `C:\`드라이브에 대한 섀도 복사본은 `\\Device\\HarddiskVolumeX`형태로 내부적으로 관리되기 때문이다. 
+
+그 뒤로도 다시 한 번 `OpenProcess`, `TerminateProcess`, `CloseHandle` 함수들과 반복문을 사용해 현재 실행 중인 프로세스들을 강제로 종료한다.
+![[Pasted image 20250806142351.png]]
+해당 반복문을 몇 번 실행하다 나중에는 파란색 분기 안으로 들어가는데, 
+이 때 `\\Device\\HarddiskVolume3\\System32\\svchost32.exe`와 `dllhost.exe`, `RuntimeBroker.exe`, `explorer.exe`, `shellhost.exe`등의 응용 프로그램과 프로그램의 스냅샷 등을 순회한다. 
+
+`ragnar_locker.591000`으로 EIP를 설정하고 F7으로 들어가 분석하면 다음과 같은 사진이 나온다. 
+![[Pasted image 20250806155640.png]]
+이 함수는 [GetNativeSystemInfo](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getnativesysteminfo)함수와 [LoadLibraryW](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryw), [GetProcAddress](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress), [GetStartupInfoW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getstartupinfow), [CreateProcessW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw)함수를 사용해 파일 암호화 등을 위해 새로운 프로세스를 생성하고, 이를 위한 DLL들을 동적으로 가져 온다. 
+
+이후 함수 프롤로그를 통해 함수 바깥인 entry로 나가고 나서 그 밑의 함수인 `ragnar_locker.5920E0`으로 들어가면 반복문을 통해 처음에는 EAX 레지스터의 값이 0x100이 될 때까지 `mov byte ptr ss:[ebp+eax-100],al`연산을 하고, 두 번째 반복문에서는 ESI 레지스터의 값이 0x100이 될 때까지 하단의 사진에 나와 있는 연산을 하고 나서 다시 함수 프롤로그를 통해 바깥으로 나온다. 
+![[Pasted image 20250806161120.png]]
+
+`ragnar_locker.5920E0`까지 다 수행하고 나면 다음 사진처럼 EAX가 가리키는 주소에 `BEGIN PUBLIC KEY`라는 문구와 함께 어떤 문자열이 나온다. 
+![[Pasted image 20250806161334.png]]
+이후 `ragnar_locker.591F90`함수로 들어가 보면 [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수와 [CryptDestroyKey](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptdestroykey)함수를 사용하며, 이후 공개키 암호에 사용되는 함수인 [CryptImportPublicKeyInfo](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptimportpublickeyinfo)함수를 사용해 공개키의 정보를 변환하고 공개키의 핸들을 반환한다. 
+
+`ragnar_locker.5918C0`함수로 들어가면 해당 사진에서 보이는 것처럼 데이터를 조작하거나 복사시에 소스 데이터의 주소가 저장되는 ESI 레지스터가 가리키는 주소에 `BEGIN PUBLIC KEY`가 있는 것으로 보아 RSA 등의 공개키 암호화 알고리즘으로 해당 공개키로 어떤 데이터를 암호화하거나 공개키 그 자체를 암호화하는 것으로 추측된다. 
+![[Pasted image 20250806165514.png]]
+
+그런 뒤 `GetComputerNameW`함수로 실행 컴퓨터의 이름을 받아 오고 `ragnar_locker.592240`함수를 실행하고 해당 함수가 끝나면 `lstcpyW`와 `lstcatW`함수를 실행해 랜섬노트의 이름처럼 보이는 `RGNR_818CD995.txt`를 지정하고, [CryptBinaryToStringA](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptbinarytostringa)함수로 바이트 배열을 형식이 지정된 문자열로 변형한다. 
+그 다음 `CreateFileW`함수를 이용해 지정된 랜섬노트의 이름으로 랜섬노트 파일을 만들고, 랜섬노트에 들어갈 내용들을 기록한다. ![[Pasted image 20250806171218.png]]
+
+그 다음 `ragnar_locker.591950`함수로 들어가 보면 다음과 같은 사진이 나온다. 
+![[Pasted image 20250806171609.png]]
