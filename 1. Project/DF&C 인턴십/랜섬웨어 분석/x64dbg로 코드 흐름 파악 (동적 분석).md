@@ -149,4 +149,4 @@ psapi.dll
 ![[Pasted image 20250807150209.png]]
 이 때 [[x64dbg]]에서 `덤프`창을 계속 내리다 보면 `0059B000`에 다음과 같이 두 개의 64바이트의 값이 공개키와 같이 메모리 내에 있는 것을 확인할 수 있었다. 
 ![[Pasted image 20250807162108.png]]
-또한, 암호화가 전부 끝나고 나면, 랜섬노트를 메모장을 실행해 모니터에 출력하며, [ExitProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)함수를 사용해 모든 프로세스와 호출한 프로세스를 전부 종료하고 자기 자신 또한 종료한다. 
+또한, 암호화가 전부 끝나고 나면, 메모장을 실행해 랜섬노트를 모니터에 출력하며, [ExitProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)함수를 사용해 모든 프로세스와 호출한 프로세스를 전부 종료하고 자기 자신 또한 종료한다. 
