@@ -62,9 +62,9 @@ psapi.dll
 ### ragnar_locker.5931D0 함수 분석 (2번 수행)
 먼저 `ragnar_locker.5931D0`함수를 call하는 지점에 중단점을 걸고 F7으로 들어가서 분석해 보면 그 안에서도 함수 에필로그 부분까지 여러 함수들을 추가로 호출한다. 
 호출하는 함수는 다음과 같다. 
-1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 
+1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 해당 함수는 [[CNG (Cryptography Next Generation)|CNG]]의 [[BCryptOpenAlgorithmProvider 함수]]와 비슷하게 암호화, 난수 생성 등을 위한 준비 단계에 해당한다.
 2. [CryptGenRandom](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptgenrandom) 함수: 지정한 버퍼에 지정한 바이트 수 만큼의 난수를 넣어 반환한다. 
-3. [CryptReleaseContext](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext) 함수: CSP의 키 컨테이너의 핸들을 해제한다. 
+3. [CryptReleaseContext](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext) 함수: CSP의 키 컨테이너의 핸들을 해제한다. 이 함수는 CNG의 [[BCryptCloseAlgorithmProvider 함수]]와 비슷한 역할을 수행한다. 
 4. `ragnar_locker.597240`함수
 	![[Pasted image 20250805165437.png]]
 	별도의 함수 호출 없이 EAX 레지스터가 가리키는 메모리 주소에 4바이트 값을 16번, 총 64바이트의 값을 저장하며, 각각의 값은 사진과 같이 실행파일 내에 하드코딩 되어 있었다. 
@@ -105,6 +105,7 @@ psapi.dll
 ![[Pasted image 20250806142351.png]]
 위의 사진에서 해당 반복문을 몇 번 실행하다 나중에는 파란색 분기 안으로 들어가는데, 
 이 때 `\\Device\\HarddiskVolume3\\System32\\svchost32.exe`와 `dllhost.exe`, `RuntimeBroker.exe`, `explorer.exe`, `shellhost.exe`등의 응용 프로그램과 프로그램의 스냅샷 등을 순회한다. 
+💡이 때 주의할 점은 해당 지점 근처에 [[안티 디버깅]]을 수행하는 부분이 있어 그 밑의 함수인 `ragnar_locker.591000`으로 바로 넘어갈 수 있도록 그 곳에 CPU가 실행할 명령어를 기억하는 EIP 레지스터를 설정해서 바로 넘어가야 한다. 
 
 `ragnar_locker.591000`으로 EIP를 설정하고 F7으로 들어가 분석하면 다음과 같은 사진이 나온다. 
 ![[Pasted image 20250806155640.png]]
@@ -126,4 +127,26 @@ psapi.dll
 랜섬노트까지 만들고 나서 `ragnar_locker.591950`함수로 들어가 보면 다음과 같은 사진이 나온다. 
 ![[Pasted image 20250806171609.png]]
 [FindFirstFileW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-findfirstfilew)함수와 [GetFullPathNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-getfullpathnamew)함수가 사진 속에서 같이 사용된 것으로 보아 해당 함수는 반복문을 돌리면서 [FindNextFileW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-findnextfilew)등의 함수와 같이 사용해 디렉터리 내의 모든 파일이나 폴더를 반복적으로 검색하여 암호화할 파일을 찾는 함수로 유추할 수 있다. 
-이에 대해 실행을 하면서 더 자세하게 분석해 보자. 
+이에 대해 실행을 하면서 더 자세하게 분석해 보자.
+
+먼저 `FindFirstFileW`함수로 최상위 폴더인 `C:\`폴더의 파일들부터 차례대로 검색하며, 대소문자 가리지 않고 문자열을 비교하는 `lstrcmpiW`함수로 미리 설정해 둔 문자열, 즉 미리 설정해 둔 파일이나 폴더 명을 찾아 비교하고, 해당 파일의 이름은 `GetFullPathNameW`함수로 찾아 비교한다.
+또한, 파일의 확장자를 탐색하는 `PathFindExtensionW`함수로 모든 파일에 대하여 미리 설정해 둔 확장자를 찾아 비교한다. 
+미리 설정해 둔 파일, 확장자, 폴더 이름은 다음과 같다. 
+1. 파일 이름: 랜섬노트 (`RGNR_818CD995.txt`), `autorun.inf`,`boot.ini`, `bootfont.bin`, `bootsect.bak`, `desktop.ini`, `iconcache.db`, `ntldr`, `ntuser.dat`, `ntuser.dat.log`, `ntuser.ini`, `thumbs.db`
+2. 확장자: `db`, `sys`, `dll`, `lnk`, `msi`, `drv`, `exe`
+3. 폴더 이름: `Windows`, `Windows.old`, `Tor browser`, `Internet Explorer`, `Google`, `Opera`, `Opera Software`, `Mozilla`, `Mozilla Firefox`, `$Recycle.Bin`, `ProgramData`, `All Users`
+
+이 경우, 랜섬웨어에 걸린 사용자는 랜섬노트가 암호화되지 않고 보여야 하며, 그 외의 이름들은 시스템 동작에 필요한 것들이기 때문에 해당 이름들은 랜섬웨어 실행 시 암호화에서 제외하는 파일, 디렉터리 이름, 확장자로 유추할 수 있다.
+>[!example]- 예시 이미지
+>![[Pasted image 20250807135225.png]] ![[Pasted image 20250807141736.png]] ![[Pasted image 20250807141841.png]]
+
+이 때 반복문을 돌면서 최상위 디렉터리부터 그 밑의 디렉터리를 하나씩 검색하여 (예: `C:\inetpub`, `C:\PerfLogs` 순서로) 암호화에서 제외할 항목들을 검색한다. 
+![[Pasted image 20250807135520.png]]
+또한 반복문을 돌며 검사하는 동시에 재귀함수로 `ragnar_locker.591950`함수 자기 자신을 계속 실행하여 `FindNextFileW`함수와 함께 사용해 파일을 계속 탐색하며, 그와 동시에 
+
+계속 실행하다 보면 `ragnar_locker.591950`함수가 호출하는`ragnar_locker.591490`함수로 들어오게 된다. ![[Pasted image 20250807142435.png]]
+이 함수에서는 `CreateFileW`함수로 디렉터리 내의 파일을 전부 순회하며 해당 디렉터리와 그 안의 하위 디렉터리에 랜섬노트를 만들고 파일 암호화를 수행하며, 랜섬노트를 만드는 조건은 해당 디렉터리 내의 하위 디렉터리를 전부 순회하여 암호화를 완료했을 때로 추측된다. 
+![[Pasted image 20250807150209.png]]
+이 때 [[x64dbg]]에서 `덤프`창을 계속 내리다 보면 `0059B000`에 다음과 같이 두 개의 64바이트의 값이 공개키와 같이 메모리 내에 있는 것을 확인할 수 있었다. 
+![[Pasted image 20250807162108.png]]
+또한, 암호화가 전부 끝나고 나면, 랜섬노트를 메모장을 실행해 모니터에 출력하며, [ExitProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)함수를 사용해 모든 프로세스와 호출한 프로세스를 전부 종료하고 자기 자신 또한 종료한다. 
