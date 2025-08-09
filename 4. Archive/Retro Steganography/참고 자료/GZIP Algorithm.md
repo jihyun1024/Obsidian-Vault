@@ -14,4 +14,3 @@ GZIP은 단순한 압축 포맷이라기보다는 여러 정보를 담고 있는
 3. Optional Trailer
 	* [[CRC Algorithm|CRC32]] (압축되기 전의 원래 데이터의 체크섬)
 	* 원래 데이터의 크기
-	* 

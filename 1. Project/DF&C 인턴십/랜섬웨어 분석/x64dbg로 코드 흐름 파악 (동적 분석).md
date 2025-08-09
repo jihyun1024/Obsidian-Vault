@@ -62,9 +62,9 @@ psapi.dll
 ### ragnar_locker.5931D0 함수 분석 (2번 수행)
 먼저 `ragnar_locker.5931D0`함수를 call하는 지점에 중단점을 걸고 F7으로 들어가서 분석해 보면 그 안에서도 함수 에필로그 부분까지 여러 함수들을 추가로 호출한다. 
 호출하는 함수는 다음과 같다. 
-1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 해당 함수는 [[CNG (Cryptography Next Generation)|CNG]]의 [[BCryptOpenAlgorithmProvider 함수]]와 비슷하게 암호화, 난수 생성 등을 위한 준비 단계에 해당한다.
+1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 해당 함수는 [[CNG (Cryptography Next Generation)|CNG]]의 [BCryptOpenAlgorithmProvider 함수](https://learn.microsoft.com/ko-kr/windows/win32/api/bcrypt/nf-bcrypt-bcryptopenalgorithmprovider)와 비슷하게 암호화, 난수 생성 등을 위한 준비 단계에 해당한다.
 2. [CryptGenRandom](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptgenrandom) 함수: 지정한 버퍼에 지정한 바이트 수 만큼의 난수를 넣어 반환한다. 
-3. [CryptReleaseContext](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext) 함수: CSP의 키 컨테이너의 핸들을 해제한다. 이 함수는 CNG의 [[BCryptCloseAlgorithmProvider 함수]]와 비슷한 역할을 수행한다. 
+3. [CryptReleaseContext](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext) 함수: CSP의 키 컨테이너의 핸들을 해제한다. 이 함수는 CNG의 [BCryptCloseAlgorithmProvider 함수](https://learn.microsoft.com/ko-kr/windows/win32/api/bcrypt/nf-bcrypt-bcryptclosealgorithmprovider)와 비슷한 역할을 수행한다. 
 4. `ragnar_locker.597240`함수
 	![[Pasted image 20250805165437.png]]
 	별도의 함수 호출 없이 EAX 레지스터가 가리키는 메모리 주소에 4바이트 값을 16번, 총 64바이트의 값을 저장하며, 각각의 값은 사진과 같이 실행파일 내에 하드코딩 되어 있었다. 
