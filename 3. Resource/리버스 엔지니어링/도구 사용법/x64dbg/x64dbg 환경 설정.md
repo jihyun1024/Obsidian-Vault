@@ -1,3 +1,9 @@
+
+- [[#🤔x64dbg?|🤔x64dbg?]]
+- [[#📲x64dbg 설치|📲x64dbg 설치]]
+- [[#☃️Snowman Plugin 설치|☃️Snowman Plugin 설치]]
+- [[#🔧x64dbg Plugin Manager 설정|🔧x64dbg Plugin Manager 설정]]
+
 ### 🤔x64dbg?
 
 - 실행파일을 동적 분석할 수 있도록 돕는 디버거
@@ -42,3 +48,15 @@
     
 - x32/x64dbg를 다시 실행하여 코드를 여러 줄 선택하고 마우스 우클릭을 하면 맨 밑에 Snowman 플러그인이 정상적으로 설치된 것을 볼 수 있다.
 	![[image 3 1.png]]
+
+### 🔧x64dbg Plugin Manager 설정
+https://github.com/horsicq/x64dbg-Plugin-Manager/releases
+
+- 위 사이트에 들어가서 zip파일을 다운로드한다. 
+- 다운로드 받은 zip 파일을 압축 해제한 후 압축 해제 된 폴더로 들어간다. 
+![[Pasted image 20250812204101.png]]
+- 그러면 위와 같이 파일들이 있는데 이 중 x64plgmmr 프로그램을 실행한다. 
+- 이후 x64dbg의 루트 디렉터리를 선택하라는 창이 뜨는데, x64dbg 스냅샷 폴더 안의 release 폴더를 선택하고 Enter를 누른다. 
+![[Pasted image 20250812204306.png]]
+
+- 위의 사진의 리스트는 모두 Plugn들인데 설치하고 싶은 Plugin의 오른쪽에 있는 `Install`을 눌러 설치하면 된다. 

@@ -1,5 +1,5 @@
 ### Linked Document
-[[x64dbg를 이용한 동적 분석 환경 설정]]
+[[x64dbg 환경 설정]]
 [[x64dbg 사용 방법]]
 
 ---
