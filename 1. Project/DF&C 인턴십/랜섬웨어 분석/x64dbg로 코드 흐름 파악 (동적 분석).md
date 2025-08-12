@@ -5,25 +5,26 @@ mov ebx, esp
 sub esp, 8
 ```
 이제 [[x64dbg 사용 방법]]에서 본 것처럼 중단점을 찍고, 한 줄씩 내려가면서 새로운 함수가 보이면 중단점을 찍고, 그 안으로 들어가거나 하면서 분석해 보자. 
-그 전에 먼저 어떤 API가 사용되는지를 알아야 할 것 같아서 로그 창에서 다음과 같은 dll들이 사용되는 것을 확인했고, 그 다음으로 x64dbg를 사용해 랜섬웨어의 전체적인 흐름을 분석해 봤다.
->[!list]- 사용된 dll들
-kernel32.dll
-kernelBase.dll
-user32.dll
-gdi32.dll
-msvcp_win.dll
-ucrtbase.dll
-advapi32.dll
-msvcrt.dll
-sechost.dll
-rpcrt4.dll
-shell32.dll
-WinTypes.dll
-combase.dll
-shlwapi.dll
-crypt32.dll
-psapi.dll
 
+그 전에, 우리가 넘어갔던`ntdll.dll`은 랜섬웨어 등의 악성코드에서 다음 이유로 사용한다. 
+1. **탐지 우회**
+	보통 정상적인 애플리케이션은 `kernel32.dll`이나 `user32.dll` 등의 고수준 API를 사용한다. 
+	그러나 악성코드는 보안 솔루션의 고수준 API 감시를 피하기 위해 `ntdll.dll` 등의 Native API를 직접 호출한다. 
+2. **메모리 조작 및 인젝션**
+	악성코드는 종종 다른 프로세스를 통제하기 위해 `ntdll.dll`의 함수를 사용한다.
+	- `NtAllocateVirtualMemory`: 메모리 공간 확보
+	- `NtWriteVirtualMemory`: 메모리에 악성 코드 쓰기
+	- `NtCreateThreadEx`: 원격 스레드 생성 (코드 실행)
+	이런 방식은 **DLL 인젝션**, **Reflective DLL Injection**, **Process Hollowing** 같은 기술에 사용된다.
+3. **Hook 우회 및 API 패치 탐지**
+	보안 솔루션은 종종 고수준 API에 API Hooking을 걸어 악성 행위를 탐지한다. 그러나 `ntdll.dll`의 Native API는 상대적으로 덜 감시되기 때문에 악성코드는 이를 통해 API Hooking을 우회한다. 
+	- `NtQuerySystemInformation`을 사용해 시스템 정보나 프로세스 리스트를 가져와 보안 솔루션을 탐지할 수 있음
+	- `NtProtectVirtualMemory`를 사용해 메모리 보호 속성을 변경하여 탐지 회피
+4. **Syscall 직접 호출**
+	고급 악성코드는 `ntdll.dll`을 거치지 않고 직접 시스템 호출을 수행하기도 한다. 하지만 대부분의 악성코드는 `ntdll.dll`의 함수에서 Syscall 번호를 추출해 이를 기반으로 직접 호출한다. 
+	이는 보안 솔루션이 `ntdll.dll`을 모니터링하더라도 탐지하지 못하게 한다. 
+
+다시 돌아가서, 랜섬웨어를 동적 분석해 보자. 
 먼저 쭉 내려가다가 `call ragnar_locker.5974C0`라는 함수를 만날 수 있고, 그 곳에 중단점을 찍고 F7을 눌러 그 함수로 들어가 분석해 보자. ![[Pasted image 20250726134518.png]]
 그러면, 다음과 같이 그 밑에 루프가 있는 것을 발견할 수 있는데, 이 루프는 약 3번 정도 돌다가 방금 중단점을 설정해 놓은 그 곳 바로 밑으로 빠져나오는 것을 확인할 수 있다. 
 이후 `push esi, push edi`를 사용해 데이터의 주소와 목적지의 주소를 스택에 저장하고 나서 `call ragnar_locker.591CF0` 명령어를 사용해 해당 함수로 넘어간다. 
@@ -38,7 +39,7 @@ psapi.dll
 ![[Pasted image 20250726135008.png]]
 이후 라그나로커 시작 지점으로 다시 돌아와 컴퓨터 자체의 이름과 Username을 받고 다음 함수를 실행할 준비를 한다. 
 
-`ragnar_locker.5921C0`함수로 넘어가 보면 [VirtualAlloc](https://learn.microsoft.com/ko-kr/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc)함수를 사용해 현재 프로세스의 가상 메모리를 할당하며, [RegOpenKeyExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regopenkeyexw)함수를 이용해 [[레지스트리]]의 키를 연다. 
+`ragnar_locker.5921C0`함수로 넘어가 보면 [VirtualAlloc](https://learn.microsoft.com/ko-kr/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc)함수를 사용해 현재 프로세스에 추가적인 행위를 하기 위한 가상 메모리를 할당하며, [RegOpenKeyExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regopenkeyexw)함수를 이용해 [[레지스트리]]의 키를 연다. 
 그리고 나서 [RegQueryValueExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regqueryvalueexw)함수를 이용해 열었던 레지스트리 키와 연관된 지정된 값/이름에 대한 유형과 데이터를 검색하고, [RegCloseKey](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regclosekey)함수를 사용해 열었던 레지스트리의 키를 닫는다. 
 ![[KakaoTalk_20250805_221734510_01.png]]
 이후 해당 작업이 전부 끝나면 이 함수를 호출하기 이전의 메인 함수로 돌아가 다음 코드를 시작하며, 이후의 코드에서 `push eax`가 실행될 때마다 각각 사용자의 이름(USERNAME), 컴퓨터의 이름이 EAX 레지스터가 가리키는 주소의 값에 push되는 것을 확인할 수 있었다. 
@@ -49,11 +50,14 @@ psapi.dll
 ![[Pasted image 20250726140128.png]]
 따라서 `ragnar_locker.592240` 함수는 `lstrlenW`함수로 입력된 문자열의 길이를 계산하고, 루프에서 정의된 반복문대로 움직이며 간단한 해시값이나 무결성 체크 등의 연산을 수행하는 함수로 추측된다. 
 그 뒤에도 4번 정도 `ragnar_locker.592240`함수를 더 수행하는 코드가 있으며, 이 코드를 수행한 뒤, `wsprintfW`함수를 호출해 ESP 레지스터가 가리키는 메모리 주소의 값에 `A6A64009-6FAB6FDA-780E09FA-818CD995-10352210`의 해시값 비슷한 것을 저장한다. 
+더 정확히는, 컴퓨터 이름, 사용자 이름, 컴퓨터의 guid, Windows 버전, combined_info의 순서대로 해시를 계산해서 위의 해시값의 형태로 저장한다. (출처: https://www.cybereason.com/blog/threat-analysis-report-ragnar-locker-ransomware-targeting-the-energy-sector)
+![[Pasted image 20250812175042.png]]
 ![[Pasted image 20250726140355.png]]
 
 그 밑으로 수많은 함수가 사용되고 있는, Ragnar Locker 랜섬웨어에서 메인 기능을 담당하는 것처럼 보이는 코드가 등장한다. 하나하나 분석해 보자.
 ![[Pasted image 20250726140432.png]]
-먼저, [CreateEventW](https://learn.microsoft.com/ko-kr/windows/win32/api/synchapi/nf-synchapi-createeventw), [GetLastError](https://learn.microsoft.com/ko-kr/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror), [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess), [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess), [CloseHandle](https://learn.microsoft.com/ko-kr/windows/win32/api/handleapi/nf-handleapi-closehandle) 함수들을 사용하고, 함수의 반환값을 특정 값과 비교하는 방식으로 현재 랜섬웨어 프로세스를 관리하며, 
+먼저, [CreateEventW](https://learn.microsoft.com/ko-kr/windows/win32/api/synchapi/nf-synchapi-createeventw), [GetLastError](https://learn.microsoft.com/ko-kr/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror), [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess), [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess), [CloseHandle](https://learn.microsoft.com/ko-kr/windows/win32/api/handleapi/nf-handleapi-closehandle) 함수들을 사용하고, 함수의 반환값을 특정 값과 비교하는 방식으로 현재 랜섬웨어 프로세스를 관리하며,
+앞에서 계산했던 해시값이 이어진 문자열을 이벤트 이름으로 사용한다. 
 [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수로 현재 실행 중인 프로세스들을 받아 와 [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수를 사용해 현재 실행 중인 프로세스들을 강제로 정지한다. 해당 작업은`while`반복문을 0xFAE9과 비교하는 방식으로 인덱스를 1씩 늘려 가며 (inc esi, cmp esi, FAE9) 동작한다.
 그 뒤에 `ragnar_locker.5931D0`와 `ragnar_locker.5920E0` 함수가 2개씩 나온다. 
 하나씩 알아보자. 
