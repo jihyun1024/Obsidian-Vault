@@ -5,6 +5,7 @@ mov ebx, esp
 sub esp, 8
 ```
 이제 [[x64dbg 사용 방법]]에서 본 것처럼 중단점을 찍고, 한 줄씩 내려가면서 새로운 함수가 보이면 중단점을 찍고, 그 안으로 들어가거나 하면서 분석해 보자. 
+그 전에, 함수로 어떤 인자를 넣는지 확인하는 방법은 [[x64dbg 사용 방법#👨‍🔧스택을 활용한 함수의 Parameter 확인 방법|스택을 활용한 함수의 Parameter 확인]]에서 볼 수 있다. 
 
 그 전에, 우리가 넘어갔던`ntdll.dll`은 랜섬웨어 등의 악성코드에서 다음 이유로 사용한다. 
 1. **탐지 우회**
@@ -58,6 +59,10 @@ sub esp, 8
 ![[Pasted image 20250726140432.png]]
 먼저, [CreateEventW](https://learn.microsoft.com/ko-kr/windows/win32/api/synchapi/nf-synchapi-createeventw), [GetLastError](https://learn.microsoft.com/ko-kr/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror), [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess), [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess), [CloseHandle](https://learn.microsoft.com/ko-kr/windows/win32/api/handleapi/nf-handleapi-closehandle) 함수들을 사용하고, 함수의 반환값을 특정 값과 비교하는 방식으로 현재 랜섬웨어 프로세스를 관리하며,
 앞에서 계산했던 해시값이 이어진 문자열을 이벤트 이름으로 사용한다. 
+![[Pasted image 20250813132356.png]]
+이 사진에서 0, 1, 0, 해시값을 인자로 넣어 새 이벤트를 만들 때 이벤트 이름을 해당 해시값으로 한다. 
+![[Pasted image 20250813133525.png]]
+
 [GetCurrentProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수로 현재 실행 중인 프로세스들을 받아 와 [TerminateProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)함수를 사용해 현재 실행 중인 프로세스들을 강제로 정지한다. 해당 작업은`while`반복문을 0xFAE9과 비교하는 방식으로 인덱스를 1씩 늘려 가며 (inc esi, cmp esi, FAE9) 동작한다.
 그 뒤에 `ragnar_locker.5931D0`와 `ragnar_locker.5920E0` 함수가 2개씩 나온다. 
 하나씩 알아보자. 
@@ -68,6 +73,9 @@ sub esp, 8
 호출하는 함수는 다음과 같다. 
 1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 해당 함수는 [[CNG (Cryptography Next Generation)|CNG]]의 [BCryptOpenAlgorithmProvider 함수](https://learn.microsoft.com/ko-kr/windows/win32/api/bcrypt/nf-bcrypt-bcryptopenalgorithmprovider)와 비슷하게 암호화, 난수 생성 등을 위한 준비 단계에 해당한다.
 2. [CryptGenRandom](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptgenrandom) 함수: 지정한 버퍼에 지정한 바이트 수 만큼의 난수를 넣어 반환한다. 
+	1. 첫 번쨰 실행: 0x28 = 40 Byte를 생성
+	2. 두 번째 실행: 0x20 = 32 Byte를 생성
+	![[Pasted image 20250813143025.png]]
 3. [CryptReleaseContext](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext) 함수: CSP의 키 컨테이너의 핸들을 해제한다. 이 함수는 CNG의 [BCryptCloseAlgorithmProvider 함수](https://learn.microsoft.com/ko-kr/windows/win32/api/bcrypt/nf-bcrypt-bcryptclosealgorithmprovider)와 비슷한 역할을 수행한다. 
 4. `ragnar_locker.597240`함수
 	![[Pasted image 20250805165437.png]]
@@ -81,6 +89,7 @@ sub esp, 8
 	1. `ragnar_locker.593290` 함수
 		![[Pasted image 20250805171542.png]]
 		`ret`명령어로 반환하기 전까지 `mov, sub, xor, add`등의 연산을 많이 수행한다. 
+		랜섬웨어에 이러한 연산이 있는 것으로 봐서 어떤 암호 연산을 수행하는 것이 아닐까 추측된다.
 	2. `ragnar_locker.5974F0` 함수 (4번 수행)
 		![[Pasted image 20250805191659.png]]
 		실행하면 `cmp cl,40`, `cmp cl,20`, `mov eax,edx`, `xor edx,edx`, `and cl,1F`, `shr eax,cl`, `ret`의 명령어를 순서대로 수행하고 함수 밖으로 나온다. 
@@ -88,18 +97,50 @@ sub esp, 8
 7. `ragnar_locker.597430`함수 
 	![[Pasted image 20250805193525.png]]
 	`push`명령어와 `mov`, `and`, `rep`, `shr`, `cld`명령어를 사용해 간단한 연산을 한 뒤 반환한다. 
+
+이후, 메인 함수로 나와서 `push`명령어로 들어갔던 메모리 주소를 덤프 떠 보면 다음 사진과 같이 각각 40 바이트와 32 바이트가 저장되어 있다. 
+(이 사진에서는 다 합쳐서 0x48 = 72 바이트를 블록 선택했다)
+![[Pasted image 20250813150412.png]]
 ### ragnar_locker.5920E0 함수 분석 (2번 수행)
+이 함수는 메모리에 있는 값 1, 0x40, 메모리에 있는 값 2, 0x40으로 4개의 parameter를 받아서 동작한다. 
+이 때, 메모리에 있는 값은 덤프를 뜨면 각각 정확하게 0x40 = 64 바이트가 있는 것을 확인할 수 있다. 
+![[Pasted image 20250813152106.png]]
+(단, 블록 설정한 메모리의 값은 중간의 초록색 0을 빼고 봐야 한다는 것을 잊지 말자.....)
+
+이제 함수 내부로 들어가서 분석해 보자. 
 ![[Pasted image 20250805193812.png]]
-이 함수에서는 별도의 함수 호출 없이 함수 에필로그까지 반복문을 사용해 특정 연산을 하고, 특정한 연산이 끝나면 함수 에필로그를 통해 함수 바깥으로 나간다. 
+이 함수에서는 별도의 함수 호출 없이 함수 에필로그까지 반복문을 사용해 특정한 연산을 수행하고, 연산이 끝나면 함수 에필로그를 통해 함수 바깥으로 나간다. 
 이 때 처음 반복문은 EAX 레지스터의 값이 256이 될 때까지 실행하고, 두 번째 반복문은 ESI 레지스터의 값이 256이 될 때까지 실행한다. 
-실행을 전부 끝내면 EAX 레지스터가 가리키는 메모리 주소에 아래 사진처럼 64바이트 값이 저장되어 있다. 
+또한, 그 밑에도 반복문이 있는데, 세 번째 반복문은 `cmp` 명령어가 없는 것으로 보아 `while`반복문을 사용하는 것으로 추측된다. 실행을 전부 끝내면 EAX 레지스터가 가리키는 메모리 주소에 아래 사진처럼 64바이트 값이 저장되어 있다. 
 ![[Pasted image 20250805195857.png]]
+
+또한, 함수 실행 이후에는 인자로 받은 두 개의 64 바이트 값 중 두 번째 64 바이트가 알아보기 쉽게 변경되었기 때문에, 해당 함수의 역할은 이 64 바이트를 복호화하거나 암호화화하는 것으로 추측된다. 
+**Before**
+![[Pasted image 20250813155946.png]] 
+**After**
+![[Pasted image 20250813155959.png]]
+
+두 번째로 실행할 때는 첫 번째 실행했을 때의 상위 바이트, 0x40, AAB260, 0x56을 parameter로 가지며, 세 번째 parameter의 값은 다음과 같다. 
+![[Pasted image 20250813162129.png]]
+이를 실행시키면, 함수는 첫 번째로 동작할 때와 동일하게 동작하며, 함수 실행 이후, 위의 사진과 같은 위치에 있던 메모리의 값이 사람이 알아볼 수 있도록 변한다. 
+따라서, 이번에는 확실하게 해당 함수의 역할, Parameter를 알 수 있다. 
+1. 역할: 고정된 키를 가지고 인자로 들어오는 바이트 배열을 복호화
+2. Parameter
+	1. 복호화에 사용하는 고정된 키의 주소
+	2. 고정된 키의 바이트 길이
+	3. 복호화 대상 바이트 배열의 주소
+	4. 복호화 대상 바이트 배열의 길이
+![[Pasted image 20250813163621.png]]
+이 키워드의 공통점은 백업, 보안, 원격 관리와 관련된 서비스로, 파일 암호화나 그 이전에 해당 서비스들을  종료하기 위해 넣은 것으로 추측된다. 
 
 ---
 그 뒤로 [OpenSCManagerA](https://learn.microsoft.com/ko-kr/windows/win32/api/winsvc/nf-winsvc-openscmanagera)함수를 사용해 해당 컴퓨터에서 [[서비스 제어 관리자]]에 대한 연결을 설정하고 해당 서비스 제어 관리자 데이터 베이스를 연다. 
+이 때, `0, 0, F003F`를 인자로 받아 사용자 컴퓨터의 기본 서비스 제어 관리자에 대해 거의 모든 권한을 가진 핸들을 요청한다. ([공식 문서](https://learn.microsoft.com/ko-kr/windows/win32/services/service-security-and-access-rights) 참고)
+![[Pasted image 20250813171818.png]]
 그 밑으로는 [GetModuleFileNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew)함수로 Ragnar Locker 랜섬웨어 파일 경로를 EAX 레지스터가 가리키는 주소에 저장하며,![[Pasted image 20250806134016.png]]
 [PathFindFileNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew)함수, [GetWindowsDirectoryW](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getwindowsdirectoryw)함수를 사용해 현재 실행 중인 컴퓨터의 `Windows`디렉터리의 경로를 문자열 형태로 반환해 아래처럼 EAX 레지스터가 가리키는 주소에 저장한다. 
 ![[Pasted image 20250806134605.png]]
+이상의 함수들은 서비스 제어 관리자를 사용해 이전에 복호화 해 뒀던 백업, 보안 관리 등의 서비스를 중지하고, 파일 암호화 등의 행위를 하기 위해 동작한 것으로 추측된다. 
 
 이후 [QueryDosDeviceW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-querydosdevicew)함수를 사용해 `\\Device\\HarddiskVolume3`경로를 얻어 와서 저장하며, 해당 경로는 Windows 운영체제에서 사용하는 디바이스 경로 중 하나로, 커널 수준에서 물리적 또는 논리적 디스크를 식별하기 위해 사용한다. 
 ![[Pasted image 20250806140851.png]]
@@ -113,10 +154,11 @@ sub esp, 8
 
 `ragnar_locker.591000`으로 EIP를 설정하고 F7으로 들어가 분석하면 다음과 같은 사진이 나온다. 
 ![[Pasted image 20250806155640.png]]
-이 함수는 [GetNativeSystemInfo](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getnativesysteminfo)함수와 [LoadLibraryW](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryw), [GetProcAddress](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress), [GetStartupInfoW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getstartupinfow), [CreateProcessW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw)함수를 사용해 파일 암호화 등을 위해 새로운 프로세스를 생성하고, 이를 위한 DLL들을 동적으로 가져 온다. 
+이 함수는 [GetNativeSystemInfo](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getnativesysteminfo)함수와 [LoadLibraryW](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryw), [GetProcAddress](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress), [GetStartupInfoW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getstartupinfow), [CreateProcessW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw)함수를 사용해 새로운 프로세스를 생성하고, 이를 위한 DLL들을 동적으로 가져 온다. 
+이 때, Parameter로 `kernel32.dll`과 `Wow64EnableWow64FsRedirection`을 받아 전체적인 파일 시스템을 64bit와 32bit 상관없이 일반적인 상태로 접근할 수 있도록 하며, Wmic과 Vssadmin을 사용해 섀도 복사본을 삭제한다. 
 
-이후 함수 프롤로그를 통해 함수 바깥인 entry로 나가고 나서 그 밑의 함수인 `ragnar_locker.5920E0`으로 들어가면 반복문을 통해 처음에는 EAX 레지스터의 값이 0x100이 될 때까지 `mov byte ptr ss:[ebp+eax-100],al`연산을 하고, 두 번째 반복문에서는 ESI 레지스터의 값이 0x100이 될 때까지 하단의 사진에 나와 있는 연산을 하고 나서 다시 함수 프롤로그를 통해 바깥으로 나온다. 
-![[Pasted image 20250806161120.png]]
+이후 함수 프롤로그를 통해 함수 바깥인 entry로 나가고 나서 그 밑의 함수인 `ragnar_locker.5920E0`으로 들어가면 위에서 분석했던 내용대로 복호화를 수행한다. 
+(추가 분석 필요)
 
 `ragnar_locker.5920E0`까지 다 수행하고 나면 다음 사진처럼 EAX가 가리키는 주소에 `BEGIN PUBLIC KEY`라는 문구와 함께 어떤 문자열이 나온다. 
 ![[Pasted image 20250806161334.png]]
@@ -151,6 +193,5 @@ sub esp, 8
 계속 실행하다 보면 `ragnar_locker.591950`함수가 호출하는`ragnar_locker.591490`함수로 들어오게 된다. ![[Pasted image 20250807142435.png]]
 이 함수에서는 `CreateFileW`함수로 디렉터리 내의 파일을 전부 순회하며 해당 디렉터리와 그 안의 하위 디렉터리에 랜섬노트를 만들고 파일 암호화를 수행하며, 랜섬노트를 만드는 조건은 해당 디렉터리 내의 하위 디렉터리를 전부 순회하여 암호화를 완료했을 때로 추측된다. 
 ![[Pasted image 20250807150209.png]]
-이 때 [[x64dbg]]에서 `덤프`창을 계속 내리다 보면 `0059B000`에 다음과 같이 두 개의 64바이트의 값이 공개키와 같이 메모리 내에 있는 것을 확인할 수 있었다. 
-![[Pasted image 20250807162108.png]]
+
 또한, 암호화가 전부 끝나고 나면, 메모장을 실행해 랜섬노트를 모니터에 출력하며, [ExitProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)함수를 사용해 모든 프로세스와 호출한 프로세스를 전부 종료하고 자기 자신 또한 종료한다. 
