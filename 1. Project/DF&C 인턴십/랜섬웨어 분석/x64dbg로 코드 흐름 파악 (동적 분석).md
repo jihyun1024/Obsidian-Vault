@@ -1,3 +1,18 @@
+
+# 목차
+- [[#동작 분석 Warm-Up|동작 분석 Warm-Up]]
+- [[#사용자의 국가 확인 (구소련일 경우, 넘어감)|사용자의 국가 확인 (구소련일 경우, 넘어감)]]
+- [[#피해 컴퓨터의 정보 수집|피해 컴퓨터의 정보 수집]]
+	- [[#피해 컴퓨터의 정보 수집#ragnar_locker.5931D0 함수 분석 (2번 수행, 난수 생성)|ragnar_locker.5931D0 함수 분석 (2번 수행, 난수 생성)]]
+	- [[#피해 컴퓨터의 정보 수집#ragnar_locker.5920E0 함수 분석 (2번 수행, RC4 복호화)|ragnar_locker.5920E0 함수 분석 (2번 수행, RC4 복호화)]]
+- [[#볼륨 섀도 복사본 삭제|볼륨 섀도 복사본 삭제]]
+- [[#공개키 복호화|공개키 복호화]]
+- [[#랜섬노트 제작|랜섬노트 제작]]
+- [[#파일 탐색 및 암호화 수행|파일 탐색 및 암호화 수행]]
+- [[#악성 행위가 끝난 이후|악성 행위가 끝난 이후]]
+- [[#더 자세하고 추가적인 분석|더 자세하고 추가적인 분석]]
+
+## 동작 분석 Warm-Up
 x64dbg에 라그나로커 랜섬웨어를 물려 놓고 F9 키를 3번 정도 누르면 [[함수 프롤로그 & 에필로그|함수 프롤로그]]를 발견할 수 있다. 
 ```
 push ebx
@@ -33,13 +48,16 @@ sub esp, 8
 ![[Pasted image 20250726134659.png]]
 그러면 이렇게 엄청나게 많은 귀찮은 코드가 있는데, 분기나 함수 호출 등 의미있는 코드가 나올 때까지 계속 F8으로 넘어가 보자. 
 계속 넘어가고 또 넘어가 보면...
+
+## 사용자의 국가 확인 (구소련일 경우, 넘어감)
 ![[Pasted image 20250726134823.png]]
 다음처럼 [GetLocaleInfow](https://learn.microsoft.com/en-us/windows/win32/api/winnls/nf-winnls-getlocaleinfow)함수를 사용해 사용자의 국가, 언어 등을 받아와 EAX 레지스터에 영문 문자열로 저장하며, 이를 반복문을 이용해 여러 나라의 언어와 비교한다. 이때 비교하는 언어는 Azerbaijani, Armenian, Belorussian, Kazakh, Kyrgyz, Moldavian, Tajik, Russian, Turkmen, Uzbek, Ukrainian, Georgian 총 12개이다. (해당 언어들은 소련의 일부였다는 공통점이 있다)
 이후 함수 에필로그를 통해 함수 밖으로 나간다. 
 
 ![[Pasted image 20250726135008.png]]
-이후 라그나로커 시작 지점으로 다시 돌아와 컴퓨터 자체의 이름과 Username을 받고 다음 함수를 실행할 준비를 한다. 
+이후 라그나로커 시작 지점으로 다시 돌아와 컴퓨터의 이름과 Username을 받고 다음 과정을 수행한다.
 
+## 피해 컴퓨터의 정보 수집
 `ragnar_locker.5921C0`함수로 넘어가 보면 [VirtualAlloc](https://learn.microsoft.com/ko-kr/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc)함수를 사용해 현재 프로세스에 추가적인 행위를 하기 위한 가상 메모리를 할당하며, [RegOpenKeyExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regopenkeyexw)함수를 이용해 [[레지스트리]]의 키를 연다. 
 그리고 나서 [RegQueryValueExW](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regqueryvalueexw)함수를 이용해 열었던 레지스트리 키와 연관된 지정된 값/이름에 대한 유형과 데이터를 검색하고, [RegCloseKey](https://learn.microsoft.com/ko-kr/windows/win32/api/winreg/nf-winreg-regclosekey)함수를 사용해 열었던 레지스트리의 키를 닫는다. 
 ![[KakaoTalk_20250805_221734510_01.png]]
@@ -68,12 +86,12 @@ sub esp, 8
 하나씩 알아보자. 
 
 ---
-### ragnar_locker.5931D0 함수 분석 (2번 수행)
+### ragnar_locker.5931D0 함수 분석 (2번 수행, 난수 생성)
 먼저 `ragnar_locker.5931D0`함수를 call하는 지점에 중단점을 걸고 F7으로 들어가서 분석해 보면 그 안에서도 함수 에필로그 부분까지 여러 함수들을 추가로 호출한다. 
 호출하는 함수는 다음과 같다. 
 1. [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수: 특정 CSP(암호화 서비스 공급자) 안의 특정 키 [[컨테이너]]에 대한 핸들을 획득하는 데 사용하며, 이 핸들은 선택한 CSP를 사용하는 CryptoAPI 함수 호출에 사용된다. 해당 함수는 [[CNG (Cryptography Next Generation)|CNG]]의 [BCryptOpenAlgorithmProvider 함수](https://learn.microsoft.com/ko-kr/windows/win32/api/bcrypt/nf-bcrypt-bcryptopenalgorithmprovider)와 비슷하게 암호화, 난수 생성 등을 위한 준비 단계에 해당한다.
 2. [CryptGenRandom](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptgenrandom) 함수: 지정한 버퍼에 지정한 바이트 수 만큼의 난수를 넣어 반환한다. 
-	1. 첫 번쨰 실행: 0x28 = 40 Byte를 생성
+	1. 첫 번째 실행: 0x28 = 40 Byte를 생성
 	2. 두 번째 실행: 0x20 = 32 Byte를 생성
 	![[Pasted image 20250813143025.png]]
 3. [CryptReleaseContext](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext) 함수: CSP의 키 컨테이너의 핸들을 해제한다. 이 함수는 CNG의 [BCryptCloseAlgorithmProvider 함수](https://learn.microsoft.com/ko-kr/windows/win32/api/bcrypt/nf-bcrypt-bcryptclosealgorithmprovider)와 비슷한 역할을 수행한다. 
@@ -101,7 +119,7 @@ sub esp, 8
 이후, 메인 함수로 나와서 `push`명령어로 들어갔던 메모리 주소를 덤프 떠 보면 다음 사진과 같이 각각 40 바이트와 32 바이트가 저장되어 있다. 
 (이 사진에서는 다 합쳐서 0x48 = 72 바이트를 블록 선택했다)
 ![[Pasted image 20250813150412.png]]
-### ragnar_locker.5920E0 함수 분석 (2번 수행)
+### ragnar_locker.5920E0 함수 분석 (2번 수행, RC4 복호화)
 이 함수는 메모리에 있는 값 1, 0x40, 메모리에 있는 값 2, 0x40으로 4개의 parameter를 받아서 동작한다. 
 이 때, 메모리에 있는 값은 덤프를 뜨면 각각 정확하게 0x40 = 64 바이트가 있는 것을 확인할 수 있다. 
 ![[Pasted image 20250813152106.png]]
@@ -134,6 +152,7 @@ sub esp, 8
 이 키워드의 공통점은 백업, 보안, 원격 관리와 관련된 서비스로, 파일 암호화나 그 이전에 해당 서비스들을  종료하기 위해 넣은 것으로 추측된다. 
 
 ---
+## 볼륨 섀도 복사본 삭제
 그 뒤로 [OpenSCManagerA](https://learn.microsoft.com/ko-kr/windows/win32/api/winsvc/nf-winsvc-openscmanagera)함수를 사용해 해당 컴퓨터에서 [[서비스 제어 관리자]]에 대한 연결을 설정하고 해당 서비스 제어 관리자 데이터 베이스를 연다. 
 이 때, `0, 0, F003F`를 인자로 받아 사용자 컴퓨터의 기본 서비스 제어 관리자에 대해 거의 모든 권한을 가진 핸들을 요청한다. ([공식 문서](https://learn.microsoft.com/ko-kr/windows/win32/services/service-security-and-access-rights) 참고)
 ![[Pasted image 20250813171818.png]]
@@ -146,7 +165,7 @@ sub esp, 8
 ![[Pasted image 20250806140851.png]]
 해당 경로는 볼륨 섀도 복사본을 삭제하는 과정에서 나타날 수 있는데, 그 이유는 `C:\`드라이브에 대한 섀도 복사본은 `\\Device\\HarddiskVolumeX`형태로 내부적으로 관리되기 때문이다. 
 
-그 뒤로도 다시 한 번 `OpenProcess`, `TerminateProcess`, `CloseHandle` 함수들과 반복문을 사용해 현재 실행 중인 프로세스들을 강제로 종료한다.
+그 뒤로 `OpenProcess`, `TerminateProcess`, `CloseHandle` 함수들과 반복문을 사용해 현재 실행 중인 프로세스들을 강제로 종료한다.
 ![[Pasted image 20250806142351.png]]
 위의 사진에서 해당 반복문을 몇 번 실행하다 나중에는 파란색 분기 안으로 들어가는데, 
 이 때 `\\Device\\HarddiskVolume3\\System32\\svchost32.exe`와 `dllhost.exe`, `RuntimeBroker.exe`, `explorer.exe`, `shellhost.exe`등의 응용 프로그램과 프로그램의 스냅샷 등을 순회한다. 
@@ -156,7 +175,9 @@ sub esp, 8
 ![[Pasted image 20250806155640.png]]
 이 함수는 [GetNativeSystemInfo](https://learn.microsoft.com/ko-kr/windows/win32/api/sysinfoapi/nf-sysinfoapi-getnativesysteminfo)함수와 [LoadLibraryW](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryw), [GetProcAddress](https://learn.microsoft.com/ko-kr/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress), [GetStartupInfoW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-getstartupinfow), [CreateProcessW](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw)함수를 사용해 새로운 프로세스를 생성하고, 이를 위한 DLL들을 동적으로 가져 온다. 
 이 때, Parameter로 `kernel32.dll`과 `Wow64EnableWow64FsRedirection`을 받아 전체적인 파일 시스템을 64bit와 32bit 상관없이 일반적인 상태로 접근할 수 있도록 하며, Wmic과 Vssadmin을 사용해 섀도 복사본을 삭제한다. 
+![[Pasted image 20250814141950.png]]
 
+## 공개키 복호화
 이후 함수 프롤로그를 통해 함수 바깥인 entry로 나가고 나서 그 밑의 함수인 `ragnar_locker.5920E0`으로 들어가면 위에서 분석했던 내용대로 복호화를 수행한다. 
 이 함수에서는 이전에 복호화했던 64 byte 배열의 바로 밑이 있는 0x1C3 byte짜리 바이트 배열을 실행 파일 내에 있는 64 byte의 키로 복호화한다. 복호화 결과는 다음 사진과 같다. 
 ![[Pasted image 20250814050208.png]]
@@ -169,10 +190,12 @@ sub esp, 8
 따라서, 해당 함수의 역할은 아래 사진처럼 암호화를 위해 공개키를 다른 함수에 전달한다. 
 ![[Pasted image 20250814060243.png]]
 
-그런 뒤 `GetComputerNameW`함수로 실행 컴퓨터의 이름을 받아 오고 `ragnar_locker.592240`함수를 실행하고 해당 함수가 끝나면 `lstcpyW`와 `lstcatW`함수를 실행해 랜섬노트의 이름처럼 보이는 `RGNR_818CD995.txt`를 지정하고, [CryptBinaryToStringA](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptbinarytostringa)함수로 바이트 배열을 형식이 지정된 문자열로 변형한다. 
+## 랜섬노트 제작
+그런 뒤 `GetComputerNameW`함수로 실행 컴퓨터의 이름을 받아 오고 `ragnar_locker.592240`함수를 실행하고 해당 함수가 끝나면 `lstcpyW`와 `lstcatW`함수를 실행해 랜섬노트의 이름처럼 보이는 `RGNR_818CD995.txt`를 지정하고, [CryptBinaryToStringA](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptbinarytostringa)함수로 바이트 배열을 형식이 지정된 문자열로 변형한다. 이 때의 바이트 배열은 랜섬노트의 내용에 해당한다.
 그 다음 `CreateFileW`함수를 이용해 지정된 랜섬노트의 이름으로 랜섬노트 파일을 만들고, 랜섬노트에 들어갈 내용들을 기록한다. ![[Pasted image 20250806171218.png]]
 이 때 랜섬노트가 생성되는 경로는 `C:\\Users\\Public\\Documents\\RGNR_[해시값].txt`이며, 해당 경로에 들어가 보면 실제로 랜섬노트가 존재한다. 
 
+## 파일 탐색 및 암호화 수행
 랜섬노트까지 만들고 나서 `ragnar_locker.591950`함수로 들어가 보면 다음과 같은 사진이 나온다. 
 ![[Pasted image 20250806171609.png]]
 [FindFirstFileW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-findfirstfilew)함수와 [GetFullPathNameW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-getfullpathnamew)함수가 사진 속에서 같이 사용된 것으로 보아 해당 함수는 반복문을 돌리면서 [FindNextFileW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-findnextfilew)등의 함수와 같이 사용해 디렉터리 내의 모든 파일이나 폴더를 반복적으로 검색하여 암호화할 파일을 찾는 함수로 유추할 수 있다. 
@@ -197,7 +220,13 @@ sub esp, 8
 이 함수에서는 `CreateFileW`함수로 디렉터리 내의 파일을 전부 순회하며 해당 디렉터리와 그 안의 하위 디렉터리에 랜섬노트를 만들고 파일 암호화를 수행하며, 랜섬노트를 만드는 조건은 해당 디렉터리 내의 하위 디렉터리를 전부 순회하여 암호화를 완료했을 때로 추측된다. 
 ![[Pasted image 20250807150209.png]]
 
-또한, 암호화가 전부 끝나고 나면, 메모장을 실행해 랜섬노트를 모니터에 출력하며, [ExitProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)함수를 사용해 모든 프로세스와 호출한 프로세스를 전부 종료하고 자기 자신 또한 종료한다. 
+## 악성 행위가 끝난 이후
+암호화가 전부 끝나고 나면, 메모장을 실행해 랜섬노트를 모니터에 출력하며, [ExitProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)함수를 사용해 모든 프로세스와 호출한 프로세스를 전부 종료하고 자기 자신 또한 종료한다. 
 이 때 `notepad.exe`를 실행하는데, 현재 프로세스 토큰 핸들을 가져오고, 토큰을 복제해 권한을 상승시키며, 상승된 토큰과 함께 `CreateProcessW` 함수를 사용해 프로세스를 생성한다. 
 ![[Pasted image 20250814090245.png]]
 ![[Pasted image 20250814090300.png]]
+
+---
+## 더 자세하고 추가적인 분석
+[[암호화와 복호화 알고리즘 파악]]
+[[Ragnar Locker 랜섬웨어 복호화]]
