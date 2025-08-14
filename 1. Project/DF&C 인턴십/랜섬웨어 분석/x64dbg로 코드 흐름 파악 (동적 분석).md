@@ -158,17 +158,20 @@ sub esp, 8
 이 때, Parameter로 `kernel32.dll`과 `Wow64EnableWow64FsRedirection`을 받아 전체적인 파일 시스템을 64bit와 32bit 상관없이 일반적인 상태로 접근할 수 있도록 하며, Wmic과 Vssadmin을 사용해 섀도 복사본을 삭제한다. 
 
 이후 함수 프롤로그를 통해 함수 바깥인 entry로 나가고 나서 그 밑의 함수인 `ragnar_locker.5920E0`으로 들어가면 위에서 분석했던 내용대로 복호화를 수행한다. 
-(추가 분석 필요)
+이 함수에서는 이전에 복호화했던 64 byte 배열의 바로 밑이 있는 0x1C3 byte짜리 바이트 배열을 실행 파일 내에 있는 64 byte의 키로 복호화한다. 복호화 결과는 다음 사진과 같다. 
+![[Pasted image 20250814050208.png]]
+따라서, 해당 코드는 RSA 암호화 등에 사용하는 공개키를 복호화하는 코드로 추측된다. 
+또한, 암호문과 평문의 바이트 길이가 동일하기 때문에 복호화에 사용된 암호 알고리즘은 스트림 암호나 블록 암호의 ECB, CTR, OFB, CFB 등 스트림 암호와 비슷한 알고리즘을 사용했을 것으로 추측할 수 있었다. 
 
-`ragnar_locker.5920E0`까지 다 수행하고 나면 다음 사진처럼 EAX가 가리키는 주소에 `BEGIN PUBLIC KEY`라는 문구와 함께 어떤 문자열이 나온다. 
-![[Pasted image 20250806161334.png]]
+또한, 그 밑에도 0x7D4 byte 배열을 복호화하는 코드가 있는데, 해당 코드를 실행하면 parameter로 받은 바이트 배열이 랜섬노트를 나타내는 바이트 배열로 복호화된다. 
+
 이후 `ragnar_locker.591F90`함수로 들어가 보면 [CryptAcquireContextW](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontextw) 함수와 [CryptDestroyKey](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptdestroykey)함수를 사용하며, 이후 공개키 암호에 사용되는 함수인 [CryptImportPublicKeyInfo](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptimportpublickeyinfo)함수를 사용해 공개키의 정보를 변환하고 공개키의 핸들을 반환한다. 
-
-`ragnar_locker.5918C0`함수로 들어가면 해당 사진에서 보이는 것처럼 데이터를 조작하거나 복사시에 소스 데이터의 주소가 저장되는 ESI 레지스터가 가리키는 주소에 `BEGIN PUBLIC KEY`가 있는 것으로 보아 RSA 등의 공개키 암호화 알고리즘으로 해당 공개키로 어떤 데이터를 암호화하거나 공개키 그 자체를 암호화하는 것으로 추측된다. 
-![[Pasted image 20250806165514.png]]
+따라서, 해당 함수의 역할은 아래 사진처럼 암호화를 위해 공개키를 다른 함수에 전달한다. 
+![[Pasted image 20250814060243.png]]
 
 그런 뒤 `GetComputerNameW`함수로 실행 컴퓨터의 이름을 받아 오고 `ragnar_locker.592240`함수를 실행하고 해당 함수가 끝나면 `lstcpyW`와 `lstcatW`함수를 실행해 랜섬노트의 이름처럼 보이는 `RGNR_818CD995.txt`를 지정하고, [CryptBinaryToStringA](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptbinarytostringa)함수로 바이트 배열을 형식이 지정된 문자열로 변형한다. 
 그 다음 `CreateFileW`함수를 이용해 지정된 랜섬노트의 이름으로 랜섬노트 파일을 만들고, 랜섬노트에 들어갈 내용들을 기록한다. ![[Pasted image 20250806171218.png]]
+이 때 랜섬노트가 생성되는 경로는 `C:\\Users\\Public\\Documents\\RGNR_[해시값].txt`이며, 해당 경로에 들어가 보면 실제로 랜섬노트가 존재한다. 
 
 랜섬노트까지 만들고 나서 `ragnar_locker.591950`함수로 들어가 보면 다음과 같은 사진이 나온다. 
 ![[Pasted image 20250806171609.png]]
@@ -195,3 +198,6 @@ sub esp, 8
 ![[Pasted image 20250807150209.png]]
 
 또한, 암호화가 전부 끝나고 나면, 메모장을 실행해 랜섬노트를 모니터에 출력하며, [ExitProcess](https://learn.microsoft.com/ko-kr/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)함수를 사용해 모든 프로세스와 호출한 프로세스를 전부 종료하고 자기 자신 또한 종료한다. 
+이 때 `notepad.exe`를 실행하는데, 현재 프로세스 토큰 핸들을 가져오고, 토큰을 복제해 권한을 상승시키며, 상승된 토큰과 함께 `CreateProcessW` 함수를 사용해 프로세스를 생성한다. 
+![[Pasted image 20250814090245.png]]
+![[Pasted image 20250814090300.png]]
