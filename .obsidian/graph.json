@@ -1,22 +1,44 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
-  "showTags": false,
+  "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "일일_노트",
+      "color": {
+        "a": 1,
+        "rgb": 4373879
+      }
+    },
+    {
+      "query": "교회",
+      "color": {
+        "a": 1,
+        "rgb": 15084845
+      }
+    },
+    {
+      "query": "메인_문서",
+      "color": {
+        "a": 1,
+        "rgb": 9771259
+      }
+    }
+  ],
   "collapse-display": false,
   "showArrow": true,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.01875,
-  "lineSizeMultiplier": 1.58020833333333,
+  "nodeSizeMultiplier": 1.00598958333333,
+  "lineSizeMultiplier": 1.50364583333333,
   "collapse-forces": false,
   "centerStrength": 0.359375,
   "repelStrength": 9.01041666666667,
   "linkStrength": 0.744791666666667,
   "linkDistance": 237,
-  "scale": 0.5315531144021629,
-  "close": true
+  "scale": 0.3823010968769975,
+  "close": false
 }

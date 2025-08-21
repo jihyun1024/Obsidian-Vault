@@ -1,3 +1,8 @@
+---
+tags:
+  - 메인_문서
+---
+
 ### Linked Document
 
 [[첫 번째 Rust 프로그램 만들기]]

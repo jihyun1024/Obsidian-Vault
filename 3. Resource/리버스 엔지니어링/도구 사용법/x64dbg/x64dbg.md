@@ -1,3 +1,8 @@
+---
+tags:
+  - 메인_문서
+---
+
 ### Linked Document
 [[x64dbg 환경 설정]]
 [[x64dbg 사용 방법]]
