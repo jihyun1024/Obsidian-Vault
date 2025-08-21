@@ -4,8 +4,8 @@
 
 ---
 ### 정적 분석 및 동적 분석
-[[x64dbg로 코드 흐름 파악 (동적 분석)]]
-[[암호화와 복호화 알고리즘 파악]]
+[[x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석)]]
+[[Ragnar Locker 암호화와 복호화 알고리즘 파악]]
 [[Ragnar Locker 랜섬웨어 복호화]]
 
 ### Feedback
