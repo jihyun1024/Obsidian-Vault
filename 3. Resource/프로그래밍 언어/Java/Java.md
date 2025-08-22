@@ -1,6 +1,7 @@
 ---
 tags:
-  - 메인_문서
+  - Dashboard
+  - Programming
 ---
 [[AndroidKeyStore]]
 [[BufferedInputStream]]

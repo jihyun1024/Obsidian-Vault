@@ -1,3 +1,8 @@
+---
+tags:
+  - Programming
+---
+
 [[랜섬웨어 제작 (2025)|랜섬웨어 제작]] 활동에서 공부했던 CNG API에 대해 알아볼 것이다. 
 
 CNG(Cryptography Next Generation)는 Microsoft에서 개발한 차세대 암호화 API로, Windows 플랫폼에서 보안 기능을 구현할 때 사용하는 기술이다. 

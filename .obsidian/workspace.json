@@ -11,10 +11,14 @@
             "id": "7f7a6e3cec5b14f8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "새 탭"
+              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:메인_문서",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,12 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악 의 개요"
             }
           },
           {
@@ -193,8 +198,8 @@
   },
   "active": "7f7a6e3cec5b14f8",
   "lastOpenFiles": [
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
-    "3. Resource/도서/도서 정리.md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. SafeSpy - 안드로이드 앱 분석.md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. Godzilla Loader - 윈도우 멀웨어 분석.md",
@@ -203,26 +208,27 @@
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. Crackme - ELF 크랙미 분석.md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra Script&Extension으로 기능 확장.md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra를 이용한 리버스 엔지니어링 연습.md",
-    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
-    "3. Resource/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리 - 김민수.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
+    "2. Area/베이스 기타/베이스 기타.md",
+    "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
+    "1. Project/DF&C 인턴십/DF&C 인턴십.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
+    "4. Archive/Retro Steganography/Retro Steganography 분석.md",
+    "4. Archive/Retro Steganography/메시지 추출 알고리즘 파악.md",
+    "4. Archive/FaS 활동 내역/차량용 블랙박스 포렌식을 위한 분석 절차 및 저장 구조 분석.md",
+    "4. Archive/FaS 활동 내역/파일 시스템 (Ext4).md",
+    "4. Archive/FaS 활동 내역/랜섬웨어/랜섬웨어 제작 (2025).md",
+    "4. Archive/FaS 활동 내역/랜섬웨어/랜섬웨어 분석 (2025).md",
+    "4. Archive/FaS 활동 내역/랜섬웨어/랜섬웨어 분석 (2024).md",
+    "4. Archive/FaS 활동 내역/스테가노그래피/스테가노그래피 개요.md",
+    "4. Archive/FaS 활동 내역/비밀번호 관리 애플리케이션 분석/비밀번호 관리 애플리케이션.md",
     "3. Resource/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
-    "3. Resource/리버스 엔지니어링/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리.md",
-    "Ghidra Script/Extension으로 기능 확장.md",
     "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드",
     "Ghidra Script",
-    "3. Resource/리버스 엔지니어링/도서/리버스 엔지니어링 기드라 실전 가이드.md",
     "Attached file/Pasted image 20250822192130.png",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
-    "4차 산업혁명과 정보통신의 이해 - 김정섭 이호상 양인창.md",
-    "Templetes/도서 정리 템플릿.md",
-    "Templetes/대학청년부 QT모임 템플릿.md",
-    "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
     "Tags",
-    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/GDB/GDB.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
-    "2. Area/베이스 기타/베이스 기타.md",
     "2. Area/수업 정리/2024년 1학기/수리전산",
     "2. Area/수업 정리/2024년 1학기/알고리즘개론",
     "2. Area/수업 정리/2024년 1학기/해석학 및 응용",

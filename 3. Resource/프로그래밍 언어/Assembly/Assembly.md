@@ -1,6 +1,7 @@
 ---
 tags:
-  - 메인_문서
+  - Dashboard
+  - Programming
 ---
 
 어셈블리어는 같은 인텔 CPU에서도 Intel 기반 표기 방법과 AT&T 기반 표기 방법으로 나눠진다. 
