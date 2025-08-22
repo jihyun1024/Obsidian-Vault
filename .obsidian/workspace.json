@@ -4,37 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "f97ae7d61d59a615",
+        "id": "2df4ceca6b034e46",
         "type": "tabs",
         "children": [
           {
-            "id": "5e1d84ae33455e36",
+            "id": "7f7a6e3cec5b14f8",
             "type": "leaf",
-            "pinned": true,
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "pinned": true,
-              "icon": "lucide-git-fork",
-              "title": "그래프 뷰"
-            }
-          },
-          {
-            "id": "41605ac31780d4d1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
-                "mode": "source",
-                "source": false
-              },
               "icon": "lucide-file",
-              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악"
+              "title": "새 탭"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -66,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#교회",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악 의 백링크"
+              "title": "백링크"
             }
           },
           {
@@ -126,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악 의 나가는 링크"
+              "title": "나가는 링크"
             }
           },
           {
@@ -155,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
-                "followCursor": false,
-                "showSearch": false,
+                "followCursor": true,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악 의 개요"
+              "title": "개요"
             }
           },
           {
@@ -175,12 +155,27 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
+      },
+      {
+        "id": "c1b6608b6da1cdc5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0d3bafe8fbc7715a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "그래프 뷰"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,15 +183,45 @@
       "switcher:빠른 전환기 열기": false,
       "graph:그래프 뷰 열기": false,
       "canvas:새 캔버스 만들기": false,
-      "daily-notes:오늘의 일일 노트 열기": false,
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "markdown-importer:마크다운 형식 불러오기 열기": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "41605ac31780d4d1",
+  "active": "7f7a6e3cec5b14f8",
   "lastOpenFiles": [
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
+    "3. Resource/도서/도서 정리.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. SafeSpy - 안드로이드 앱 분석.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. Godzilla Loader - 윈도우 멀웨어 분석.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. BlackBicorn - 윈도우 패커 분석.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. MOTHRA - 윈도우 백도어 분석.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. Crackme - ELF 크랙미 분석.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra Script&Extension으로 기능 확장.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra를 이용한 리버스 엔지니어링 연습.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
+    "3. Resource/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리 - 김민수.md",
+    "3. Resource/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
+    "3. Resource/리버스 엔지니어링/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리.md",
+    "Ghidra Script/Extension으로 기능 확장.md",
+    "3. Resource/도서/리버스 엔지니어링 기드라 실전 가이드",
+    "Ghidra Script",
+    "3. Resource/리버스 엔지니어링/도서/리버스 엔지니어링 기드라 실전 가이드.md",
+    "Attached file/Pasted image 20250822192130.png",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
+    "4차 산업혁명과 정보통신의 이해 - 김정섭 이호상 양인창.md",
+    "Templetes/도서 정리 템플릿.md",
+    "Templetes/대학청년부 QT모임 템플릿.md",
+    "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
+    "Tags",
+    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/GDB/GDB.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
     "2. Area/베이스 기타/베이스 기타.md",
     "2. Area/수업 정리/2024년 1학기/수리전산",
     "2. Area/수업 정리/2024년 1학기/알고리즘개론",
@@ -204,34 +229,6 @@
     "2. Area/수업 정리/2024년 1학기/수리통계학",
     "2. Area/수업 정리/2024년 1학기/현대대수학_1",
     "2. Area/수업 정리/2024년 2학기/보안 SW 구현",
-    "2. Area/수업 정리/2024년 2학기/현대대수학_2",
-    "2. Area/수업 정리/2024년 2학기/보안 프로토콜",
-    "2. Area/수업 정리/2024년 2학기/확률론 및 응용",
-    "2. Area/수업 정리/2024년 2학기/금융보안개론",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
-    "1. Project/DF&C 인턴십/DF&C 인턴십.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
-    "2. Area/QT 및 설교 요약/2025/8월/8월 17일 대학청년부 QT모임.md",
-    "3. Resource/포렌식/네트워크 포렌식/Puzzle 1. Ann's Bad AIM.md",
-    "3. Resource/포렌식/네트워크 포렌식/네트워크 포렌식.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
-    "4. Archive/Retro Steganography/참고 자료/CRC Algorithm.md",
-    "4. Archive/Retro Steganography/메시지 추출 도구 제작 (Python).md",
-    "4. Archive/Retro Steganography/메시지 은닉 알고리즘 파악.md",
-    "4. Archive/FaS 활동 내역/비밀번호 관리 애플리케이션 분석/비밀번호 관리 애플리케이션.md",
-    "4. Archive/2025 통합수련회/2025 통합수련회 찬양팀 콘티.md",
-    "3. Resource/프로그래밍 언어/C,C++/C,C++.md",
-    "3. Resource/암호학/CNG/CNG (Cryptography Next Generation).md",
-    "3. Resource/암호학/CNG/AES with CNG.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/WireShark.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/Network Miner.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/Jadx.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/GDB/GDB.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg.md",
-    "무제.md",
     "Attached file/Pasted image 20250821234911.png",
     "Attached file/Pasted image 20250814145712.png",
     "Attached file/Pasted image 20250814145349.png",
@@ -240,7 +237,6 @@
     "Attached file/Pasted image 20250814141950.png",
     "Attached file/Pasted image 20250814141933.png",
     "Attached file/Pasted image 20250814090300.png",
-    "Attached file/Pasted image 20250814090245.png",
-    "Attached file/Pasted image 20250814060243.png"
+    "Attached file/Pasted image 20250814090245.png"
   ]
 }
