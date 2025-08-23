@@ -73,4 +73,5 @@ tags:
 - [Dreamhack Ghidra 강의](https://dreamhack.io/lecture/paths/reverse-engineering-ghidra)
 - [벨로그 사용법 정리](https://velog.io/@sdfghjk147/Ghidra-%EC%82%AC%EC%9A%A9%EB%B2%95)
 - [HSPACE 튜토리얼](https://blog.hspace.io/posts/Ghidra-tutorial-for-reversing-beginners/)
+- [[기드라 입문|기드라 사용법]]
 - [[Ghidra를 이용한 리버스 엔지니어링 연습]]
