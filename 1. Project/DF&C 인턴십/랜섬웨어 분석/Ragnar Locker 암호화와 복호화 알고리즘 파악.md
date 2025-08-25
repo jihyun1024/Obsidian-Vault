@@ -75,6 +75,8 @@ Salsa20의 경우, constant word로 `expand 32-byte k`라는 문자를 Initial S
 
 이제 분석 방법도 알고, 어떤 걸 찾아야 할지도 알았으니 x64dbg로 분석해 보자. 
 
+---
+`ragnar_locker.591490`함수로 들어가기 위해서는 F7, F8, F9을 번갈아 누르면서 건너뛸 것은 건너뛰고 분석할 부분만 분석해야 한다. 
 
 [^1]: https://crypto.stackexchange.com/questions/11182/security-considerations-on-expand-32-byte-k-magic-number-in-the-salsa20-family
 [^2]: https://en.wikipedia.org/wiki/Salsa20

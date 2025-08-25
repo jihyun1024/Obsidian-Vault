@@ -217,15 +217,14 @@
       "command-palette:명령어 팔레트 열기": false,
       "markdown-importer:마크다운 형식 불러오기 열기": false,
       "omnisearch:Omnisearch": false,
-      "daily-notes:오늘의 일일 노트 열기": false,
-      "obsidian-book-search-plugin:Create new book note": false,
-      "zk-prefixer:새 고유 노트 생성": false
+      "obsidian-book-search-plugin:Create new book note": false
     }
   },
   "active": "7f7a6e3cec5b14f8",
   "lastOpenFiles": [
-    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
     "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
     "1. Project/DF&C 인턴십/랜섬웨어 분석/참고자료/ARX 구조.md",
     "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
@@ -252,7 +251,6 @@
     "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
     "1. Project/DF&C 인턴십/DF&C 인턴십.md",
     "4. Archive/Retro Steganography/Retro Steganography 분석.md",
-    "4. Archive/Retro Steganography/메시지 추출 알고리즘 파악.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드",
     "Ghidra Script",
