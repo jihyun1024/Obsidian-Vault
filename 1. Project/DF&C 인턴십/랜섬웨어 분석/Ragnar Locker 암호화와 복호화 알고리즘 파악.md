@@ -6,8 +6,8 @@
 `ragnar_locker.591490`함수가 호출하는 피호출자는 순서대로 다음과 같다. 
 1. [CreateFileW](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-createfilew) 함수
 2. [GetFileSizeEx](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-getfilesizeex) 함수
-3. `ragnar_locker.5922B0` 함수
-4. `ragnar_locker.597480` 함수
+3. `ragnar_locker.5922B0` 함수 (분석 결과 뭐 없음)
+4. `ragnar_locker.597480` 함수 (분석 결과 뭐 없음)
 5. [SetFilePointerEx](https://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-setfilepointerexhttps://learn.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-setfilepointerex) 함수
 6. [GetProcessHeap](https://learn.microsoft.com/ko-kr/windows/win32/api/heapapi/nf-heapapi-getprocessheap) 함수
 7. [HeapAlloc](https://learn.microsoft.com/ko-kr/windows/win32/api/heapapi/nf-heapapi-heapalloc) 함수
@@ -79,6 +79,17 @@ Salsa20의 경우, constant word로 `expand 32-byte k`라는 문자를 Initial S
 `ragnar_locker.591490`함수로 들어가기 위해서는 F7, F8, F9을 번갈아 누르면서 건너뛸 것은 건너뛰고 분석할 부분만 분석해야 한다. 
 ![[Pasted image 20250826131032.png]]
 이 부분에서 중단점이 `je ragnar_locker.5918A4` 분기 밑에 있는데, `je` 명령어는 ZF(Zero Flag)가 1일 때 점프를 수행한다. 이 분기 바로 밑에 있는 중단점 부분을 분석하기 위해서 ZF 부분을 두 번 눌러서 ZF = 0으로 만들어 강제로 들어갈 수 있다. 
+또한, 이 문서 맨 위에서 `ReadFile` 함수와 `VirtualAlloc` 함수 뒤에 나오는 (파일을 읽고, 가상 메모리를 할당해 파일 암호화를 위한 프로세스를 할당) `ragnar_locker.592310` 함수에 집중해서 살펴봐야 한다. 
+이 함수는 `ReadFile`함수, `VirtualAlloc` 함수 뒤에 나오며, 이 함수를 실행한 이후 파일을 잠그고 어떤 내용물을 쓰며, 다시 파일을 잠금 해제하는 함수들인 `LockFile`, `WriteFile`, `UnlockFile` 함수가 나오기 때문에 파일의 내용물을 읽고 그 내용물을 암호화 알고리즘으로 암호화 해서 `WriteFile` 함수에서 그 내용을 기록할 수 있도록 하는 함수로 추측된다. 
+
+샘플 파일은 다음과 같다. 
+![[Pasted image 20250826154159.png]]
+앞에서 나왔던 함수들을 실행하고, `ReadFile` 함수를 실행해 성공해서 반환값이 0이 아니면 `ragnar_locker.5926B0` 함수를 실행하는데, 이 때 이 함수에 들어가는 인자들을 보면 [[x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석)#ragnar_locker.5931D0 함수 분석 (2번 수행, 난수 생성)|난수 생성]] 과정에서 생성한 40 byte와 32 byte를 Parameter로 받는다. 
+![[Pasted image 20250826161933.png]]
+`ragnar_locker.5926B0`함수를 살펴보면 별도의 함수 호출 없이 `mov, shl, or`연산으로만 구성된 것을 확인할 수 있어 해당 연산은 XOR 연산이 많이 사용되지 않은 것으로 보아 암호화 알고리즘 연산은 아닌 것으로 판별되었다. 
+
+그 다음, 드디어 `ragnar_locker.592310` 함수에 대해 분석해 보자. 
+(분석 중)
 
 [^1]: https://crypto.stackexchange.com/questions/11182/security-considerations-on-expand-32-byte-k-magic-number-in-the-salsa20-family
 [^2]: https://en.wikipedia.org/wiki/Salsa20
