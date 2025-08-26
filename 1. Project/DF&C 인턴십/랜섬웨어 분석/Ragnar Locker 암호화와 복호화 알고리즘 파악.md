@@ -77,6 +77,8 @@ Salsa20의 경우, constant word로 `expand 32-byte k`라는 문자를 Initial S
 
 ---
 `ragnar_locker.591490`함수로 들어가기 위해서는 F7, F8, F9을 번갈아 누르면서 건너뛸 것은 건너뛰고 분석할 부분만 분석해야 한다. 
+![[Pasted image 20250826131032.png]]
+이 부분에서 중단점이 `je ragnar_locker.5918A4` 분기 밑에 있는데, `je` 명령어는 ZF(Zero Flag)가 1일 때 점프를 수행한다. 이 분기 바로 밑에 있는 중단점 부분을 분석하기 위해서 ZF 부분을 두 번 눌러서 ZF = 0으로 만들어 강제로 들어갈 수 있다. 
 
 [^1]: https://crypto.stackexchange.com/questions/11182/security-considerations-on-expand-32-byte-k-magic-number-in-the-salsa20-family
 [^2]: https://en.wikipedia.org/wiki/Salsa20

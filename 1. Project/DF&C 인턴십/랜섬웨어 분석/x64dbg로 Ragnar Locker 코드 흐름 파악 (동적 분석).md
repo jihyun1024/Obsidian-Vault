@@ -194,6 +194,8 @@ sub esp, 8
 그런 뒤 `GetComputerNameW`함수로 실행 컴퓨터의 이름을 받아 오고 `ragnar_locker.592240`함수를 실행하고 해당 함수가 끝나면 `lstcpyW`와 `lstcatW`함수를 실행해 랜섬노트의 이름처럼 보이는 `RGNR_818CD995.txt`를 지정하고, [CryptBinaryToStringA](https://learn.microsoft.com/ko-kr/windows/win32/api/wincrypt/nf-wincrypt-cryptbinarytostringa)함수로 바이트 배열을 형식이 지정된 문자열로 변형한다. 이 때의 바이트 배열은 랜섬노트의 내용에 해당한다.
 그 다음 `CreateFileW`함수를 이용해 지정된 랜섬노트의 이름으로 랜섬노트 파일을 만들고, 랜섬노트에 들어갈 내용들을 기록한다. ![[Pasted image 20250806171218.png]]
 이 때 랜섬노트가 생성되는 경로는 `C:\\Users\\Public\\Documents\\RGNR_[해시값].txt`이며, 해당 경로에 들어가 보면 실제로 랜섬노트가 존재한다. 
+또한, 랜섬노트에서 'RAGNAR SECRET'이라는 부분이 있는데, 이는 아래의 이미지에 나오는 바이트들을 Base64로 인코딩한 값이다. 
+![[Pasted image 20250813155959.png]]
 
 ## 파일 탐색 및 암호화 수행
 랜섬노트까지 만들고 나서 `ragnar_locker.591950`함수로 들어가 보면 다음과 같은 사진이 나온다. 

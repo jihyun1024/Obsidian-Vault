@@ -222,12 +222,15 @@
   },
   "active": "7f7a6e3cec5b14f8",
   "lastOpenFiles": [
-    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/참고자료/ARX 구조.md",
+    "2. Area/QT 및 설교 요약/2025/8월/8월 24일 대학청년부 QT모임.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
     "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
+    "2. Area/QT 및 설교 요약/2025/8월/8월 17일 대학청년부 QT모임.md",
+    "Attached file/Pasted image 20250826131032.png",
+    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/참고자료/ARX 구조.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리 - 김민수.md",
     "Attached file/Pasted image 20250823230030.png",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
@@ -249,8 +252,6 @@
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra를 이용한 리버스 엔지니어링 연습.md",
     "2. Area/베이스 기타/베이스 기타.md",
     "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
-    "1. Project/DF&C 인턴십/DF&C 인턴십.md",
-    "4. Archive/Retro Steganography/Retro Steganography 분석.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드",
     "Ghidra Script",
@@ -266,7 +267,6 @@
     "Attached file/Pasted image 20250814145712.png",
     "Attached file/Pasted image 20250814145349.png",
     "Attached file/Pasted image 20250814144905.png",
-    "Attached file/Pasted image 20250814144506.png",
-    "Attached file/Pasted image 20250814141950.png"
+    "Attached file/Pasted image 20250814144506.png"
   ]
 }
