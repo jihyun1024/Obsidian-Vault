@@ -25,12 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
+                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악"
+              "title": "Ragnar Locker 랜섬웨어 복호화"
+            }
+          },
+          {
+            "id": "7d57c36eb4170bfd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ragnar Locker 파일 암호화 알고리즘 파악"
             }
           },
           {
@@ -45,6 +59,20 @@
               },
               "icon": "lucide-file",
               "title": "x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석)"
+            }
+          },
+          {
+            "id": "6962fe37cb2b1dcf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ragnar Locker 랜섬웨어 분석"
             }
           },
           {
@@ -181,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
+                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Ragnar Locker 암호화와 복호화 알고리즘 파악 의 개요"
+              "title": "Ragnar Locker 랜섬웨어 복호화 의 개요"
             }
           },
           {
@@ -222,11 +250,15 @@
   },
   "active": "7f7a6e3cec5b14f8",
   "lastOpenFiles": [
-    "Attached file/Pasted image 20250826161933.png",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
     "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 암호화와 복호화 알고리즘 파악.md",
-    "Attached file/Pasted image 20250826154159.png",
+    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
+    "Attached file/Pasted image 20250827150852.png",
+    "Attached file/Pasted image 20250827134041.png",
+    "Attached file/Pasted image 20250826161933.png",
+    "Attached file/Pasted image 20250826154159.png",
     "2. Area/QT 및 설교 요약/2025/8월/8월 24일 대학청년부 QT모임.md",
     "2. Area/QT 및 설교 요약/2025/8월/8월 17일 대학청년부 QT모임.md",
     "Attached file/Pasted image 20250826131032.png",
@@ -243,7 +275,6 @@
     "3. Resource/프로그래밍 언어/Assembly/루프 명령어.md",
     "Attached file/Pasted image 20250823002407.png",
     "3. Resource/리버스 엔지니어링/Dreamhack/Assembly Language/컴퓨터 아키텍처 기초 (레지스터).md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. SafeSpy - 안드로이드 앱 분석.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. Godzilla Loader - 윈도우 멀웨어 분석.md",
@@ -264,9 +295,6 @@
     "2. Area/수업 정리/2024년 1학기/수리통계학",
     "2. Area/수업 정리/2024년 1학기/현대대수학_1",
     "2. Area/수업 정리/2024년 2학기/보안 SW 구현",
-    "Attached file/Pasted image 20250821234911.png",
-    "Attached file/Pasted image 20250814145712.png",
-    "Attached file/Pasted image 20250814145349.png",
-    "Attached file/Pasted image 20250814144905.png"
+    "Attached file/Pasted image 20250821234911.png"
   ]
 }

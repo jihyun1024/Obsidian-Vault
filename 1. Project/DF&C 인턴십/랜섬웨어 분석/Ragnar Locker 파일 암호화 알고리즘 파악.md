@@ -41,7 +41,7 @@
 따라서, 이런 함수 조합은 파일을 메모리에 로드하고, 처리해 다시 저장하는 [[CNG (Cryptography Next Generation)]]와 비슷하게 파일의 암호화나 복호화에 사용될 수 있다. 
 그러면, 더 자세하게 분석해 보자. 
 
-# Ghidra를 사용한 분석
+# Ghidra를 사용한 분석에 대한 분석 방법
 그 전에, [[Ghidra]]를 사용해 해당 함수에서 암호화(Salsa20, RC4 등)를 수행하는 부분이 있는지 분석해 볼 것이다.
 Salsa20의 경우, constant word로 `expand 32-byte k`라는 문자를 Initial State 안에 사용하며, 해당 문자열은 `expa`, `nd 3`, `2-by`, `te k`의 알파벳 4개로 구성된 4개의 단어로 나눠서 사용된다. 
 따라서 Ghidra에서는 
@@ -86,10 +86,55 @@ Salsa20의 경우, constant word로 `expand 32-byte k`라는 문자를 Initial S
 ![[Pasted image 20250826154159.png]]
 앞에서 나왔던 함수들을 실행하고, `ReadFile` 함수를 실행해 성공해서 반환값이 0이 아니면 `ragnar_locker.5926B0` 함수를 실행하는데, 이 때 이 함수에 들어가는 인자들을 보면 [[x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석)#ragnar_locker.5931D0 함수 분석 (2번 수행, 난수 생성)|난수 생성]] 과정에서 생성한 40 byte와 32 byte를 Parameter로 받는다. 
 ![[Pasted image 20250826161933.png]]
-`ragnar_locker.5926B0`함수를 살펴보면 별도의 함수 호출 없이 `mov, shl, or`연산으로만 구성된 것을 확인할 수 있어 해당 연산은 XOR 연산이 많이 사용되지 않은 것으로 보아 암호화 알고리즘 연산은 아닌 것으로 판별되었다. 
+`ragnar_locker.5926B0`함수를 살펴보면 별도의 함수 호출 없이 산술연산과 비트연산 정도로만 구성된 것을 확인할 수 있어 해당 연산은 XOR 연산이 많이 사용되지 않은 것으로 보아 암호화 알고리즘 연산은 아닌 것으로 판별되었다. 
 
 그 다음, 드디어 `ragnar_locker.592310` 함수에 대해 분석해 보자. 
-(분석 중)
+`ragnar_locker.592310` 함수는 `SetFilePointerEx`, `ReadFile`, `SetFilePointerEx` 함수를 순서대로 실행한 이후 호출된다. 
+함수 안으로 들어가 보면, 함수 에필로그부터 함수 프롤로그까지 별도의 함수 호출 없이 `mov, rol, ror, xor, add, cmp, shr, inc` 등의 연산만 사용해 입력받은 Parameter에 대한 연산을 실행한다. 
+![[Pasted image 20250827134041.png]]
+이 사진에서 특별히 주의깊게 볼 것이 있는데, `rol` 명령어와 `ror` 명령어 부분이다. 
+해당 명령어를 사용하는 과정에서 `rol ebx,7`, `rol esi,9`, `rol edx,D`, `ror ecx,E` 등 7, 9, D, E를 사용하는 비트 시프트 명령어가 분기 명령어를 무시하면 총 **8번** 등장한다. 
+이 때, E는 `ror` 명령어를 사용하는데, 이는 비트 시프트 연산자의 특성 때문이다. 
+비트 시프트 연산에서 왼쪽 순환 시프트와 오른쪽 순환 시프트는 서로 반대로 회전하며, 다음과 같은 관계가 있다. 
+$$x <<< r = x >>> (32-r)$$
+즉, 32비트 정수에서 왼쪽으로 r비트 순환 시프트한 결과는 오른쪽으로 32-r 비트 순환 시프트한 결과와 동일하다. 
+따라서, Salsa20의 Quarter Round에서 a ^= (d + c) <<< 18은 a ^= (d + c) >>> (32-18) = 
+a ^= (d + c) >>> 14와 동일하다. 즉, 위의 사진에서 보는 명령어는 Salsa20의 Quarter Round 함수와 동일하다고 판단할 수 있다. 
+Salsa20 알고리즘의 위키백과 문서[^2]를 보면 Odd Round와 Even Round를 전부 합쳐 반복문 한 번 당 Quarter Round가 8번 실행되는데, 이는 방금 전 관찰했던 결과와 동일하다. 
+```cpp
+// Salsa20의 라운드 구조 코드
+void salsa20_block(uint32_t out[16], uint32_t const in[16])
+{
+	int i;
+	uint32_t x[16];
+	
+	for (i = 0; i < 16; i++) 
+	{
+		x[i] = in[i]; 
+	}
+	
+	// 10 loops X 2 rounds/loop = 20 Rounds
+	for (i = 0; i < 20; i += 2)
+	{
+		// Odd round
+		QR(x[0], x[4], x[8], x[12]); // column 1
+		QR(x[5], x[9], x[13], x[1]); // colomn 2
+		QR(x[10], x[14], x[2], x[6]);// colomn 3
+		QR(x[15], x[3], x[7], x[11]);// colomn 4
+		
+		// Even round
+		QR(x[0], x[1], x[2], x[3]);     // row 1
+		QR(x[5], x[6], x[7], x[4]);     // row 2
+		QR(x[10], x[11], x[8], x[9]);   // row 3
+		QR(x[15], x[12], x[13], x[14]); // row 4
+	}
+	
+	for (i = 0; i < 16; ++i)
+		out[i] = x[i] + in[i];
+}
+```
+그 다음으로 알아보아야 할 것은 Salsa20의 Initial State를 구성하는 방법인데, 이는 위에서 분석했던 `ragnar_locker.5926B0` 함수가 0x28 byte, 0x20 byte 두 개를 받아 Initial State를 구성하는 함수라는 것을 유추할 수 있었다. 
+그러나, 어떻게 Initial state를 만드는지는 아직 어셈블리에 대한 이해가 완벽하지 않아 어떤 방식으로 만드는지는 확인하지 못했다. 
 
 [^1]: https://crypto.stackexchange.com/questions/11182/security-considerations-on-expand-32-byte-k-magic-number-in-the-salsa20-family
 [^2]: https://en.wikipedia.org/wiki/Salsa20
