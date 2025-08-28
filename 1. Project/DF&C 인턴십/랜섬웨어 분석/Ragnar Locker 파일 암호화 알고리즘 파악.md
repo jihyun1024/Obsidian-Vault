@@ -83,7 +83,7 @@ Salsa20의 경우, constant word로 `expand 32-byte k`라는 문자를 Initial S
 이 함수는 `ReadFile`함수, `VirtualAlloc` 함수 뒤에 나오며, 이 함수를 실행한 이후 파일을 잠그고 어떤 내용물을 쓰며, 다시 파일을 잠금 해제하는 함수들인 `LockFile`, `WriteFile`, `UnlockFile` 함수가 나오기 때문에 파일의 내용물을 읽고 그 내용물을 암호화 알고리즘으로 암호화 해서 `WriteFile` 함수에서 그 내용을 기록할 수 있도록 하는 함수로 추측된다. 
 
 샘플 파일은 다음과 같다. 
-![[Pasted image 20250826154159.png]]
+![[Pasted image 20250827213552.png]]
 앞에서 나왔던 함수들을 실행하고, `ReadFile` 함수를 실행해 성공해서 반환값이 0이 아니면 `ragnar_locker.5926B0` 함수를 실행하는데, 이 때 이 함수에 들어가는 인자들을 보면 [[x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석)#ragnar_locker.5931D0 함수 분석 (2번 수행, 난수 생성)|난수 생성]] 과정에서 생성한 40 byte와 32 byte를 Parameter로 받는다. 
 ![[Pasted image 20250826161933.png]]
 `ragnar_locker.5926B0`함수를 살펴보면 별도의 함수 호출 없이 산술연산과 비트연산 정도로만 구성된 것을 확인할 수 있어 해당 연산은 XOR 연산이 많이 사용되지 않은 것으로 보아 암호화 알고리즘 연산은 아닌 것으로 판별되었다. 
