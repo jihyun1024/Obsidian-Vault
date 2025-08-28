@@ -20,59 +20,17 @@
             }
           },
           {
-            "id": "7f7a6e3cec5b14f8",
+            "id": "580ec6c79b5d3063",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
+                "file": "1. Project/DF&C 인턴십/DF&C 인턴십.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ragnar Locker 랜섬웨어 복호화"
-            }
-          },
-          {
-            "id": "7d57c36eb4170bfd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Ragnar Locker 파일 암호화 알고리즘 파악"
-            }
-          },
-          {
-            "id": "6962fe37cb2b1dcf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Ragnar Locker 랜섬웨어 분석"
-            }
-          },
-          {
-            "id": "226f74bfdbe17d64",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "기드라 입문"
+              "title": "DF&C 인턴십"
             }
           }
         ],
@@ -195,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
+                "file": "1. Project/DF&C 인턴십/DF&C 인턴십.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Ragnar Locker 랜섬웨어 복호화 의 개요"
+              "title": "DF&C 인턴십 의 개요"
             }
           },
           {
@@ -234,29 +192,31 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "7f7a6e3cec5b14f8",
+  "active": "580ec6c79b5d3063",
   "lastOpenFiles": [
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
+    "1. Project/DF&C 인턴십/DF&C 인턴십.md",
+    "4. Archive/DF&C 인턴십 활동 내역",
+    "Attached file/Pasted image 20250828134001.png",
+    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
+    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
+    "Attached file/Pasted image 20250828133418.png",
     "Attached file/Pasted image 20250828030958.png",
     "Attached file/Pasted image 20250828030752.png",
     "Attached file/Pasted image 20250827233233.png",
     "Attached file/Pasted image 20250827213552.png",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
     "Attached file/Pasted image 20250827150852.png",
     "Attached file/Pasted image 20250827134041.png",
     "Attached file/Pasted image 20250826161933.png",
     "Attached file/Pasted image 20250826154159.png",
     "2. Area/QT 및 설교 요약/2025/8월/8월 24일 대학청년부 QT모임.md",
     "2. Area/QT 및 설교 요약/2025/8월/8월 17일 대학청년부 QT모임.md",
-    "Attached file/Pasted image 20250826131032.png",
     "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
     "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
-    "1. Project/DF&C 인턴십/랜섬웨어 분석/참고자료/ARX 구조.md",
+    "3. Resource/암호학/ARX 구조.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리 - 김민수.md",
-    "Attached file/Pasted image 20250823230030.png",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
     "3. Resource/프로그래밍 언어/Assembly/Assembly.md",
     "3. Resource/프로그래밍 언어/Assembly/데이터 이동 명령어.md",
@@ -270,7 +230,6 @@
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. MOTHRA - 윈도우 백도어 분석.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra vs. Crackme - ELF 크랙미 분석.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra Script&Extension으로 기능 확장.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra를 이용한 리버스 엔지니어링 연습.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드",
     "Ghidra Script",
@@ -279,7 +238,6 @@
     "2. Area/수업 정리/2024년 1학기/알고리즘개론",
     "2. Area/수업 정리/2024년 1학기/해석학 및 응용",
     "2. Area/수업 정리/2024년 1학기/수리통계학",
-    "2. Area/수업 정리/2024년 1학기/현대대수학_1",
-    "2. Area/수업 정리/2024년 2학기/보안 SW 구현"
+    "2. Area/수업 정리/2024년 1학기/현대대수학_1"
   ]
 }
