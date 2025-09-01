@@ -34,20 +34,6 @@
             }
           },
           {
-            "id": "2eb6aae859f80656",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/Retro Steganography 분석.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Retro Steganography 분석"
-            }
-          },
-          {
             "id": "790809beb036c620",
             "type": "leaf",
             "state": {
@@ -222,9 +208,11 @@
   },
   "active": "1207463cf955cb58",
   "lastOpenFiles": [
-    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/Retro Steganography 분석.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
     "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
+    "2. Area/도서/도서 정리.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/Retro Steganography 분석.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/PNG의 구조.md",
     "1. Project/DF&C 인턴십/DF&C 인턴십.md",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피",
@@ -261,8 +249,6 @@
     "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
     "3. Resource/암호학/ARX 구조.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리 - 김민수.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
-    "3. Resource/프로그래밍 언어/Assembly/Assembly.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드",
     "Ghidra Script",

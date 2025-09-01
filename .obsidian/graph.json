@@ -36,13 +36,6 @@
       }
     },
     {
-      "query": "tag:#암호학  ",
-      "color": {
-        "a": 1,
-        "rgb": 20383
-      }
-    },
-    {
       "query": "tag:#수업_정리  ",
       "color": {
         "a": 1,
@@ -60,6 +53,6 @@
   "repelStrength": 9.01041666666667,
   "linkStrength": 0.744791666666667,
   "linkDistance": 237,
-  "scale": 0.22521239827277476,
+  "scale": 0.3236088912153595,
   "close": true
 }

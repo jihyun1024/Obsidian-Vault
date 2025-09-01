@@ -12,16 +12,17 @@ Chunk: PNG 이미지 파일을 구성하는 기본 단위로, PNG에는 4 부분
         
     - Color type (1byte): 이미지의 색상 구성 방식과 알파(투명도) 채널 포함 여부에 대한 정보
         
-        |**Color Type**|**설명**|**구성**|**사용 가능한 Bit Depth**|
-        |---|---|---|---|
-        |0|Grayscale|회색조만 (흑백)|1, 2, 4, 8, 16|
-        |2|Truecolor|RGB (색상)|8, 16|
-        |3|Indexed-color|팔레트 기반 색상|1, 2, 4, 8|
-        |4|Grayscale + Alpha|회색조 + 투명도|8, 16|
-        |6|Truecolor + Alpha|RGB + 투명도|8, 16|
+|**Color Type**|**설명**|**구성**|**사용 가능한 Bit Depth**|
+|----|----|----|----|
+|0|Grayscale|회색조만 (흑백)|1, 2, 4, 8, 16|
+|2|Truecolor|RGB (색상)|8, 16|
+|3|Indexed-color|팔레트 기반 색상|1, 2, 4, 8|
+|4|Grayscale + Alpha|회색조 + 투명도|8, 16|
+|6|Truecolor + Alpha|RGB + 투명도|8, 16|
         
-        - 예: Color type = 6, Bit depth = 8 → R,G,B,A 4개의 채널당 각 8비트 ⇒ 픽셀당 32비트
-    - Compression method (1byte): 이미지 데이터를 압축하는 데 사용된 방식에 대한 정보로, 모든 PNG 파일은 0을 사용한다.
+-  예: Color type = 6, Bit depth = 8 → R,G,B,A 4개의 채널당 각 8비트 ⇒ 픽셀당 32비트
+    
+- Compression method (1byte): 이미지 데이터를 압축하는 데 사용된 방식에 대한 정보로, 모든 PNG 파일은 0을 사용한다.
         
     - Filter method (1byte): 압축 전에 이미지 데이터를 처리하는 방식으로, 모든 PNG 파일은 0을 사용한다.
         
@@ -44,14 +45,14 @@ Chunk: PNG 이미지 파일을 구성하는 기본 단위로, PNG에는 4 부분
         
     - Rendering intent (1byte): 색상 렌더링 방식을 저장
         
-        |Intent value|이름|특징|용도|
-        |---|---|---|---|
-        |0|Perceptual|자연스러운 색 보정, 전체 이미지 조정|일반 사진|
-        |1|Relative Colormetric|재현 가능한 색은 정확하게, 나머지는 조정|로고, 인쇄|
-        |2|Saturation|채도 보존 중심|비즈니스 그래픽|
-        |3|Absolute Colormetric|색상의 절대 좌표 유지, 백색점(White point) 또한 유지|색상 교정, 인쇄 테스트|
+| Intent value | 이름                   | 특징                                   | 용도            |
+| ------------ | -------------------- | ------------------------------------ | ------------- |
+| 0            | Perceptual           | 자연스러운 색 보정, 전체 이미지 조정                | 일반 사진         |
+| 1            | Relative Colormetric | 재현 가능한 색은 정확하게, 나머지는 조정              | 로고, 인쇄        |
+| 2            | Saturation           | 채도 보존 중심                             | 비즈니스 그래픽      |
+| 3            | Absolute Colormetric | 색상의 절대 좌표 유지, 백색점(White point) 또한 유지 | 색상 교정, 인쇄 테스트 |
         
-    - CRC (4byte): 데이터 오류 검증에 사용
+- CRC (4byte): 데이터 오류 검증에 사용
         
 - gAMA: 감마(이미지의 밝기) 정보를 지정
     
@@ -74,20 +75,21 @@ Chunk: PNG 이미지 파일을 구성하는 기본 단위로, PNG에는 4 부분
     - CRC (4byte): 데이터 오류 검증에 사용
 - tEXt / zTXt / iTXt: 텍스트 메타데이터를 저장
     
-    |**키워드**|**의미**|
-    |---|---|
-    |`Title`|이미지 제목|
-    |`Author`|이미지 제작자|
-    |`Description`|이미지 설명|
-    |`Copyright`|저작권 정보|
-    |`Creation Time`|생성 시간|
-    |`Software`|이미지 생성에 사용된 소프트웨어|
-    |`Disclaimer`|면책 조항|
-    |`Warning`|경고 메시지|
-    |`Source`|이미지 출처|
-    |`Comment`|일반적인 코멘트|
+| **키워드**         | **의미**            |
+| --------------- | ----------------- |
+| `Title`         | 이미지 제목            |
+| `Author`        | 이미지 제작자           |
+| `Description`   | 이미지 설명            |
+| `Copyright`     | 저작권 정보            |
+| `Creation Time` | 생성 시간             |
+| `Software`      | 이미지 생성에 사용된 소프트웨어 |
+| `Disclaimer`    | 면책 조항             |
+| `Warning`       | 경고 메시지            |
+| `Source`        | 이미지 출처            |
+| `Comment`       | 일반적인 코멘트          |
     
-    Keyword: 메타데이터의 종류나 목적을 설명하는 필드로, 1 ~ 79byte의 Latin-1 문자로 구성되며, 널 문자로 끝난다.
+    
+- Keyword: 메타데이터의 종류나 목적을 설명하는 필드로, 1 ~ 79byte의 Latin-1 문자로 구성되며, 널 문자로 끝난다.
     
     - tEXt: 일반 텍스트 메타데이터
     - zTXt: 압축된 텍스트 메타데이터
