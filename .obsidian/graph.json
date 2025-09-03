@@ -1,58 +1,22 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": false,
-  "showAttachments": true,
+  "showTags": true,
+  "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "일일_노트",
-      "color": {
-        "a": 1,
-        "rgb": 4373879
-      }
-    },
-    {
-      "query": "tag:#Dashboard  ",
-      "color": {
-        "a": 1,
-        "rgb": 9771259
-      }
-    },
-    {
-      "query": "교회",
-      "color": {
-        "a": 1,
-        "rgb": 16711680
-      }
-    },
-    {
-      "query": "tag:#도서  ",
-      "color": {
-        "a": 1,
-        "rgb": 509933
-      }
-    },
-    {
-      "query": "tag:#수업_정리  ",
-      "color": {
-        "a": 1,
-        "rgb": 3781001
-      }
-    }
-  ],
+  "colorGroups": [],
   "collapse-display": false,
   "showArrow": true,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.00598958333333,
-  "lineSizeMultiplier": 1.50364583333333,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.359375,
-  "repelStrength": 9.01041666666667,
-  "linkStrength": 0.744791666666667,
-  "linkDistance": 237,
-  "scale": 0.3236088912153595,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.6403357911217552,
   "close": true
 }
