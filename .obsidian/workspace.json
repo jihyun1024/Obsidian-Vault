@@ -25,26 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. Area/수업 정리/2025년 2학기/양자보안/양자보안_1주차_수요일.md",
+                "file": "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "양자보안_1주차_수요일"
-            }
-          },
-          {
-            "id": "af937f72c3186a80",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2. Area/수업 정리/2025년 2학기/양자보안/양자보안_1주차_월요일.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "양자보안_1주차_월요일"
+              "title": "리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이"
             }
           }
         ],
@@ -169,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. Area/수업 정리/2025년 2학기/양자보안/양자보안_1주차_수요일.md",
+                "file": "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "양자보안_1주차_수요일 의 개요"
+              "title": "리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이 의 개요"
             }
           }
         ],
@@ -216,12 +202,27 @@
   },
   "active": "73ffa888b74d1ba6",
   "lastOpenFiles": [
-    "2. Area/수업 정리/2025년 2학기/양자보안/양자보안_1주차_월요일.md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra Script&Extension으로 기능 확장.md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
+    "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리 - 김민수.md",
+    "3. Resource/포렌식/네트워크 포렌식/네트워크 포렌식.md",
+    "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
     "2. Area/수업 정리/2025년 2학기/양자보안/양자보안_1주차_수요일.md",
+    "3. Resource/네트워크/TCP.md",
+    "4. Archive/국민대 수업 정리",
+    "2. Area/수업 정리/2025년 2학기/양자보안/양자보안_1주차_월요일.md",
+    "2. Area/수업 정리/2025년 2학기/양자보안/양자보안.md",
+    "2. Area/수업 정리/2025년 2학기/AI 보안/1주차_인공지능과 보안, 데이터 이해.md",
+    "2. Area/수업 정리/2025년 2학기/AI 보안/AI 보안.md",
+    "2. Area/수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
+    "2. Area/수업 정리/2025년 2학기/부채널 공격 및 대응/부채널 공격 및 대응.md",
+    "2. Area/수업 정리/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
     "Attached file/Pasted image 20250903234950.png",
     "Attached file/Pasted image 20250903231224.png",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
-    "2. Area/수업 정리/2025년 2학기/AI 보안/1주차_인공지능과 보안, 데이터 이해.md",
     "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
     "2. Area/도서/도서 정리.md",
     "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/Retro Steganography 분석.md",
@@ -229,13 +230,8 @@
     "1. Project/DF&C 인턴십/DF&C 인턴십.md",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피",
-    "2. Area/수업 정리/2025년 2학기/AI 보안/AI 보안.md",
     "Attached file/Pasted image 20250723153424.png",
     "Attached file/Pasted image 20250723144805.png",
-    "2. Area/수업 정리/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
-    "2. Area/수업 정리/2025년 2학기/부채널 공격 및 대응/부채널 공격 및 대응.md",
-    "2. Area/수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
-    "2. Area/수업 정리/2025년 2학기/양자보안/양자보안.md",
     "2. Area/수업 정리/2025년 2학기/AI 보안/무제",
     "Attached file/Pasted image 20250901152159.png",
     "Attached file/Pasted image 20250901144335.png",
@@ -247,19 +243,10 @@
     "1. Project/2025 CaS_FaS 암호분석경진대회",
     "1. Project/Proton Pass 분석/Proton Pass 복호화 알고리즘 분석.md",
     "1. Project/Proton Pass 분석/Proton Pass 기능 정리 및 아티팩트 분석.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
     "4. Archive/DF&C 인턴십 활동 내역",
-    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
-    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
-    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 복호화.md",
-    "2. Area/QT 및 설교 요약/2025/8월/8월 24일 대학청년부 QT모임.md",
-    "2. Area/QT 및 설교 요약/2025/8월/8월 17일 대학청년부 QT모임.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
-    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드",
     "Ghidra Script",
-    "Tags",
-    "2. Area/수업 정리/2024년 1학기/수리전산"
+    "Tags"
   ]
 }
