@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
+                "file": "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이"
+              "title": "기드라 입문"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
+                "file": "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이 의 개요"
+              "title": "기드라 입문 의 개요"
             }
           }
         ],
@@ -202,11 +202,27 @@
   },
   "active": "73ffa888b74d1ba6",
   "lastOpenFiles": [
+    "2. Area/수업 정리/2025년 2학기/양자보안/양자보안.md",
+    "2. Area/수업 정리/2025년 2학기/운영체제/운영체제.md",
+    "2. Area/수업 정리/2025년 2학기/AI 보안/AI 보안.md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra Script&Extension으로 기능 확장.md",
+    "2. Area/수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
+    "2. Area/수업 정리/2025년 2학기/운영체제",
+    "Attached file/Pasted image 20250904035119.png",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드 - 나카지마 쇼타 고타케 다이치 하라 히로아키 가와바타 고헤이.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
+    "Attached file/Pasted image 20250904031859.png",
+    "Attached file/Pasted image 20250904031801.png",
+    "Attached file/Pasted image 20250904030650.png",
+    "Attached file/Pasted image 20250904030211.png",
+    "Attached file/Pasted image 20250904020336.png",
+    "Attached file/Pasted image 20250904020328.png",
+    "Attached file/Pasted image 20250904015509.png",
+    "Attached file/Pasted image 20250904010209.png",
+    "Attached file/Pasted image 20250904005547.png",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra를 이용한 리버스 엔지니어링 연습.md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra Script&Extension으로 기능 확장.md",
+    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리 - 김민수.md",
     "3. Resource/포렌식/네트워크 포렌식/네트워크 포렌식.md",
     "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
@@ -214,14 +230,9 @@
     "3. Resource/네트워크/TCP.md",
     "4. Archive/국민대 수업 정리",
     "2. Area/수업 정리/2025년 2학기/양자보안/양자보안_1주차_월요일.md",
-    "2. Area/수업 정리/2025년 2학기/양자보안/양자보안.md",
     "2. Area/수업 정리/2025년 2학기/AI 보안/1주차_인공지능과 보안, 데이터 이해.md",
-    "2. Area/수업 정리/2025년 2학기/AI 보안/AI 보안.md",
-    "2. Area/수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
     "2. Area/수업 정리/2025년 2학기/부채널 공격 및 대응/부채널 공격 및 대응.md",
     "2. Area/수업 정리/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
-    "Attached file/Pasted image 20250903234950.png",
-    "Attached file/Pasted image 20250903231224.png",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
     "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
     "2. Area/도서/도서 정리.md",
@@ -230,23 +241,12 @@
     "1. Project/DF&C 인턴십/DF&C 인턴십.md",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피",
-    "Attached file/Pasted image 20250723153424.png",
-    "Attached file/Pasted image 20250723144805.png",
     "2. Area/수업 정리/2025년 2학기/AI 보안/무제",
-    "Attached file/Pasted image 20250901152159.png",
-    "Attached file/Pasted image 20250901144335.png",
-    "Attached file/Pasted image 20250901144332.png",
-    "Attached file/Pasted image 20250901112030.png",
-    "Attached file/Pasted image 20250901112017.png",
-    "Attached file/Pasted image 20250901111408.png",
     "Templetes/수업 정리 템플릿.md",
     "1. Project/2025 CaS_FaS 암호분석경진대회",
-    "1. Project/Proton Pass 분석/Proton Pass 복호화 알고리즘 분석.md",
-    "1. Project/Proton Pass 분석/Proton Pass 기능 정리 및 아티팩트 분석.md",
     "4. Archive/DF&C 인턴십 활동 내역",
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리",
     "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드",
-    "Ghidra Script",
-    "Tags"
+    "Ghidra Script"
   ]
 }
