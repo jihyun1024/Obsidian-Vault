@@ -15,4 +15,4 @@ JPG 파일의 구조를 배울 수 있는 사이트는 다음과 같다.
 - [The Metadata in JPEG files](https://dev.exiv2.org/projects/exiv2/wiki/The_Metadata_in_JPEG_files?utm_source=chatgpt.com)
 - [JPG Signature Format: Documentation & Recovery Example](https://www.file-recovery.com/jpg-signature-format.htm?utm_source=chatgpt.com)
 
-위의 사이트에서 나온 내용들을 바탕으로 JPG 파일의 구조에 대해 정리해 보도록 하자. 
+위의 사이트에서 나온 내용들을 바탕으로 [[JPG의 구조|JPG 파일의 구조]]에 대해 정리해 보자.

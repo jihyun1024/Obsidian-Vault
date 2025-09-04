@@ -18,8 +18,23 @@
               "icon": "lucide-git-fork",
               "title": "그래프 뷰"
             }
+          },
+          {
+            "id": "d00914abdc73d2d2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG의 구조.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "JPG의 구조"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -140,12 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG의 구조.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "JPG의 구조 의 개요"
             }
           }
         ],
@@ -186,9 +202,41 @@
       "obsidian-kanban:새 보드 만들기": false
     }
   },
-  "active": "74ab6798f7193281",
+  "active": "d00914abdc73d2d2",
   "lastOpenFiles": [
-    "무제.md",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/MCU.md",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/DCT.md",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG의 구조.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/메시지 은닉 알고리즘 파악.md",
+    "Attached file/Pasted image 20250905074320.png",
+    "Attached file/Pasted image 20250905074246.png",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/F5 Algorithm.md",
+    "Attached file/Pasted image 20250905065301.png",
+    "Attached file/Pasted image 20250905064645.png",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/메시지 추출 도구 제작 (Python).md",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/PNG의 구조.md",
+    "Attached file/Pasted image 20250905023609.png",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/DEFLATE 압축 알고리즘.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/GZIP Algorithm.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
+    "Attached file/Pasted image 20250905013833.png",
+    "Attached file/Pasted image 20250905011806.png",
+    "Attached file/Pasted image 20250905011044.png",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
+    "1. Project/DF&C 인턴십/DF&C 인턴십.md",
+    "3. Resource/디지털 포렌식/네트워크 포렌식/Puzzle 1. Ann's Bad AIM.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 환경 설정.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/WireShark.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/Network Miner.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/Jadx.md",
+    "3. Resource/리버스 엔지니어링/도구 사용법/Ghidra.md",
+    "4. Archive/FaS 활동 내역/FaS 동아리 활동 내역.md",
+    "4. Archive/FaS 활동 내역/파일 시스템 (Ext4).md",
+    "4. Archive/FaS 활동 내역/차량용 블랙박스 포렌식을 위한 분석 절차 및 저장 구조 분석.md",
+    "4. Archive/FaS 활동 내역/애플리케이션 분석/Session 애플리케이션 분석.md",
     "4. Archive/DF&C 인턴십 활동 내역",
     "4. Archive",
     "3. Resource",
@@ -196,43 +244,11 @@
     "7. 기타",
     "4. 개인 공부 & 정리",
     "2. Area/논문 정리",
-    "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리.md",
-    "2. Area/도서/책 목록.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
-    "1. Project/DF&C 인턴십/DF&C 인턴십.md",
-    "2. Area/Library/Bookshelf.md",
-    "2. Area/Library/두뇌 규칙.md",
     "2. Area/Library/무제",
     "2. Area/Library",
-    "2. Area/Library/무제 1.md",
     "2. Area/Library",
-    "이름 없는 보드.md",
     "Attached file/image 1.png",
     "Attached file/image.png",
-    "2. Area/도서/도서 목록_CANVAS.canvas",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
-    "Attached file/Pasted image 20250904232247.png",
-    "2. Area/도서/도서 정리.md",
-    "2. Area/2025년 2학기/양자보안/양자보안.md",
-    "2. Area/2025년 2학기/운영체제/운영체제.md",
-    "2. Area/2025년 2학기/AI 보안/AI 보안.md",
-    "2. Area/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
-    "Attached file/Pasted image 20250904035119.png",
-    "Attached file/Pasted image 20250904031859.png",
-    "Attached file/Pasted image 20250904031801.png",
-    "Attached file/Pasted image 20250904030650.png",
-    "Attached file/Pasted image 20250904030211.png",
-    "Attached file/Pasted image 20250904020336.png",
-    "Attached file/Pasted image 20250904020328.png",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra를 이용한 리버스 엔지니어링 연습.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/Ghidra Script&Extension으로 기능 확장.md",
-    "3. Resource/디지털 포렌식/네트워크 포렌식/네트워크 포렌식.md",
-    "3. Resource/리버스 엔지니어링/리버스 엔지니어링.md",
-    "2. Area/2025년 2학기/양자보안/양자보안_1주차_수요일.md",
-    "3. Resource/네트워크/TCP.md",
-    "2. Area/2025년 2학기/양자보안/양자보안_1주차_월요일.md",
-    "2. Area/2025년 2학기/AI 보안/1주차_인공지능과 보안, 데이터 이해.md"
+    "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }

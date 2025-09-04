@@ -1,9 +1,4 @@
 
-- [[#🤔x64dbg?|🤔x64dbg?]]
-- [[#📲x64dbg 설치|📲x64dbg 설치]]
-- [[#☃️Snowman Plugin 설치|☃️Snowman Plugin 설치]]
-- [[#🔧x64dbg Plugin Manager 설정|🔧x64dbg Plugin Manager 설정]]
-
 ### 🤔x64dbg?
 
 - 실행파일을 동적 분석할 수 있도록 돕는 디버거
