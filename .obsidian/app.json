@@ -6,5 +6,6 @@
   "focusNewTab": true,
   "strictLineBreaks": false,
   "rightToLeft": false,
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "propertiesInDocument": "visible"
 }
