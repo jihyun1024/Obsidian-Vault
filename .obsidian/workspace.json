@@ -25,6 +25,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG의 구조.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "JPG의 구조"
+            }
+          },
+          {
+            "id": "ad443e3bbf31a44e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/F5 Algorithm.md",
                 "mode": "source",
                 "source": false
@@ -33,8 +47,7 @@
               "title": "F5 Algorithm"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,13 +168,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/F5 Algorithm.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "F5 Algorithm 의 개요"
+              "title": "개요"
             }
           }
         ],
@@ -201,20 +213,21 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "d00914abdc73d2d2",
+  "active": "a7a4178884aebea3",
   "lastOpenFiles": [
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/양자화 (Quantization).md",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/F5 Algorithm.md",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG의 구조.md",
+    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/DEFLATE 압축 알고리즘.md",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/양자화 (Quantization).md",
+    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/MCU.md",
     "Attached file/Pasted image 20250906233755.png",
     "1. Project/DF&C 인턴십/DF&C 인턴십.md",
     "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
     "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 파일 암호화 알고리즘 파악.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/MCU.md",
     "Attached file/Pasted image 20250906232542.png",
     "Attached file/Pasted image 20250906232505.png",
     "Attached file/Pasted image 20250906232430.png",
-    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/DEFLATE 압축 알고리즘.md",
     "Attached file/Pasted image 20250906181414.png",
     "Attached file/Pasted image 20250906180739.png",
     "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/DCT.md",
@@ -226,7 +239,6 @@
     "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/메시지 추출 도구 제작 (Python).md",
     "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/PNG의 구조.md",
     "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/참고 자료/GZIP Algorithm.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
     "3. Resource/디지털 포렌식/네트워크 포렌식/Puzzle 1. Ann's Bad AIM.md",
     "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 환경 설정.md",
     "3. Resource/리버스 엔지니어링/도구 사용법/x64dbg/x64dbg 사용 방법.md",
