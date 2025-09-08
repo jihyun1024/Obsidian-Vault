@@ -80,7 +80,7 @@ Salsa20의 경우, constant word로 `expand 32-byte k`라는 문자를 Initial S
 ![[Pasted image 20250826131032.png]]
 이 부분에서 중단점이 `je ragnar_locker.5918A4` 분기 밑에 있는데, `je` 명령어는 ZF(Zero Flag)가 1일 때 점프를 수행한다. 이 분기 바로 밑에 있는 중단점 부분을 분석하기 위해서 ZF 부분을 두 번 눌러서 ZF = 0으로 만들어 강제로 들어갈 수 있다. 
 또한, 이 문서 맨 위에서 `ReadFile` 함수와 `VirtualAlloc` 함수 뒤에 나오는 (파일을 읽고, 가상 메모리를 할당해 파일 암호화를 위한 프로세스를 할당) `ragnar_locker.592310` 함수에 집중해서 살펴봐야 한다. 
-이 함수는 `ReadFile`함수, `VirtualAlloc` 함수 뒤에 나오며, 이 함수를 실행한 이후 파일을 잠그고 어떤 내용물을 쓰며, 다시 파일을 잠금 해제하는 함수들인 `LockFile`, `WriteFile`, `UnlockFile` 함수가 나오기 때문에 파일의 내용물을 읽고 그 내용물을 암호화 알고리즘으로 암호화 해서 `WriteFile` 함수에서 그 내용을 기록할 수 있도록 하는 함수로 추측된다. 
+이 함수는 `ReadFile`함수, `VirtualAlloc` 함수 뒤에 나오며, [[읽기,쓰기 락|이 함수를 실행한 이후 파일을 잠그고 어떤 내용물을 쓰며, 다시 파일을 잠금 해제하는 함수들]]인 `LockFile`, `WriteFile`, `UnlockFile` 함수가 나오기 때문에 파일의 내용물을 읽고 그 내용물을 암호화 알고리즘으로 암호화 해서 `WriteFile` 함수에서 그 내용을 기록할 수 있도록 하는 함수로 추측된다. 
 
 샘플 파일은 다음과 같다. 
 ![[Pasted image 20250827213552.png]]
