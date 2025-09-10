@@ -97,8 +97,8 @@ SOF는 JPEG 이미지의 가로, 세로 픽셀 크기와 색상 구성, 각 컴�
 			    - Y(H=2,V=2), Cb(H=1,V=1), Cr(H=1,V=1)
 			    - Y는 가로/세로 모두 2배, 색차는 1/4 해상도.
 			    - MCU당 블록 배치: Y=4블록, Cb=1, Cr=1 → 총 6블록.
-- Quantization table selector (1 byte): 해당 컴포넌트가 사용할 DQT 테이블 번호
-	- 값의 범위는 `0x00 ~ 0x03`
+	- Quantization table selector (1 byte): 해당 컴포넌트가 사용할 DQT 테이블 번호
+		- 값의 범위는 `0x00 ~ 0x03`
 
 ### DQT 마커 구조
 DQT 마커에서는 이미지 압축에 사용되는 양자화 테이블을 저장한다.
@@ -121,7 +121,7 @@ DQT 마커에서는 이미지 압축에 사용되는 양자화 테이블을 저�
 DHT 마커에서는 JPEG 이미지 압축 시 사용되는 [[DEFLATE 압축 알고리즘#2. Huffman Coding (통계적 부호화)|Huffman Coding]]을 위한 엔트로피 변환 테이블 정보를 저장한다. 스캔 시작을 의미하는 SOS 부분에서 각 컴포넌트가 어떤 DC/AC Huffman Table을 쓸지 참조하므로 **압축된 비트스트림을 해석하기 위해 이 테이블이 필요하다.**
 ![[Pasted image 20250906232542.png]]
 구조는 다음과 같다. 
-- length (2 bytes): 마커의 총 길이로, length 부분을 포함하며 DHT 마커 시그니처인 `0xC4`는 마커 길이 계산에 포함하지 않는다. 
+	- length (2 bytes): 마커의 총 길이로, length 부분을 포함하며 DHT 마커 시그니처인 `0xC4`는 마커 길이 계산에 포함하지 않는다. 
 - Huffman Table
 	- Header (1 byte)
 		- 상위 4 bits: 이 테이블이 DC(Direct Current)용인지, AC(Alternating Current)용인지
