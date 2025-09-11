@@ -15,4 +15,17 @@ JPG 파일의 구조를 배울 수 있는 사이트는 다음과 같다.
 - [The Metadata in JPEG files](https://dev.exiv2.org/projects/exiv2/wiki/The_Metadata_in_JPEG_files?utm_source=chatgpt.com)
 - [JPG Signature Format: Documentation & Recovery Example](https://www.file-recovery.com/jpg-signature-format.htm?utm_source=chatgpt.com)
 
-위의 사이트에서 나온 내용들을 바탕으로 [[JPG의 구조|JPG 파일의 구조]]에 대해 정리해 보자.
+위의 사이트에서 나온 내용들을 바탕으로 [[JPG의 구조|JPG 파일의 구조]]에 대해 정리해 보았고, 
+[[F5 Algorithm]]도 추가로 정리해 보았다. 
+
+### 다양한 Steganography Algorithms
+저번 세미나에서는 JPG의 자세한 구조와 F5 알고리즘의 대략적인 동작 방법에 대해 정리해 보았다. 그러나, 너무 피곤해서 그런가 F5 알고리즘에서 정작 중요한 메시지는 어떻게 은닉되는지, 그리고 어떻게 추출되는지에 대한 방법은 자세히 알아보지 못했던 것 같다. 
+
+따라서 이번 세미나에서는 [[F5 Algorithm]]의 자세한 동작과 [[UERD Algorithm]]에 대해 알아보았다. 
+
+### Feedback
+[1차 피드백]
+1. JPG 구조와 그에 관련된 개념에 대한 정리는 상당히 잘 해왔다.
+2. F5 알고리즘에서 메시지를 어떻게 은닉하는지 추가로 더 알아와야 할 것 같다. 
+3. 다음 세미나(2주 뒤)에서는 F5 알고리즘에서 어떻게 메시지를 은닉하는지, 그리고 UERD 알고리즘이 뭐고, 어떻게 동작하는지 알아오는 것이 과제
+
