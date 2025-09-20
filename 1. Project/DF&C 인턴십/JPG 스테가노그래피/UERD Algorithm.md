@@ -1,2 +1,2 @@
-UERD 알고리즘은 JPEG 파일에 데이터를 은닉하는 스테가노그래피 기법으로, **Guo, L., Ni, J., Su, W., Tang, C., Shi, Y. Q.**가 공동 저자로 참여한 논문에서 처음 제안되었고**. 이 논문은 **2015년**에 **IEEE Transactions on Information Forensics & Security** 저널에 발표되었다. 
+UERD 알고리즘은 JPEG 파일에 데이터를 은닉하는 스테가노그래피 기법으로, **Guo, L., Ni, J., Su, W., Tang, C., Shi, Y. Q.** 가 공동 저자로 참여한 논문에서 처음 제안되었고. 이 논문은 **2015년**에 **IEEE Transactions on Information Forensics & Security** 저널에 발표되었다. 
 발표한 논문은 [이 사이트](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7225122)에서 PDF 파일로 확인할 수 있다. 

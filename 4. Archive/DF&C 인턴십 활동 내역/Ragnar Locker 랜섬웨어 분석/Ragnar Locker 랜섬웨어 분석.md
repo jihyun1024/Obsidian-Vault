@@ -1,6 +1,5 @@
 ---
 tags:
-  - Dashboard
 created: 2025-07-18
 ---
 
