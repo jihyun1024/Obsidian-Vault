@@ -20,7 +20,7 @@
             }
           },
           {
-            "id": "81cce164460380fd",
+            "id": "dd0fcdacebcdf72b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,37 +32,9 @@
               "icon": "lucide-file",
               "title": "동계학술대회 Proton Pass 논문 작성"
             }
-          },
-          {
-            "id": "b758816ff07c3bc9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/Proton Pass 기능 정리 및 아티팩트 분석.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Proton Pass 기능 정리 및 아티팩트 분석"
-            }
-          },
-          {
-            "id": "90ee7ea68c454d99",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/Proton Pass 복호화 알고리즘 분석.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Proton Pass 복호화 알고리즘 분석"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/Proton Pass 복호화 알고리즘 분석.md",
+                "file": "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/동계학술대회 Proton Pass 논문 작성.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Proton Pass 복호화 알고리즘 분석 의 개요"
+              "title": "동계학술대회 Proton Pass 논문 작성 의 개요"
             }
           }
         ],
@@ -229,43 +201,44 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "90ee7ea68c454d99",
+  "active": "dd0fcdacebcdf72b",
   "lastOpenFiles": [
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/UERD Algorithm.md",
-    "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/Proton Pass 복호화 알고리즘 분석.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/F5 Algorithm.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/DCT.md",
-    "Attached file/Pasted image 20250923043111.png",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/양자화 (Quantization).md",
-    "Attached file/Pasted image 20250923035216.png",
+    "Templetes/수업 정리 템플릿.md",
     "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/동계학술대회 Proton Pass 논문 작성.md",
-    "2. Area/2025년 2학기/AI 보안/2주차_Numpy 기초 이해 및 실습.md",
     "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/Proton Pass 기능 정리 및 아티팩트 분석.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG의 구조.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/JPG 스테가노그래피.md",
-    "1. Project/DF&C 인턴십/JPG 스테가노그래피/참고 자료/MCU.md",
-    "1. Project/비밀번호 관리 애플리케이션 분석/비밀번호 관리 애플리케이션.md",
-    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
-    "4. Archive/DF&C 인턴십 활동 내역/Retro Steganography/Retro Steganography 분석.md",
-    "3. Resource/디지털 포렌식/네트워크 포렌식/네트워크 포렌식.md",
-    "4. Archive/FaS 활동 내역/스테가노그래피/스테가노그래피 개요.md",
-    "2. Area/2025년 2학기/운영체제/운영체제_3주차_화요일.md",
-    "2. Area/2025년 2학기/운영체제/운영체제_3주차_목요일.md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/1주차_TCP&IP 전송계층.md",
-    "Attached file/Pasted image 20250919010902.png",
-    "Attached file/Pasted image 20250918174813.png",
-    "Attached file/Pasted image 20250918154251.png",
-    "Attached file/Pasted image 20250918154203.png",
-    "2. Area/2025년 2학기/운영체제/운영체제_2주차_목요일.md",
+    "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/Proton Pass 복호화 알고리즘 분석.md",
+    "Attached file/Pasted image 20250924051949.png",
+    "Attached file/Pasted image 20250924051941.png",
+    "Attached file/Pasted image 20250924050040.png",
+    "Attached file/Pasted image 20250924045545.png",
+    "Attached file/Pasted image 20250924045401.png",
+    "Attached file/Pasted image 20250924044001.png",
+    "Attached file/Pasted image 20250924035829.png",
+    "Attached file/Pasted image 20250924035518.png",
+    "Attached file/Pasted image 20250924035024.png",
+    "Attached file/Pasted image 20250924031224.png",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/3주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (1).md",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/2주차_TCP&IP 전송계층.md",
+    "2. Area/2025년 2학기/부채널 공격 및 대응/부채널 공격 및 대응.md",
+    "2. Area/2025년 2학기/부채널 공격 및 대응/3주차_전력분석모델과 1차 전력분석.md",
+    "2. Area/2025년 2학기/부채널 공격 및 대응/4주차_차분전력분석.md",
+    "2. Area/2025년 2학기/AI 보안/1주차_인공지능과 보안, 데이터 이해.md",
+    "2. Area/2025년 2학기/AI 보안/3주차_Numpy 이해 및 실습.md",
+    "2. Area/2025년 2학기/AI 보안/2주차_Numpy 기초 이해 및 실습.md",
+    "2. Area/2025년 2학기/운영체제/운영체제_4주차_목요일.md",
+    "2. Area/2025년 2학기/AI 보안/4주차_Numpy 마무리.md",
     "2. Area/2025년 2학기/운영체제/운영체제.md",
-    "2. Area/2025년 2학기/운영체제/운영체제_2주차_화요일.md",
+    "2. Area/2025년 2학기/운영체제/운영체제_4주차_화요일.md",
+    "2. Area/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
+    "2. Area/2025년 2학기/알고리즘 분석/3주차_Linear Algebra.md",
+    "2. Area/2025년 2학기/알고리즘 분석/2주차_Introduction to Quantum Computing.md",
+    "2. Area/2025년 2학기/AI 보안/AI 보안.md",
+    "2. Area/2025년 2학기/양자보안/양자보안_4주차_월요일.md",
     "2. Area/2025년 2학기/양자보안/양자보안_3주차_수요일.md",
-    "Attached file/Pasted image 20250918063111.png",
-    "Attached file/Pasted image 20250918062506.png",
-    "2. Area/2025년 2학기/양자보안/양자보안_2주차_월요일.md",
+    "2. Area/2025년 2학기/양자보안/양자보안_4주차_수요일.md",
     "2. Area/2025년 2학기/양자보안/양자보안.md",
-    "Attached file/Pasted image 20250918055638.png",
-    "Attached file/Pasted image 20250918050716.png",
+    "2. Area/2025년 2학기/양자보안/양자보안_1주차_수요일.md",
     "1주차_TCP",
     "4. Archive/DF&C 인턴십 활동 내역",
     "4. Archive",
