@@ -38,7 +38,7 @@ IV는 pass.key의 상위 12-byte를 사용하며 Tag는 pass.key의 하위 16-by
 ![[Pasted image 20250924050040.png]]
 (그림 3) Decryption Process of pass.key
 
-AES 복호화에 사용되는 Masterkey는 /data/misc/keystore/user_X 디렉터리의 USRID_USRPKEY__me_proton_core_data_crypto_master_key_ 파일에 32-byte로 저장되어 있다. 
+AES256/GCM 복호화에 사용되는 Master key는 /data/misc/keystore/user_X 디렉터리의 USRID_USRPKEY__me_proton_core_data_crypto_master_key_ 파일에 32-byte로 저장되어 있다. 
 
 암호화된 컨텐츠는 AES256/GCM/NoPadding 알고리즘을 사용하여 복호화할 수 있다. 암호화된 컨텐츠를 Base64 디코딩하여 데이터로 정의하며, IV는 데이터의 상위 12-byte를 사용한다. 해당 과정을 정리하면 다음과 같다(그림 4).
 ![[Pasted image 20250924051949.png]]
