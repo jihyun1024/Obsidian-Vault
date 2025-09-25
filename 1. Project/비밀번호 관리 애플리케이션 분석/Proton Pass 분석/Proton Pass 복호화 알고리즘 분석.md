@@ -64,42 +64,64 @@ Jadx에서 `pass.key`를 검색하면 해당 결과가 나오며, 이 메서드�
 from Crypto.Cipher import AES
 import base64
 
+
 # pass.key 복호화
 with open('pass.key', 'rb') as f:
     data = f.read()
-
+  
 iv = data[:12]
-ciphertext = data[12:]
-
+ciphertext = data[12:-16]
+  
+# KeyStore Blob에서 추출한 masterkey
 masterkey = bytes.fromhex("9CE131042C30EB4A46D70E746D6C028018CEA0809A55DC4885FC421DA0AD4B53")
-
 cipher = AES.new(masterkey, AES.MODE_GCM, nonce=iv)
 dec_passkey = cipher.decrypt(ciphertext)
-print("Decrypted pass.key:", dec_passkey)
-
+  
 # 암호화된 아티팩트 복호화
-key = dec_passkey[:32]
-encrypted_title = base64.b64decode('gBBgNYcmxkLJNeDmJXXnnpWLPlYp4TZlYlBEPo1lSuHqAyHC9zgD')
-encrypted_note = base64.b64decode('5+4USFm6LIZ3c0ftYjrOr7v30vpvbGS1t8pV9CfFILwgDyRESi3E1QZuuqUJ232Fiv9hGg==')
+# encrypted_note의 경우, PIN, Memo 데이터만 해당
+encrypted_title = base64.b64decode('fugixgbir7NC2abkg14jDwisu4Pk/lWqNZncbJ01obgC0qtVCdjK')
 
+encrypted_note = base64.b64decode('xUCGBd3QeEgocIpj0Hq601RsbpCE0Na0FARBvOpEOtlmHTtho8B7Sbj36nefySv5SwIajWsHzfxhOOAavATAd0ZjXpYcWw==')
+
+# 이 부분만 복호화해도 웬만한 데이터는 다 나옴 (휴지통에 있는 데이터도 복호화 가능)
+
+encrypted_content = bytes.fromhex("""7f439dc204723a63d61928de28fac1a5
+c9ee7ca9c90da806f67a34f591ee92dc
+58747b84ca04ce51ffd5d89d619c0668
+804441dc4192f605d5141be48f4b184e
+8b4645a5f69e3f6857f2e269c17cf815
+666b32ee73a4b47ab79d93b6befea053
+4408a982a98c5c9e1c64eb844c10880f
+8c6547fdb72fe02922079b912fb765e3
+f4""")
+  
 # iv, ciphertext, tag 분리
 iv_title = encrypted_title[:12]
 ciphertext_title = encrypted_title[12:-16]
 tag_title = encrypted_title[-16:]
-
+  
 iv_note = encrypted_note[:12]
 ciphertext_note = encrypted_note[12:-16]
 tag_note = encrypted_note[-16:]
-  
+
+iv_content = encrypted_content[:12]
+ciphertext_content = encrypted_content[12:-16]
+tag_content = encrypted_content[-16:]
+
 # 복호화
-cipher_title = AES.new(key, AES.MODE_GCM, nonce=iv_title)
+cipher_title = AES.new(dec_passkey, AES.MODE_GCM, nonce=iv_title)
 dec_title = cipher_title.decrypt(ciphertext_title)
-  
-cipher_note = AES.new(key, AES.MODE_GCM, nonce=iv_note)
+
+cipher_note = AES.new(dec_passkey, AES.MODE_GCM, nonce=iv_note)
 dec_note = cipher_note.decrypt(ciphertext_note)
+
+cipher_content = AES.new(dec_passkey, AES.MODE_GCM, nonce=iv_content)
+dec_content = cipher_content.decrypt(ciphertext_content)
+
 
 print("Decrypted Title:", dec_title.decode('utf-8'))
 print("Decrypted Note:", dec_note.decode('utf-8'))
+print("Decrypted Content:", dec_content.decode('utf-8'))
 ```
 이 코드를 실행하면 ![[Pasted image 20250729054445.png]]
 이와 같은 결과를 볼 수 있으며, 따라서 이 코드가 잘 동작한다는 것을 확인했다.
