@@ -53,12 +53,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. Area/2025년 2학기/보안네트워크 프로그래밍/4주차_TCP_소켓_실습1.md",
+                "file": "2. Area/2025년 2학기/보안네트워크 프로그래밍/4주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (2).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4주차_TCP_소켓_실습1"
+              "title": "4주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (2)"
             }
           },
           {
@@ -245,18 +245,24 @@
   },
   "active": "110fdcd37533fc4a",
   "lastOpenFiles": [
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/4주차_TCP_소켓_실습1.md",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/3주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (1).md",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/4주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (2).md",
+    "Attached file/Pasted image 20251005041108.png",
+    "Attached file/Pasted image 20251005035109.png",
+    "Attached file/Pasted image 20251005030036.png",
+    "Attached file/Pasted image 20251005023337.png",
+    "Attached file/Pasted image 20251005022826.png",
+    "2. Area/2025년 2학기/운영체제/운영체제_5주차_목요일.md",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/2주차_TCP&IP 전송계층.md",
+    "Attached file/Pasted image 20251005012507.png",
     "2. Area/2025년 2학기/AI 보안/6주차_Pandas 이해 및 실습 마무리.md",
     "2. Area/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
     "2. Area/2025년 2학기/알고리즘 분석/6주차_스핀과 큐비트_Part 2 + Entanglement.md",
     "2. Area/2025년 2학기/알고리즘 분석/4,5주차_스핀과 큐비트_Part 1.md",
     "2. Area/2025년 2학기/부채널 공격 및 대응/부채널 공격 및 대응.md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/3주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (1).md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/2주차_TCP&IP 전송계층.md",
     "2. Area/2025년 2학기/부채널 공격 및 대응/4, 5주차_차분전력분석.md",
     "1. Project/DF&C 인턴십/LockBit 3.0 랜섬웨어 분석.md",
-    "2. Area/2025년 2학기/운영체제/운영체제_5주차_목요일.md",
     "2. Area/2025년 2학기/운영체제/운영체제_5주차_화요일.md",
     "2. Area/2025년 2학기/운영체제/운영체제_1주차_목요일.md",
     "2. Area/2025년 2학기/운영체제/운영체제_2주차_화요일.md",
@@ -273,14 +279,7 @@
     "2. Area/2025년 2학기/양자보안/양자보안_5주차_월요일.md",
     "2. Area/2025년 2학기/운영체제/운영체제_4주차_화요일.md",
     "2. Area/2025년 2학기/양자보안/양자보안_4주차_월요일.md",
-    "1. Project/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/동계학술대회 Proton Pass 논문 작성.md",
     "Attached file/Pasted image 20251002100430.png",
-    "Attached file/Pasted image 20251002100337.png",
-    "Attached file/Pasted image 20251002095716.png",
-    "Attached file/Pasted image 20250924031224.png",
-    "Attached file/Pasted image 20251002091037.png",
-    "Attached file/Pasted image 20251002091025.png",
-    "Attached file/Pasted image 20251002091000.png",
     "1주차_TCP",
     "4. Archive/DF&C 인턴십 활동 내역",
     "4. Archive",
