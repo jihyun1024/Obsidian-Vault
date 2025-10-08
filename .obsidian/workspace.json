@@ -75,7 +75,8 @@
               "title": "3주차_Numpy 이해 및 실습"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -197,12 +198,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "2. Area/2025년 2학기/알고리즘 분석/3주차_Linear Algebra.md",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "3주차_Linear Algebra 의 개요"
             }
           }
         ],
@@ -242,8 +244,14 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "a7a4178884aebea3",
+  "active": "afa169f70f5721a2",
   "lastOpenFiles": [
+    "Attached file/Pasted image 20251008234754.png",
+    "Attached file/Pasted image 20251008234338.png",
+    "Attached file/Pasted image 20251008234246.png",
+    "Attached file/Pasted image 20251008234006.png",
+    "2. Area/2025년 2학기/알고리즘 분석/2주차_Introduction to Quantum Computing.md",
+    "2. Area/2025년 2학기/알고리즘 분석/3주차_Linear Algebra.md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/5주차_인증 및 보안 프로토콜.md",
     "Attached file/Pasted image 20251008212713.png",
     "Attached file/Pasted image 20251008210452.png",
@@ -255,10 +263,8 @@
     "2. Area/2025년 2학기/부채널 공격 및 대응/4, 5주차_차분전력분석.md",
     "2. Area/2025년 2학기/알고리즘 분석/6주차_스핀과 큐비트_Part 2 + Entanglement.md",
     "2. Area/2025년 2학기/알고리즘 분석/4,5주차_스핀과 큐비트_Part 1.md",
-    "2. Area/2025년 2학기/알고리즘 분석/3주차_Linear Algebra.md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/3주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (1).md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/4주차_TCP&IP 클라이언트_서버 소켓 프로그래밍 (2).md",
-    "2. Area/2025년 2학기/알고리즘 분석/2주차_Introduction to Quantum Computing.md",
     "2. Area/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
     "1. Project/DF&C 인턴십/LockBit 3.0 랜섬웨어 분석.md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
@@ -271,9 +277,6 @@
     "2. Area/2025년 2학기/양자보안/양자보안.md",
     "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_2주차_수요일.md",
     "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_6주차_수요일.md",
-    "Attached file/Pasted image 20250723163808.png",
-    "Attached file/Pasted image 20250726135954.png",
-    "Attached file/image 3.png",
     "Attached file/Journaling of Journal 기반 SQLite 파일 복구 기법.pdf",
     "2. Area/2025년 2학기/운영체제/수업 정리",
     "2. Area/2025년 2학기/양자보안/수업 정리",
