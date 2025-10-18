@@ -10,5 +10,6 @@
   "obsidian-book-search-plugin",
   "page-gallery",
   "card-board",
-  "execute-code"
+  "execute-code",
+  "find-orphaned-images"
 ]
