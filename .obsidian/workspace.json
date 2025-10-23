@@ -76,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 255.5
   },
   "right": {
     "id": "dfb868fc700c6573",
@@ -169,7 +169,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 263.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,6 +187,11 @@
   },
   "active": "a7a4178884aebea3",
   "lastOpenFiles": [
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/7주차 수업.md",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/6주차 수업.md",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
+    "Attached file/Pasted image 20251023173411.png",
+    "2. Area/2025년 2학기/보안네트워크 프로그래밍/5주차 수업.md",
     "2. Area/2025년 2학기/양자보안/양자보안.md",
     "2. Area/2025년 2학기/운영체제/운영체제.md",
     "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_1주차_월요일.md",
@@ -206,13 +211,8 @@
     "2. Area/2025년 2학기/부채널 공격 및 대응/3주차 수업.md",
     "2. Area/2025년 2학기/부채널 공격 및 대응/4, 5주차 수업.md",
     "2. Area/2025년 2학기/부채널 공격 및 대응/6, 7주차 수업.md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/4주차 수업.md",
     "2. Area/2025년 2학기/알고리즘 분석/3주차 수업.md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/2주차 수업.md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/7주차 수업.md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/3주차 수업.md",
-    "2. Area/2025년 2학기/보안네트워크 프로그래밍/5주차 수업.md",
     "Attached file/Pasted image 20250905011044.png",
     "Attached file/Pasted image 20251009042301.png",
     "Attached file/image 3.png",
@@ -222,7 +222,6 @@
     "Attached file/Pasted image 20250827150852.png",
     "Attached file/Pasted image 20250806165514.png",
     "Attached file/Pasted image 20250729001408.png",
-    "Attached file/Pasted image 20250828030752.png",
     "Attached file/Journaling of Journal 기반 SQLite 파일 복구 기법.pdf",
     "2. Area/2025년 2학기/운영체제/수업 정리",
     "2. Area/2025년 2학기/양자보안/수업 정리",
