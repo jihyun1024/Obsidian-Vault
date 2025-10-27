@@ -18,7 +18,7 @@
         ![[image1.png]]
         
 - 압축 해제된 폴더 중 `release` 폴더를 살펴보면 `x96dbg.exe`라는 프로그램이 있다. 이 프로그램을 실행하면 다음과 같은 화면이 나온다.
-	    ![[Attached file/image 7.png]]
+	    ![[image 7.png]]
 
 - 프로그램 코드 버전에 따라 32bit용과 64bit용을 실행할 수 있으며, `Install`을 선택하여 x32dbg와 x64dbg를 설치하거나 `release` 폴더 아래의 `x32` 폴더와 `x64`폴더에 x32dbg, x64dbg 실행 파일이 있어 그 실행 파일을 직접 실행해도 된다.
 

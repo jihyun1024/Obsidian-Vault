@@ -1,0 +1,117 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <math.h>
+
+#include <openssl/opensslv.h>
+#include <openssl/crypto.h>
+#include <openssl/hmac.h>
+#include <openssl/evp.h>
+#include <openssl/core_names.h>
+#include <openssl/params.h>
+#include <openssl/err.h>
+
+#include "Practical.h"
+#include "OTPlib.h"
+
+bool calc_otp(char* pwd, char* chall, char* otp, int* otplen)
+{
+    if (pwd == NULL || chall == NULL || otp == NULL || otplen == NULL)
+        DieWithUserMessage("calc_otp() failed", "invalid input parameter - pwd, resp, otp, otplen");
+
+    unsigned char   key[EVP_MAX_MD_SIZE];
+    unsigned int    key_len = 0, len = 0;
+
+    len = strlen(pwd);
+    if (!EVP_Digest(pwd, len, key, &key_len, EVP_sha256(), NULL))
+        DieWithUserMessage("calc_otp() failed", "EVP_Digest failed");
+
+    // time_t t = floor((time(NULL) - t0) / OTP_STEP);
+    if (NULL == HMAC(EVP_sha256(), key, (int)key_len, (unsigned char*)chall, OTP_CHAL_SIZE,
+                     (unsigned char*)otp, (unsigned int*)otplen))
+        return false;
+    return true;
+}
+
+bool verify_otp(char* pwd, char* chall, char* otp, int otplen)
+{
+    unsigned char d_otp[EVP_MAX_MD_SIZE];
+    int len = 0;
+
+    memset(d_otp, 0, EVP_MAX_MD_SIZE);
+    if(!calc_otp(pwd, chall, (char*) d_otp, &len))
+        return false;
+    else if(len != otplen)
+        return false;
+
+    return (0 == CRYPTO_memcmp(d_otp, otp, (size_t) len));
+}
+
+/* SHA256(pwd) -> 상위 16바이트를 AES-128 키로 사용 */
+void derive_key(const char* pwd, unsigned char key_out[AES128_KEY_LEN]) {
+    unsigned char hash[EVP_MAX_MD_SIZE];
+    unsigned int hash_len = 0;
+
+    if (!pwd || !key_out) {
+        if (key_out) memset(key_out, 0, AES128_KEY_LEN);
+        return;
+    }
+    if (1 != EVP_Digest(pwd, (int)strlen(pwd), hash, &hash_len, EVP_sha256(), NULL)) {
+        memset(key_out, 0, AES128_KEY_LEN);
+        return;
+    }
+    memcpy(key_out, hash, AES128_KEY_LEN);
+}
+
+/* AES-128-CBC Encrypt (PKCS#7 padding) */
+int aes_encrypt(const unsigned char *plaintext, int plaintext_len,
+                const unsigned char key[AES128_KEY_LEN], const unsigned char iv[AES_BLOCK_LEN],
+                unsigned char *ciphertext) {
+    if (!plaintext || plaintext_len < 0 || !key || !iv || !ciphertext) return -1;
+
+    EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
+    if (!ctx) return -1;
+
+    int len = 0;
+    int ciphertext_len = 0;
+    int ret = -1;
+
+    if (1 != EVP_EncryptInit_ex(ctx, EVP_aes_128_cbc(), NULL, key, iv)) goto out;
+    if (1 != EVP_EncryptUpdate(ctx, ciphertext, &len, plaintext, plaintext_len)) goto out;
+    ciphertext_len = len;
+    if (1 != EVP_EncryptFinal_ex(ctx, ciphertext + len, &len)) goto out;
+    ciphertext_len += len;
+
+    ret = ciphertext_len;
+
+out:
+    EVP_CIPHER_CTX_free(ctx);
+    return ret;
+}
+
+/* AES-128-CBC Decrypt (PKCS#7 unpad) */
+int aes_decrypt(const unsigned char *ciphertext, int ciphertext_len,
+                const unsigned char key[AES128_KEY_LEN], const unsigned char iv[AES_BLOCK_LEN],
+                unsigned char *plaintext) {
+    if (!ciphertext || ciphertext_len <= 0 || !key || !iv || !plaintext) return -1;
+
+    EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
+    if (!ctx) return -1;
+
+    int len = 0;
+    int plaintext_len = 0;
+    int ret = -1;
+
+    if (1 != EVP_DecryptInit_ex(ctx, EVP_aes_128_cbc(), NULL, key, iv)) goto out;
+    if (1 != EVP_DecryptUpdate(ctx, plaintext, &len, ciphertext, ciphertext_len)) goto out;
+    plaintext_len = len;
+    if (1 != EVP_DecryptFinal_ex(ctx, plaintext + len, &len)) goto out;
+    plaintext_len += len;
+
+    ret = plaintext_len;
+
+out:
+    EVP_CIPHER_CTX_free(ctx);
+    return ret;
+}
