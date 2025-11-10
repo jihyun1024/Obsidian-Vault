@@ -74,9 +74,37 @@
               "icon": "lucide-file",
               "title": "LockBit 3.0 랜섬웨어 분석"
             }
+          },
+          {
+            "id": "6151a71fafe323da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_10주차_수요일.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "양자보안_10주차_수요일"
+            }
+          },
+          {
+            "id": "bb8f410110c2eb7a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_11주차_월요일.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "양자보안_11주차_월요일"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -182,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Project/DF&C 인턴십/x64dbg로 LockBit 3.0 코드 흐름 파악 (동적 분석).md",
+                "file": "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_11주차_월요일.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "x64dbg로 LockBit 3.0 코드 흐름 파악 (동적 분석) 의 개요"
+              "title": "양자보안_11주차_월요일 의 개요"
             }
           },
           {
@@ -243,28 +271,31 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "4bf02e3a4ffaa655",
+  "active": "bb8f410110c2eb7a",
   "lastOpenFiles": [
-    "1. Project/DF&C 인턴십/LockBit 3.0 랜섬웨어 분석.md",
+    "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_10주차_수요일.md",
+    "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_11주차_월요일.md",
+    "Attached file/Pasted image 20251111050202.png",
+    "Attached file/Pasted image 20251111045953.png",
+    "Attached file/Pasted image 20251111043521.png",
+    "Attached file/Pasted image 20251111043152.png",
+    "Attached file/Pasted image 20251111041950.png",
+    "2. Area/2025년 2학기/양자보안/양자보안.md",
+    "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_11주차_수요일.md",
     "1. Project/DF&C 인턴십/x64dbg로 LockBit 3.0 코드 흐름 파악 (동적 분석).md",
+    "1. Project/DF&C 인턴십/LockBit 3.0 랜섬웨어 분석.md",
     "Attached file/Pasted image 20251109043312.png",
     "Attached file/Pasted image 20251109043114.png",
     "Attached file/Pasted image 20251109042816.png",
     "Attached file/Pasted image 20251109024625.png",
     "Attached file/Pasted image 20251109023812.png",
     "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/참고 자료/함수 프롤로그 & 에필로그.md",
-    "Attached file/Pasted image 20251109014320.png",
     "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/x64dbg로 Ragnar Locker 코드 흐름 파악 (동적 분석).md",
-    "Attached file/Pasted image 20251108214333.png",
-    "Attached file/Pasted image 20251108213937.png",
-    "Attached file/Pasted image 20251108211716.png",
     "4. Archive/FaS 활동 내역/애플리케이션 분석/비밀번호 관리 애플리케이션 분석/Proton Pass 분석/동계학술대회 Proton Pass 논문 작성.md",
     "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_10주차_월요일.md",
-    "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_10주차_수요일.md",
     "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_9주차_월요일.md",
     "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_7주차_수요일.md",
     "2. Area/2025년 2학기/양자보안/수업 정리/양자보안_4주차_월요일.md",
-    "Attached file/Pasted image 20251028024324.png",
     "4. Archive/FaS 활동 내역/애플리케이션 분석/비밀번호 관리 애플리케이션 분석/비밀번호 뭐였지 애플리케이션 아티팩트.md",
     "4. Archive/FaS 활동 내역/애플리케이션 분석/비밀번호 관리 애플리케이션 분석/비밀번호 관리 애플리케이션.md",
     "4. Archive/FaS 활동 내역/애플리케이션 분석/비밀번호 관리 애플리케이션 분석/비밀번호 관리 애플리케이션 관련 논문 요약.md",
@@ -277,9 +308,6 @@
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/5주차 수업.md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/6주차 수업.md",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
-    "2. Area/2025년 2학기/운영체제/수업 정리/운영체제_10주차_화요일.md",
-    "2. Area/2025년 2학기/운영체제/수업 정리/운영체제_10주차_목요일.md",
-    "2. Area/2025년 2학기/운영체제/수업 정리/운영체제_9주차_목요일.md",
     "3. Resource/리버스 엔지니어링/Dreamhack/Dreamhack 문제 모음",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/실습 코드/07-강의자료-소스코드/thread_serv.c",
     "2. Area/2025년 2학기/보안네트워크 프로그래밍/실습 코드/07-강의자료-소스코드/thread_cli.c",
