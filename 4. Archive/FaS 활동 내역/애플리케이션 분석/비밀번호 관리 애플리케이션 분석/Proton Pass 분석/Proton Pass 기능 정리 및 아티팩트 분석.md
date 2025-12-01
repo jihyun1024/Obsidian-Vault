@@ -41,5 +41,5 @@ Proton Pass를 분석할 때는 무료로 저장할 수 있는 정보들만 저�
 그 다음은 SharedPreferences를 볼 차례인데, 다음처럼 파일도 몇 개 없고, 열어봤자 Unix timestamp밖에 없어 SharedPreferences에서는 딱히 주목할 만한 자료가 없는 것으로 판단해서 넘어갔다. 
 ![[Pasted image 20250724131506.png]]
 
-마지막으로 `pass.key`파일을 확인해 볼 텐데, 이 파일을 Hex editor로 열어 보면 다음과 같이 데이터 자체의 길이도 별로 길지 않고, SQLCipher로 열어 볼 수도 없어서 해당 파일은 암호화 알고리즘이나 복호화 알고리즘에 사용되는 키 그 자체인 것으로 추측하고, [[Proton Pass 복호화 알고리즘 분석]]에서 [[Jadx|Jadx]]로 APK를 분석할 때 키워드로 사용할 것이다. 
+마지막으로 `pass.key`파일을 확인해 볼 텐데, 이 파일을 Hex editor로 열어 보면 다음과 같이 데이터 자체의 길이도 별로 길지 않고, SQLCipher로 열어 볼 수도 없어서 해당 파일은 암호화 알고리즘이나 복호화 알고리즘에 사용되는 키 그 자체인 것으로 추측하고, [[Proton Pass 복호화 알고리즘 분석]]에서 Jadx로 APK를 분석할 때 키워드로 사용할 것이다. 
 ![[Pasted image 20250724131815.png]]

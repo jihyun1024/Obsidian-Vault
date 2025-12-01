@@ -1,23 +1,3 @@
-- [[#파일 불러오기|파일 불러오기]]
-- [[#실행 흐름 제어하기|실행 흐름 제어하기]]
-	- [[#실행 흐름 제어하기#run|run]]
-	- [[#실행 흐름 제어하기#break, continue|break, continue]]
-	- [[#실행 흐름 제어하기#entry, start|entry, start]]
-- [[#실행 흐름 추적하기|실행 흐름 추적하기]]
-	- [[#실행 흐름 추적하기#ni (next instruction)|ni (next instruction)]]
-	- [[#실행 흐름 추적하기#si (step into)|si (step into)]]
-	- [[#실행 흐름 추적하기#finish|finish]]
-- [[#디버깅을 위해 자주 사용하는 명령어들|디버깅을 위해 자주 사용하는 명령어들]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#info|info]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#disassemble|disassemble]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#x (examine)|x (examine)]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#telescope|telescope]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#vmmap|vmmap]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#backtrace|backtrace]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#dump memory|dump memory]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#context|context]]
-	- [[#디버깅을 위해 자주 사용하는 명령어들#set|set]]
-
 ### 파일 불러오기
 GDB가 성공적으로 설치 되었다면, 터미널에서 `gdb`명령어를 입력해 GDB를 실행할 수 있다. 디버깅을 수행하기 위해 `gdb`명령어로 디버깅 터미널을 생성한 뒤 가장 먼저 해야 할 일은 디버깅 할 바이너리를 GDB에 불러 오는 것이다. 
 `file`명령어는 바이너리를 GDB에 불러 와 실행하고 디버깅 할 수 있게 한다. `file` 명령어 뒤에 불러 올 바이너리 경로를 넣어 사용할 수 있고, 처음 터미널에서 `gdb`를 실행할 때 `gdb ./debugee`와 같이 인자에 디버깅 할 바이너리의 경로를 넣어도 동일한 기능을 수행한다. 
