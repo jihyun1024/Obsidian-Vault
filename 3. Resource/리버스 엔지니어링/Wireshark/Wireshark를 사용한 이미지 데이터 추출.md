@@ -1,4 +1,4 @@
-웹 사이트에서 사용되는 이미지를 [[WireShark]]로 추출해 보는 실습을 해 보자. 실습 파일은 Wireshark 폴더 내부에 [[kookminuniv_capture.pcapng]]로 있다.
+웹 사이트에서 사용되는 이미지를 [[WireShark]]로 추출해 보는 실습을 해 보자. 
 
 ## Wireshark 설정
 Wireshark에서 SSLKEYLOGFILE 환경변수를 다음과 같이 설정한다. 
