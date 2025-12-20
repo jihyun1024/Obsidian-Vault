@@ -67,16 +67,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. Resource/Dreamhack/Dreamhack 워게임 & CTF.md",
+                "file": "3. Resource/Dreamhack/Dreamhack 학습.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dreamhack 워게임 & CTF"
+              "title": "Dreamhack 학습"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3. Resource/Dreamhack/Dreamhack 워게임 & CTF.md",
+                "file": "3. Resource/Dreamhack/Assembly Language/Assembly Training - 텍스트 편집기 구현하기.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Dreamhack 워게임 & CTF 의 개요"
+              "title": "Assembly Training - 텍스트 편집기 구현하기 의 개요"
             }
           },
           {
@@ -242,25 +242,30 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "a8326a7df2264cf1",
+  "active": "3bf2fe1b3259a9a0",
   "lastOpenFiles": [
+    "3. Resource/Dreamhack/Assembly Language/Assembly Training - 진법 변환기 구현하기.md",
+    "3. Resource/Dreamhack/Assembly Language/Assembly Training - 텍스트 편집기 구현하기.md",
+    "3. Resource/Dreamhack/Assembly Language/Assembly Traning - 구구단 구현하기.md",
     "3. Resource/Dreamhack/Dreamhack 학습.md",
+    "Templetes/Dreamhack 워게임 풀이 템플릿.md",
+    "Templetes/도서 정리 템플릿.md",
+    "Templetes/수업 정리 템플릿.md",
+    "4. Archive/국민대학교 수업 정리/2025년 2학기/운영체제/수업 정리/운영체제_12주차_화요일.md",
+    "3. Resource/디지털 포렌식/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
+    "3. Resource/Dreamhack/Assembly Language/Assembly Language.md",
     "3. Resource/Dreamhack/Dreamhack 워게임 & CTF.md",
+    "4. Archive/국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_12주차_월요일.md",
     "3. Resource/Dreamhack/Building a Web Service",
     "3. Resource/Dreamhack/Linux 101",
     "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
     "3. Resource/Dreamhack/Linux 101/Linux 101.md",
-    "3. Resource/Dreamhack/Assembly Language/Assembly Language.md",
     "4. Archive/국민대학교 수업 정리/2025년 2학기/운영체제/운영체제.md",
-    "3. Resource/Dreamhack/Assembly Language/Assembly Traning - 구구단 구현하기.md",
-    "3. Resource/Dreamhack/Assembly Language/Assembly Training - 텍스트 편집기 구현하기.md",
-    "3. Resource/Dreamhack/Assembly Language/Assembly Training - 진법 변환기 구현하기.md",
     "Attached file/Pasted image 20251221010123.png",
     "3. Resource/Dreamhack/Assembly Language/함수 호출 규약.md",
     "Attached file/Pasted image 20251220233210.png",
     "Attached file/Pasted image 20251220185629.png",
     "Attached file/Pasted image 20251220183743.png",
-    "Templetes/수업 정리 템플릿.md",
     "Attached file/Pasted image 20251219225427.png",
     "Attached file/Pasted image 20251218092742.png",
     "3. Resource/Dreamhack/Assembly Language/x86 어셈블리 (2).md",
@@ -276,11 +281,6 @@
     "3. Resource/Dreamhack/Assembly Language/NASM.md",
     "3. Resource/Dreamhack/Assembly Language/컴퓨터 아키텍처 기초 (레지스터).md",
     "3. Resource/Dreamhack/Assembly Language/컴퓨터 과학 기초.md",
-    "3. Resource/Dreamhack/Assembly Language/세그먼트.md",
-    "3. Resource/Dreamhack/Assembly Language/x86 어셈블리 (1).md",
-    "3. Resource/프로그래밍 언어/Assembly/Assembly.md",
-    "3. Resource/프로그래밍 언어/Assembly/분기 명령어.md",
-    "4. Archive/국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_10주차_수요일.md",
     "Attached file/Pasted image 20251209220727.png",
     "3. Resource/리버스 엔지니어링/Wireshark/실습 파일/kookminuniv_capture.pcapng",
     "3. Resource/리버스 엔지니어링/Wireshark/실습 파일",
