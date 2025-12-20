@@ -2,7 +2,6 @@
   "buttons",
   "calendar",
   "omnisearch",
-  "codeblock-tabs",
   "code-styler",
   "obsidian-plugin-toc",
   "obsidian-charts",
@@ -11,5 +10,6 @@
   "page-gallery",
   "card-board",
   "execute-code",
-  "find-orphaned-images"
+  "find-orphaned-images",
+  "obsidian-underline"
 ]

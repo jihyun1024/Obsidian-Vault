@@ -2,7 +2,7 @@
   "alwaysUpdateLinks": true,
   "promptDelete": false,
   "attachmentFolderPath": "Attached file",
-  "defaultViewMode": "source",
+  "defaultViewMode": "preview",
   "focusNewTab": true,
   "strictLineBreaks": false,
   "rightToLeft": false,

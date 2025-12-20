@@ -54,7 +54,7 @@ $$9876 = ((9 \times 10 + 8) \times 10 + 7) \times 10 + 6$$
 프로그램의 기능을 구현하기 전, 입출력에 사용될 문자열 데이터와 상수를 정의해야 한다. 데이터 세그먼트(Data segment)에는 값이 정해진, 즉 초기화가 된 전역 변수와 상수들이 위치한다. 따라서, `.data` 섹션에 **프로그램에서 사용될 상수 문자열들과 전역 변수 및 상수를 정의**한다. 일반적으로 상수 문자열은 `.rodata` 섹션에 정의되지만, 본 강의에서는 실습의 편의를 위해 싹 다 몰아서 `.data` 섹션에 정의한다. 
 
 C 에서 따로 변수 초기화를 해 주는 것처럼, 어셈블리어에선 `section`을 통해 특정 섹션에 데이터를 정의할 수 있다. 아래는 `section .data`로 `.data`에 상수와 문자열을 정의하는 코드이다.
-```assembly
+```nasm
 section .data
 	prompt_msg        db "Enter a number (1~99): ", 0
 	prompt_msg_len    equ $ - prompt_msg
@@ -88,7 +88,7 @@ section .data
 
 그 다음, 변수로 사용할 데이터는 `.bss` 섹션에 정의한다. 초기 값이 정해져 있지 않은 변수들은 `.bss` 섹션에 할당된다. `.data` 섹션과 유사하게 `section .bss`로 각 변수를 정의한다. 
 
-```assembly
+```nasm 
 section .bss
 	input_str:    resb MAX_LEN
 	input_num:    resb 1
@@ -114,7 +114,7 @@ Linux에서는 `read` 시스템 콜을 통해 이용자로부터 데이터를 �
 
 기능을 구현하기 전, 어셈블리어에서 반복문을 구현하는 방법을 알아 보자. 아래 코드는 임의의 동작을 10번 수행하는 반복문을 어셈블리어로 작성한 것이다. 참고로, 어셈블리어에서는 세미콜론을 이용해 주석을 작성할 수 있다. 
 
-```assembly
+```nasm
 	xor    rcx, rcx
 .loop:
 	cmp    rcx, 10
@@ -130,7 +130,7 @@ Linux에서는 `read` 시스템 콜을 통해 이용자로부터 데이터를 �
 
 `strip_eol()`은 각 바이트를 순회하며 개행 문자를 만난 경우 `.replace_eol`레이블로 분기하며, 각 바이트에 대한 순회가 모두 끝나거나 개행 문자를 만난 경우 `.done_strip`로 분기한다.
 
-```assembly
+```nasm
 strip_eol:
 	xor     rcx, rcx ; 
 .strip_loop:
@@ -151,7 +151,7 @@ strip_eol:
 
 아래는 `parse_number()`를 구현한 코드로, 호너의 법칙을 사용해 문자열을 정수로 변환한다. 일반적으로 함수의 반환 값은 `rax`에 저장되므로 `parse_number()` 또한 계산 결과를 `rax`에 누적하는 방식으로 구현한다. 첫 번째 인자인 `rdi`에는 변환하고자 하는 문자열의 주소가, 두 번째 인자인 `rsi`에는 10이 전달되어 문자열을 십진수로 변환한다. 
 
-```assembly
+```nasm
 parse_number:
 	xor     rax, rax ; 반환 값 저장을 위한 rax 레지스터 초기화
 	mov     r8, rdi ; r8에 변환하고자 하는 문자열 주소 저장
@@ -172,7 +172,7 @@ parse_number:
 
 또한, 입력된 문자의 아스키 코드가 '0'보다 작거나 '9'보다 클 경우, *변환에 실패했다는 에러 메시지를 출력하고 프로그램을 종료*하는 `exit_program()`으로 점프한다. 
 
-```assembly
+```nasm
 .parse_loop:
 	mov     dl, [r8]
 	cmp     dl, 0
@@ -194,7 +194,7 @@ parse_number:
 
 예외 처리 과정을 포함한 `parse_number()`의 전체 코드는 다음과 같다. 
 
-```assembly
+```nasm
 parse_number:
 	xor     rax, rax
 	mov     r8, rdi
@@ -237,7 +237,7 @@ parse_number:
 
 반복이 한 사이클 끝날 때마다 `r14`를 1씩 증가시키고, 총 9번의 반복 후 `r14`의 값이 10이 되면 프로그램을 종료한다. 
 
-```assembly
+```nasm
 mul_loop:
 	cmp     r14, 10 ; r14의 값이 10이 되면 프로그램을 종료
 	jmp     exit_program
@@ -259,7 +259,7 @@ mul_loop:
 ---
 C 코드가 `main` 함수부터 실행되듯이, *어셈블리 코드는 운영체제가 인식하는 진입점인 `start`부터 시작*한다. 이는 실행 가능한 코드가 위치하는 `.text` 섹션에서 `global` 키워드와 함께 아래와 같이 정의할 수 있다. 이때 `extern` 키워드를 같이 사용해 외부에 정의된 변수나 함수를 포함할 수도 있다. 
 
-```assembly
+```nasm
 section .text
 	global _start
 	extern printf
@@ -277,7 +277,7 @@ _start:
 ---
 이 강의에서 작성하는 프로그램은 사용자 입력을 받아 유효성을 검증한 뒤, 반복문으로 계산 결과를 출력하는 흐름으로 동작한다. 이미 핵심적인 함수는 전부 구현했으니, 이제 전체 실행 흐름을 총괄하는 `_start` 루틴을 작성해 보자. 본격적으로 코드를 살펴보기에 앞서, `_start`의 전체 구조는 다음과 같다. 
 
-```assembly
+```nasm
 _start: 
 	; write(1, prompt_msg, prompt_msg_len)을 system call로 호출
 	mov rax, SYS_WRITE
@@ -324,7 +324,7 @@ mul_loop:
 ---
 `invalid_input()`은 이용자의 입력이 0 이하거나 100 이상인 경우, 에러 메시지를 출력하고 프로그램을 종료한다. 내부적으로 `write(1, invalid_msg, invalid_msg_len)`과 동일한 기능이다. 
 
-```assembly
+```nasm
 invalid_input:
 	mov rax, SYS_WRITE
 	mov rdi, STDOUT
@@ -339,7 +339,7 @@ invalid_input:
 ---
 `exit_program()`은 종료 코드 0과 함께 프로그램을 종료한다. 내부적으로는 `exit(0)`과 같다. 
 
-```assembly
+```nasm
 exit_program:
 	mov rax, SYS_EXIT
 	xor rdi, rdi
@@ -351,7 +351,7 @@ exit_program:
 ---
 지금까지 구현한 모든 구구단 관련 코드를 통합한 코드는 아래와 같다. 
 
-```assembly
+```nasm
 section .data
 	prompt_msg:      db "Enter a number (1~99): ", 0
 	prompt_msg_len:  equ $ - prompt_msg
@@ -502,7 +502,7 @@ exit_program:
 ---
 작성한 코드를 `gugudan.asm`으로 저장한 후, **아래 명령어**를 *build.sh* 파일로 만들어 실행하면 실행 파일을 생성할 수 있다. 이때, `printf()`와 같은 외부 심볼을 실행 파일에 포함하려면 런타임 로더를 지정하는 `-dynamic-linker /lib64/ld-linux-x86-64.so.2` 옵션과 표준 C 라이브러리를 바이너리에 링크하는 `-lc` 옵션을 함께 지정해야 한다. 
 
-```
+```shell
 #!/bin/bash
 nasm -f elf64 gugudan.asm -o gugudan.o
 ld -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o gugudan gugudan.o -lc
