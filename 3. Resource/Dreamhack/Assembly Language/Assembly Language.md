@@ -26,11 +26,11 @@ tags:
 [[세그먼트|Linux 메모리 레이아웃]]
 [[GDB]]
 [[NASM]]
-**x86 어셈블리**
+### x86 어셈블리
 * [[Assembly|x86 어셈블리 (1)]]
 - [[x86 어셈블리 (2)]]
 [[함수 호출 규약]]
-**Assembly Training**
+## Assembly Training
 - [[Assembly Traning - 구구단 구현하기]]
 - [[Assembly Training - 진법 변환기 구현하기]]
 - [[Assembly Training - 텍스트 편집기 구현하기]]

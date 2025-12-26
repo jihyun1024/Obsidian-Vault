@@ -25,6 +25,14 @@ tags:
 
 ## Unit 구성
 ---
+### 웹 기초 지식
+[[Background - Web & HTTPS]]
+[[Background - Web Browser]]
+[[Tools - Browser DevTools]]
+[[Exercise - devtools-sources]]
+### Cookie & Session
+
+### HTML & Flask
 
 
 ## 선수 지식
