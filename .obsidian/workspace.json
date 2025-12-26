@@ -224,8 +224,7 @@
       "command-palette:명령어 팔레트 열기": false,
       "omnisearch:Omnisearch": false,
       "obsidian-book-search-plugin:Create new book note": true,
-      "markdown-importer:마크다운 형식 불러오기 열기": false,
-      "card-board:CardBoard": false
+      "markdown-importer:마크다운 형식 불러오기 열기": false
     }
   },
   "active": "7ba80b6864cf6cb2",
