@@ -11,7 +11,21 @@
       "query": "tag:#수업_정리  ",
       "color": {
         "a": 1,
-        "rgb": 5404128
+        "rgb": 880205
+      }
+    },
+    {
+      "query": "tag:#Dreamhack",
+      "color": {
+        "a": 1,
+        "rgb": 7022781
+      }
+    },
+    {
+      "query": "",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
       }
     }
   ],
@@ -25,6 +39,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.33407383407804037,
+  "scale": 0.4683658019719131,
   "close": true
 }

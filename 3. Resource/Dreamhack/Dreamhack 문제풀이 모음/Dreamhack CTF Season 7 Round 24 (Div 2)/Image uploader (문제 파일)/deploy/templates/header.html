@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo isset($page_title) ? $page_title : 'Image Uploader'; ?></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ImageBox</h1>
+            <p>Share your photos online</p>
+        </header>
+
+        <nav>
+            <a href="index.php"<?php echo ($current_page === 'upload') ? ' class="active"' : ''; ?>>Upload</a>
+            <a href="gallery.php"<?php echo ($current_page === 'gallery') ? ' class="active"' : ''; ?>>Gallery</a>
+        </nav>
+
+        <main>

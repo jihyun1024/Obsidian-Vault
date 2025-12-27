@@ -20,13 +20,13 @@
             }
           },
           {
-            "id": "a8326a7df2264cf1",
+            "id": "68f3ff2be8d8d8e9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "3. Resource/Dreamhack/Assembly Language/Assembly Language.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -40,7 +40,7 @@
               "type": "markdown",
               "state": {
                 "file": "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -48,21 +48,21 @@
             }
           },
           {
-            "id": "7ba80b6864cf6cb2",
+            "id": "0b01064f4619386b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. Resource/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
-                "mode": "source",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Background - Web Browser.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Background - Web & HTTPS"
+              "title": "Background - Web Browser"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3. Resource/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Background - Web & HTTPS 의 개요"
+              "title": "Building a Web Service 의 개요"
             }
           },
           {
@@ -224,48 +224,51 @@
       "command-palette:명령어 팔레트 열기": false,
       "omnisearch:Omnisearch": false,
       "obsidian-book-search-plugin:Create new book note": true,
-      "markdown-importer:마크다운 형식 불러오기 열기": false
+      "markdown-importer:마크다운 형식 불러오기 열기": false,
+      "card-board:CardBoard": false
     }
   },
-  "active": "7ba80b6864cf6cb2",
+  "active": "8a7b026fde76bc36",
   "lastOpenFiles": [
+    "3. Resource/Dreamhack/Assembly Language/Assembly Language.md",
+    "3. Resource/Dreamhack/Building a Web Service/Background - Web Browser.md",
+    "3. Resource/Dreamhack/Assembly Language/세그먼트.md",
     "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
+    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Symbol.md",
+    "4. Archive/국민대학교 수업 정리/2025년 2학기/운영체제/수업 정리/운영체제_3주차_화요일.md",
+    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Dreamhack CTF Season 7 Round 24 (Div2).md",
+    "3. Resource/Dreamhack/Assembly Language/함수 호출 규약.md",
+    "Templetes/Dreamhack CTF 풀이 템플릿.md",
+    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Symbol_delete.md",
+    "Templetes/Dreamhack 워게임 풀이 템플릿.md",
+    "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리.md",
+    "Attached file/Pasted image 20251227213135.png",
+    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)",
+    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Image Uploader.md",
+    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/interpret.md",
+    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/simple fsb.md",
+    "Attached file/Pasted image 20251227212021.png",
+    "3. Resource/Dreamhack/Dreamhack 학습.md",
+    "Dreamhack CTF Season 7 Round.md",
+    "3. Resource/프로그래밍 언어/Assembly/Assembly.md",
+    "3. Resource/프로그래밍 언어/Assembly/다형성 코드.md",
+    "3. Resource/프로그래밍 언어/Assembly/데이터 이동 명령어.md",
+    "3. Resource/Dreamhack/Assembly Language/컴퓨터 과학 기초.md",
+    "3. Resource/Dreamhack/Building a Web Service/Exercise - devtools-sources.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
     "Attached file/Pasted image 20251227001848.png",
     "Attached file/Pasted image 20251227001722.png",
     "Attached file/Pasted image 20251226234240.png",
     "Attached file/Pasted image 20251226230332.png",
     "Attached file/Pasted image 20251226212822.png",
-    "3. Resource/Dreamhack/Assembly Language/Assembly Language.md",
-    "3. Resource/Dreamhack/Assembly Language/함수 호출 규약.md",
     "Attached file/Pasted image 20251226202919.png",
     "Attached file/Pasted image 20251226192837.png",
     "3. Resource/프로그래밍 언어/Java/URI(Universal Resource Identifier).md",
     "Attached file/이해가 쏙쏙.gif",
-    "Attached file/Pasted image 20251226184628.png",
-    "Attached file/Pasted image 20251226184206.png",
     "3. Resource/Dreamhack/Assembly Language/Assembly Traning - 구구단 구현하기.md",
-    "3. Resource/Dreamhack/Dreamhack 학습.md",
-    "3. Resource/Dreamhack/Building a Web Service/Exercise - devtools-sources.md",
     "3. Resource/Dreamhack/Building a Web Service/Tools - Browser DevTools.md",
-    "3. Resource/Dreamhack/Building a Web Service/Background - Web Browser.md",
-    "3. Resource/프로그래밍 언어/Cygwin.md",
-    "3. Resource/Dreamhack/Assembly Language/Assembly Training - 진법 변환기 구현하기.md",
-    "3. Resource/Dreamhack/Assembly Language/Assembly Training - 텍스트 편집기 구현하기.md",
-    "Templetes/Dreamhack 워게임 풀이 템플릿.md",
-    "Templetes/도서 정리 템플릿.md",
-    "Templetes/수업 정리 템플릿.md",
-    "4. Archive/국민대학교 수업 정리/2025년 2학기/운영체제/수업 정리/운영체제_12주차_화요일.md",
-    "4. Archive/DF&C 인턴십 활동 내역/Ragnar Locker 랜섬웨어 분석/Ragnar Locker 랜섬웨어 분석.md",
-    "3. Resource/Dreamhack/Dreamhack 워게임 & CTF.md",
-    "4. Archive/국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_12주차_월요일.md",
     "3. Resource/Dreamhack/Building a Web Service",
     "3. Resource/Dreamhack/Linux 101",
-    "3. Resource/Dreamhack/Linux 101/Linux 101.md",
-    "4. Archive/국민대학교 수업 정리/2025년 2학기/운영체제/운영체제.md",
-    "3. Resource/Dreamhack/Assembly Language/x86 어셈블리 (2).md",
-    "3. Resource/디지털 포렌식/도구 사용법/GDB/GDB.md",
-    "2. Area/도서/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
     "3. Resource/리버스 엔지니어링/Wireshark/실습 파일/kookminuniv_capture.pcapng",
     "3. Resource/리버스 엔지니어링/Wireshark/실습 파일",
     "3. Resource/디지털 포렌식/Wireshark",
@@ -273,7 +276,6 @@
     "4. Archive/국민대학교 수업 정리/2025년 2학기/보안네트워크 프로그래밍/실습 코드/09_강의자료-소스코드/ssl_thread_cli.c",
     "4. Archive/국민대학교 수업 정리/2025년 2학기/보안네트워크 프로그래밍/실습 코드/09_강의자료-소스코드/simple_ssl_serv.c",
     "4. Archive/국민대학교 수업 정리/2025년 2학기/보안네트워크 프로그래밍/실습 코드/09_강의자료-소스코드/simple_ssl_cli.c",
-    "4. Archive/국민대학교 수업 정리/2025년 2학기/보안네트워크 프로그래밍/실습 코드/09_강의자료-소스코드",
     "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }
