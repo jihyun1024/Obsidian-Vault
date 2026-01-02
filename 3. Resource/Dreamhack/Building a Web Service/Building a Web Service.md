@@ -31,6 +31,10 @@ tags:
 [[Tools - Browser DevTools]]
 [[Exercise - devtools-sources]]
 ### Cookie & Session
+[[Background - Cookie & Session]]
+[[Exercise - Cookie]]
+[[Exercise - Cookie & Session]]
+[[Mitigration: Same Origin Policy]]
 
 ### HTML & Flask
 
