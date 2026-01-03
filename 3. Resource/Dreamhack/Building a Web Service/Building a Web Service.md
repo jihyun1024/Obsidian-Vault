@@ -35,7 +35,10 @@ tags:
 [[Exercise - Cookie]]
 [[Exercise - Cookie & Session]]
 [[Mitigration - Same Origin Policy]]
-
+### HTML로 웹 페이지 만드는 방법 익히기
+[[Background - HTML]]
+### Flask로 웹 서버 코딩하는 방법 익히기
+[[Background - Flask]]
 ### HTML & Flask
 
 
