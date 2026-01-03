@@ -34,7 +34,7 @@ tags:
 [[Background - Cookie & Session]]
 [[Exercise - Cookie]]
 [[Exercise - Cookie & Session]]
-[[Mitigration: Same Origin Policy]]
+[[Mitigration - Same Origin Policy]]
 
 ### HTML & Flask
 
