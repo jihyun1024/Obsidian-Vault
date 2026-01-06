@@ -25,16 +25,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Background - HTML.md",
-                "mode": "source",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Background - HTML.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Background - HTML"
             }
+          },
+          {
+            "id": "1af9af8338b04449",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Background - Flask.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Background - Flask"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -139,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Background - HTML.md",
+                "file": "Background - Flask.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Background - HTML 의 개요"
+              "title": "Background - Flask 의 개요"
             }
           },
           {
@@ -200,24 +214,25 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "8a7b026fde76bc36",
+  "active": "1af9af8338b04449",
   "lastOpenFiles": [
+    "Attached file/Pasted image 20260106232430.png",
+    "Attached file/Pasted image 20260106220454.png",
+    "Attached file/Pasted image 20260106211444.png",
+    "3. Resource/Dreamhack/Building a Web Service/Background - HTML.md",
+    "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
+    "Background - Flask.md",
+    "Attached file/Pasted image 20260106192452.png",
+    "Attached file/Pasted image 20260106185556.png",
+    "Attached file/Pasted image 20260106183719.png",
+    "Attached file/Pasted image 20260106172505.png",
+    "Attached file/Pasted image 20260106171540.png",
+    "3. Resource/Dreamhack/Building a Web Service/Mitigration - Same Origin Policy.md",
+    "3. Resource/Dreamhack/Building a Web Service/Exercise - Cookie & Session.md",
     "Attached file/Pasted image 20260105235005.png",
     "Attached file/Pasted image 20260105233457.png",
     "Attached file/Pasted image 20260105230006.png",
-    "Attached file/Pasted image 20260105224727.png",
-    "Attached file/Pasted image 20260105224718.png",
-    "Attached file/Pasted image 20260105224557.png",
-    "3. Resource/Dreamhack/Building a Web Service/Mitigration - Same Origin Policy.md",
-    "Background - HTML.md",
-    "Attached file/Pasted image 20260105213734.png",
-    "Attached file/Pasted image 20260105213159.png",
-    "Attached file/Pasted image 20260105213036.png",
-    "Attached file/Pasted image 20260105211658.png",
-    "Attached file/Pasted image 20260105210152.png",
-    "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
-    "3. Resource/Dreamhack/Building a Web Service/Exercise - Cookie & Session.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - Web Browser.md",
     "Templetes/Dreamhack 워게임 풀이 템플릿.md",
     "3. Resource/Dreamhack/Building a Web Service/Exercise - Cookie.md",
@@ -238,7 +253,6 @@
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Image Uploader.md",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/interpret.md",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/simple fsb.md",
-    "3. Resource/Dreamhack/Dreamhack 학습.md",
     "3. Resource/Dreamhack/Building a Web Service",
     "3. Resource/Dreamhack/Linux 101",
     "3. Resource/리버스 엔지니어링/Wireshark/실습 파일/kookminuniv_capture.pcapng",

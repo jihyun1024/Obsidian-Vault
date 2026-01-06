@@ -80,7 +80,7 @@ HTML에서는 다양한 태그들을 지원하며, 아래와 같은 태그들이
 | `<body>`      | 실제 화면에 표시되는 콘텐츠를 담는 영역         | `<body><h1>안녕하세요</h1></body>`        |
 | `<h1> ~ <h6>` | 제목 태그, 숫자가 작을수록 큰 제목           | `<h1>메인 제목</h1><h2>부제목</h2>`         |
 | `<p>`         | 문단을 나타내는 태그                    | `<p>이것은 문단입니다.</p>`                  |
-| `<a>`         | 하이퍼링크를 생성하는 태그                 | `<a>https://example.com링크 텍스트</a>`   |
+| `<a>`         | 하이퍼링크를 생성하는 태그                 | `<a>링크 텍스트</a>`                      |
 | `<img>`       | 이미지를 삽입하는 태그                   | `<img src="example_logo.jpg">`       |
 
 #### HTML 요소 구조 - 속성
@@ -320,8 +320,8 @@ HTML로 작성된 웹 페이지는 기본적으로 다음의 구조를 가진다
 - 브라우저의 탭 이름에서 알 수 있듯, 제목은 "Go to Dreamhack"이다.
 - 내용에는 `<h1>` 태그로 만들어진 헤딩 문구 "Access dreamhack.io"가 존재한다. 
 - 헤딩 문구 다음에는 `<img>` 태그로 만들어진 이미지가 표시되며, `dreamhack.png`이다. 
-- 이미지 다음에는 `<a>`태그로, 링크 텍스트는 "Link to Dreamhack", 링크 클릭 시 `https://dreamhack.io`로 이동한다. 
-- 링크 다음에는 `<p>` 태그로 만들어진 "Hello, Dreamhack"이라는 문단이 존재한다. 
+- 이미지 다음에는 `<a>`태그로, 링크 텍스트는 "Link to Dreamhack!", 링크 클릭 시 `https://dreamhack.io`로 이동한다. 
+- 링크 다음에는 `<p>` 태그로 만들어진 "Hello, Dreamhack!"이라는 문단이 존재한다. 
 - 그 다음에는 `<p>` 태그로 만들어진 "Dreamhack, the home for security experts"라는 텍스트가 존재한다. 
 
 먼저 웹 페이지를 만들어 보는 게 권장되기는 하지만, 어렵다면 바로 정답을 확인해도 된다. 
@@ -329,5 +329,64 @@ HTML로 작성된 웹 페이지는 기본적으로 다음의 구조를 가진다
 먼저 웹 페이지를 만들어 보면 다음과 같다. 
 
 ```html
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML Tag Test</title>
+	</head>
+	<body>
+		<h1>Access dreamhack.io</h1>
+		<img src="./dreamhack.png">
+		<a href="https://dreamhack.io">Link to Dreamhack!</a>
+		<p>Hello, Dreamhack</p>
+		<p>Dreamhack, the home for security experts</p>
+	</body>
+</html>
 ```
+
+
+### 정답 확인
+---
+정답 HTML 문서는 다음과 같다.
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML Tag Test</title>
+	</head>
+	<body>
+		<h1>Access dreamhack.io</h1>
+		<!--dreamhack.png: 정답 HTML 문서와 같은 디렉터리에 위치해야 함-->
+		<img src="./dreamhack.png">
+		<br> <!--직접 했던 것에는 없던 부분-->
+		<a href="https://dreamhack.io">Link to Dreamhack!</a>
+		<p>Hello, Dreamhack</p>
+		<p>Dreamhack, the home for security experts</p>
+	</body>
+</html>
+```
+
+
+### 코드 분석
+---
+대부분의 내용이 앞과 비슷하니, `<br>` 태그와 `<img>` 태그, `<a>` 태그에 대해서만 알아보자. 
+
+- `<br>` 태그: 내용에 개행(줄바꿈)을 추가하는 태그이다. 
+- `<img>` 태그
+	- HTML에서 이미지를 삽입할 때 사용하는 태그
+	- 외부 이미지 파일을 불러와 웹 페이지에 표시할 수 있도록 도와줌
+	- `src` 속성으로 불러올 파일의 경로를 지정할 수 있음
+- `<a>` 태그
+	- 하이퍼 링크를 삽입할 때 사용하는 태그
+	- 웹 페이지 내에서 다른 웹 사이트, 외부 웹 사이트, 파일, 이메일 주소 등의 위치로 연결
+	- `href` 속성으로 이동할 경로를 지정, 내용으로 링크의 이름을 지정
+	- `<img>` 태그를 `<a>` 태그로 감싸면 이미지에 하이퍼 링크를 부여하는 것도 가능
+		- 예시: `<a href="http://dreamhack.io"><img src="./dreamhack.png"></a>`
+
+
+## 마치며
+---
+HTML의 기본 구조와 문법을 익히고, 간단한 웹 페이지를 제작하는 실습 또한 해 보았다. HTML은 모든 웹 페이지의 기초가 되는 언어로, 이를 제대로 이해하는 것은 웹 개발 뿐만 아니라 웹 해킹을 배우는 데 있어서도 중요하다. 
+
+HTML의 기초를 잘 익혀두면 이후 다른 웹 프레임워크나 JavaScript 등의 지식을 배울 때도 훨씬 수월하게 학습할 수 있다. 또한, 웹 해킹을 배우면서 다양한 웹 페이지의 구조를 분석하고 이해하는 데에도 큰 도움이 된다. 
