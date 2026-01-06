@@ -343,41 +343,269 @@ if __name__ == '__main__':
 ![[Pasted image 20260106232430.png]]
 
 
-### 템플릿 렌더링 기호 - {{% 구문 %}}
+### 템플릿 렌더링 기호 - {% 구문 %}
 ---
 `render_template()`는 표현식 뿐만 아니라 다양한 구문도 지원한다. 이번에는 C와 Python에서 접할 수 있는 조건문과 반복문에 더해 **다른 템플릿을 상속**해서 사용하는 구문까지 공부한다. 
 
 
-### 템플릿 렌더링 기호 - {{% 구문 %}} - 
+### 템플릿 렌더링 기호 - {% 구문 %} - 조건문
 ---
+**조건문**은 주어진 조건의 참 또는 거짓에 따라 HTML 템플릿 문서에 데이터를 다르게 삽입할 수 있는 구문으로, C나 Python에서 접할 수 있는 `if`, `if-else`, `if-else if-else`문 모두 사용할 수 있다. 또한, 조건문은 `{% endif %}`로 끝나야 한다. 
 
-### 템플릿 렌더링 기호 - {{% 구문 %}} - 
----
+예시는 아래와 같다. 
 
-### 템플릿 렌더링 기호 - {{% 구문 %}} - 
----
+```html
+{% if 조건1 %}
+    <!-- 조건1이 참일 때 실행 -->
+{% elif 조건2 %}
+    <!-- 조건2가 참일 때 실행 -->
+{% else %}
+    <!-- 모든 조건이 거짓일 때 실행 -->
+{% endif %}
+```
 
-### 템플릿 렌더링 기호 - {{# 주석 #}}
+실제 코드로 예시를 살펴보자. 일일히 쓰기 귀찮으니, 각각 *app.py*와 *templates/example.html*이다. (해당 구조는 앞으로도 쭉 적용된다)
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/example')
+def get_stmt_condition():
+	user_role = 'member' # 예시: 'admin', 'member', 'guest'
+	return render_template('example.html', role=user_role)
+	
+	
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=31337)
+```
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Condition Statement Usages</title>
+	</head>
+	<body>
+		<h1>Condition Statement Usages</h1>
+		<h2>User role</h2>
+		{% if role == 'admin' %}
+			<p>You are an administrator.</p>
+		{% elif role == 'member' %}
+			<p>You are a regular member.</p>
+		{% else %}
+			<p>You are using a guest account.</p>
+		{% endif %}
+	</body>
+</html>
+```
+
+두 파일로 인해 구동한 웹 서버를 브라우저를 통해 실행하면 다음과 같은 화면이 나온다.
+
+![[Pasted image 20260107002849.png]]
+### 템플릿 렌더링 기호 - {% 구문 %} - 반복문
 ---
+**반복문**을 활용하면 서버 Python 코드에서 전달된 리스트, 딕셔너리 등의 데이터를 순회하면서 HTML 컨텐츠를 동적으로 생성할 수 있다. Jinja2의 반복문은 다음 예시처럼 Python과 비슷하다. 
+
+```html
+<ul>
+	{% for 아이템명 in 순회 가능 데이터 %}
+		<li>{{ 아이템명 }}</li>
+	{% endfor %}
+</ul>
+```
+
+예시는 아래와 같다. 
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/example')
+def get_stmt_iteration():
+	fruits = ['Apple', 'Banana', 'Cherry', 'Melon', 'Lemon']
+	return render_template('example.html', l=fruits)
+	
+	
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=31337)
+```
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Iteration Statement Usage</title>
+	</head>
+	<body>
+		<h1>Iteration Statement Usage</h1>
+		<h2>Fruit List</h2>
+		<ul>
+			{% for element in l %}
+				<li>{{ element }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>
+```
+
+두 파일로 인해 구동한 웹 서버를 브라우저를 통해 실행하면 다음과 같은 화면이 나온다.
+
+![[Pasted image 20260107004918.png]]
+### 템플릿 렌더링 기호 - {% 구문 %} - 템플릿 상속 구문
+---
+**템플릿 상속 구문**은 여러 HTML 파일 간에 공통적인 템플릿을 공유하고 재사용할 수 있도록 하는 기능이다. 상속 기능을 사용하면 코드 중복을 줄이고, 유지보수도 편하다는 장점이 있다. 
+
+템플릿 상속 기능을 사용하려면 1) **부모 템플릿**이 있고, 해당 템플릿을 상속받을 2) **자식 템플릿**이 필요하다. 부모 템플릿을 자식 템플릿이 상속받을 때 코드 중복을 줄이고 전체적인 코드 구조를 일관적으로 관리할 수 있어 유지보수가 편해진다. 
+
+- **{% block 블록명 %} {% endblock %}**
+	해당 구문은 <u>부모 템플릿과 자식 템플릿 모두</u> 사용할 수 있다. 부모 템플릿에서는 자식 템플릿에서 덮어쓸 부분을 정의하며, 자식 템플릿에서는 부모 템플릿에 반영할 데이터를 지정할 수 있다.
+
+- **{% extends '부모템플릿파일명' %}**
+	해당 구문은 <u>자식 템플릿에서</u> 사용하며, 이 구문을 사용해 부모 템플릿을 상속 받는다.
+
+예시를 통해 알아보자. 이번에도 소스코드는 순서대로 보여 준다.
+
+- *app.py*
+- *templates/base.html*
+- *templates/home.html
+- *templates/about.html*
+
+이번에는 `/home` 경로에 접근할 시 *home.html*을 렌더링하며, `/about` 경로에 접근할 시 *about.html*을 렌더링해 보여주는 웹 서비스를 예시로 보여 준다. 이 때, *base.html*은 나머지 두 개의 부모 템플릿이 된다.
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/home')
+def get_home():
+	return render_template('home.html')
+	
+	
+@app.route('/about')
+def get_about():
+	return render_template('about.html')
+	
+	
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=31337)
+```
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>{% block title %}Default Title{% endblock %}</title>
+	</head>
+	<body>
+	  <h1>Common Site Heading</h1>
+	  
+	  {% block content %}
+		<p>Default Content</p>
+	  {% endblock %}
+	  
+	  <p>Common Site Footer Text</p>
+	</body>
+</html>
+```
+
+```html
+{% extends 'base.html' %}
+
+{% block title %}
+  Home Page
+{% endblock %}
+
+{% block content %}
+  <h2>Welcome to the Home Page!</h2>
+  <p>This is the home page.</p>
+{% endblock %}
+```
+
+```html
+{% extends 'base.html' %}
+
+{% block title %}
+    About Page
+{% endblock %}
+
+{% block content %}
+  <h2>Welcome to the About Page!</h2>
+  <p>This is the about page.</p>
+{% endblock %}
+```
+
+*base.html*을 상속받은 자식 HTML 템플릿은 다음 두 군데의 내용을 덮어쓸 수 있다. 
+
+- **{% block title %}Default Title{% endblock %}**
+	- `Default Title` 대신에 다른 문구를 넣을 수 있다.
+	- 다른 문구를 넣지 않은 경우, `Default Title`이 그대로 출력된다.
+- **{% block content %}`<p>`Default Content`</p>`{% endblock %}**
+	- `<p>Default Content</p>` 대신 다른 내용을 넣을 수 있다. 
+	- 다른 내용을 넣지 않은 경우, `<p>Default Content</p>`가 그대로 출력된다.
+
+구동한 웹 서버를 브라우저를 통해 실행하면 다음 두 가지의 결과가 화면에 표시된다. 
+
+![[Pasted image 20260107011004.png|350]]![[Pasted image 20260107011017.png|350]]
+
+### 템플릿 렌더링 기호 - {# 주석 #}
+---
+주석은 Flask 템플릿에서 최종 결과물에 출력되지 않으며, 참고 정보나 메모 등을 작성할 때 많이 사용한다. 예시 HTML 템플릿 문서 하나만 살펴본 후 바로 넘어간다. 
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Flask 템플릿</title>
+	  {# 이곳은 사용자에게 표시되지 않는 주석입니다. #}
+	</head>
+	<body>
+	  <h1>템플릿 주석 예제</h1>
+	  {# 이곳도 사용자에게 표시되지 않는 주석입니다. #}
+	  <p>이 문장은 사용자에게 표시됩니다.</p>
+	</body>
+</html>
+```
+
+물론, HTML에서도 다음처럼 주석을 제공하기는 한다. 
+
+```html
+<!-- 이 문장은 주석 처리된 문장 -->
+```
+
+그런데, <u>HTML 주석은 브라우저 웹 페이지 화면에만 안 보일 뿐, 소스 코드에는 그대로 노출이 되는 정보이다.</u> 하지만, Jinja2에서 사용하는 `{# 주석 #}`은 렌더링 과정에서 제거되기 때문에 최종 HTML 소스 코드에 노출되지 않는 장점이 있다. 
+
 
 ## 사용자로부터 입력받기
 ---
 ### 들어가기에 앞서
 ---
+이번 주제에서는 **사용자로부터 입력을 받는 세 가지 주요 방식**을 살펴본다. 
 
-### 실습: URL 경로 매개변수를 통한 
+지금까지 우리가 만든 웹 서버는 사용자가 요청한 HTML 파일을 그대로 보여주는 역할만 하고 있다. 예를 들어, `/about` 경로로 접근하면 회사 소개 페이지가, `/contact`로 접근하면 문의하기 페이지가 보이는 정도의 기능만 하고 있다는 의미이다. 
+
+하지만 실제 대부분의 웹 서버는 사용자와 상호작용을 할 수 있어야 한다. 로그인 기능을 예시로 들면, 사용자가 ID와 PW를 가지고 로그인을 시도하면 웹 서버가 이를 확인하고 맞는 경우 "로그인 성공" 메시지를, 틀린 경우 "로그인 실패" 메시지를 보여줘야 한다. 게시판 기능도 마찬가지다.
+사용자가 글을 작성하거나 댓글을 달 수 있어야 하고, 이를 서버가 저장하고 있다가 사용자에게 보여줘야 한다. 
+
+그렇다면, Flask에서는 어떻게 사용자로부터 입력을 받아 처리하는 것일까?
+
+
+### 실습: URL 경로 매개변수를 통한 입력 처리
 ---
 
-### 실습: URL 쿼리 매개변수를 통한 
+### 실습: URL 쿼리 매개변수를 통한 입력 처리
 ---
 
-### `<form>` 태그를 통한 POST 데이터
+### `<form>` 태그를 통한 POST 데이터 입력 처리
 ---
 
-### `<form>` 태그를 통한 POST 데이터
+### `<form>` 태그를 통한 POST 데이터 입력 처리 - `<form>` 태그
 ---
 
-### `<form>` 태그를 통한 POST 데이터
+### `<form>` 태그를 통한 POST 데이터 입력 처리 - 서버에서 처리하기
 ---
 
 ## 마치며
