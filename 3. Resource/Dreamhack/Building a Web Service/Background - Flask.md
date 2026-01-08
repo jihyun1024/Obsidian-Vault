@@ -705,9 +705,195 @@ HTML의 `<form>` 태그는 사용자가 브라우저 상에서 데이터를 입�
 | -------- | --------------------------------------------------------------------------------------------------- |
 | `action` | 입력 값을 전송할 URL을 지정하는 속성                                                                              |
 | `method` | 입력 값을 전송할 때 사용하는 HTTP 메시지의 메서드를 설정한다. GET 메서드와 POST 메서드가 올 수 있는데, <u>이번 장에서는 POST 메서드만 사용</u>할 것이다. |
+**`<form>` 입력 요소 태그**
+이번에는 `<form>` 태그 안에서 입력 요소를 구성하는 태그들을 알아본다. `<form>` 태그 안에는 텍스트 입력 폼, 숫자 입력 폼, 비밀번호 입력 폼, 파일 업로드 폼, 제출 버튼 등의 다양한 입력 요소 태그가 포함될 수 있다. 
+
+- `<input>` 태그
+	- 입력 양식을 만드는 태그로, **`<form>` 태그 단독으로는 입력 양식을 만들 수 없으며 `<input>` 태그를 함께 사용해야 입력이 가능한 폼을 만들 수 있음**
+	- 자주 사용되는 속성 존재
+
+| 속성     | 설명                                                                                                                          |
+| ------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `type` | 입력 필드의 유형을 지정하며, 텍스트만 받는 `text`, 숫자만 입력받는 `number`, 비밀번호를 받는 폼이어서 입력이 `*`로 표시되는 `password` 유형의 폼이 존재한다.                     |
+| `name` | 서버로 전송될 때, 데이터의 **키(Key)** 를 설정한다. `<form>` 태그를 통해 서버로 전달되는 데이터는 **키-값** 쌍으로 전달되며, `name` 속성이 이 때 해당 데이터가 어떤 키로 전달될지를 설정한다. |
+| `id`   | 입력 폼의 고유 식별자이다.                                                                                                             |
+
+- `<button>` 태그
+	- 입력한 값이 있다면, 입력한 값을 제출할 수 있는 버튼도 필요하다. 
+	- `<button>` 태그는 HTML에서 **클릭 가능한 버튼**을 생성하는 데 사용한다.
+	- 코드 예시 (텍스트 입력 폼 & 입력 값 제출)
+	- ```html
+	  <!DOCTYPE html>
+		<html>
+			<head>
+				<title>Form exercise</title>
+			</head>
+			<body>
+				<h1>Form exercise</h1>
+				<form action="/submit" method="post">
+					Name:
+					<input type="text" id="username" name="username">
+					<button>Submit</button>
+				</form>
+			</body>
+		</html>
+	  ```
+- 비밀번호 입력 폼 (**코드 예시로만 설명**)
+	- ```html
+	  <!DOCTYPE html>
+	  <html>
+		  <head>
+			  <title>Form exercise</title>
+		  </head>
+		  <body>
+			  <h1>Form exercise</h1>
+			  <form action="/login" method="post">
+				  Username:
+				  <input type="text" id="userid" name="userid">
+				  <br>
+				  Password:
+				  <input type="password" id="userpw" name="userpw">
+				  <button>Log In</button>
+				</form>
+		  </body>
+	  </html>
+	  ```
+- 파일 업로드 폼 (**코드 예시로만 설명**)
+	- ```html
+	  <!DOCTYPE html>
+	  <html>
+		  <head>
+			  <title>Form exercise</title>
+		  </head>
+		  <body>
+			  <h1>Form exercise</h1>
+			  <form action="/upload" method="post">
+			  Choose a file:
+			  <input type="file" id="file" name="file">
+			  <button>Upload</button>
+			  </form>
+		  </body>
+	  </html>
+	  ```
+
+>[!example] POST 데이터
+>`<form>` 태그를 통한 POST 데이터는 **HTTP 메시지의 Body 부분에 포함되어 서버에 전송**된다. 앞서 살펴본 **URL 경로 매개변수**와 **URL 쿼리 매개변수**를 통해 입력된 데이터는 URL 부분에 포함되어 전송된다는 차이점을 잘 이해하고 넘어가자. 
+
 
 ### `<form>` 태그를 통한 POST 데이터 입력 처리 - 서버에서 처리하기
 ---
+지금부터는 앞에서 `<form>` 입력 폼으로 전달받은 사용자의 POST 데이터를 Flask 서버의 Python 코드에서 처리하는 방법을 알아보도록 한다. 
 
+![[Pasted image 20260109014802.png|400x230]]
+
+`<form>` 태그로 전달받은 POST 데이터는 `request.form` 객체로 전달된다. 이때 `request.form` 객체의 `.get()` 메서드를 사용하면, 전달받은 데이터를 가져올 수 있다. 
+
+예를 들어 전달받은 데이터 중 키가 `username`인 데이터를 사용하려면, `request.form.get(username)`으로 가져올 수 있다. 예시 코드를 통해 살펴보자. 
+
+이번 실습에서 사용할 파일들은 다음과 같다. 순서대로 코딩하면서 알아보자. (단, 이제까지 해 온 게 있으니만큼, 코드 해석은 알아서 해 보자. 그 편이 실력이 느는 길이다!!!)
+
+- *app.py*
+- *templates/login.html*
+- *templates/success.html*
+- *templates/failure.html*
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+users = {
+	'admin': 'password123',
+	'user': 'mypassword'
+}
+
+
+@app.route('/')
+def get_index():
+	return render_template('login.html')
+
+
+@app.route('/login', methods=['POST'])
+def post_login():
+	username = request.form.get('username')
+	password = request.form.get('password')
+	
+	if username in users and users[username] == password:
+		return render_template('success.html', username=username)
+	else:
+		return render_template('failure.html')
+
+
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=31337)
+```
+
+```html
+{# login.html #}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Page</title>
+	</head>
+	<body>
+		<h1>Log In</h1>
+		<form action="/login" method="post">
+			Username:
+			<input type="text" id="username" name="username">
+			<br><br>
+			Password:
+			<input type="password" id="password" name="password">
+			<br><br>
+			<button>Log In</button>
+		</form>
+	</body>
+</html>
+```
+
+```html
+{# success.html #}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Successful</title>
+	</head>
+	<body>
+		<h1>Login Successful</h1>
+		<p>Welcome, {{ username }}</p>
+	</body>
+</html>
+```
+
+```html
+{# failure.html #}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Failed</title>
+	</head>
+	<body>
+		<h1>Login Failed</h1>
+		<p>Incorrect username or password</p>
+	</body>
+</html>
+```
+
+구동한 웹 서버를 브라우저를 통해 `http://127.0.0.1:31337/`에 접속하면 아래 화면과 같은 웹 페이지가 나오며, 사용자명과 비밀번호를 입력할 수 있는 입력 폼이 존재하고 Log In 버튼도 있다.
+
+![[Pasted image 20260109020914.png]]
+정확하게 입력하면 왼쪽의 사진처럼, 틀리게 입력하면 오른쪽 사진처럼 페이지가 나온다. 
+
+![[Pasted image 20260109021010.png|350]]![[Pasted image 20260109021020.png|350]]
 ## 마치며
 ---
+이번 강의에서는 Flask를 사용해 웹 서버를 구축하는 데 필요한 기본적인 지식을 배웠다. 
+
+- 웹 서버가 무엇인지, 웹이 어떻게 작동하는지
+- Flask로 웹 서버를 개발하는 과정이 어떻게 되는지
+
+웹 개발에서 다채로운 웹 서비스를 만들기 위해서는 사용자와의 상호작용이 필수적이며, 그 시작은 사용자로부터 값을 전달받는 것에서 시작한다. 또한 보안의 관점에서 취약점은 사용자가 입력한 값으로 인해 발생하므로, <u>사용자가 웹 서버에 어떤 데이터를 입력할 수 있으며, 서버가 그 데이터를 어떻게 처리하는지</u> 분석하는 작업은 필수적이고 매우 중요하다. 
+
+따라서, 이런 이유 때문에라도 이번 강의에서 배운 내용을 복습하면서 잘 알고 있어야 한다.

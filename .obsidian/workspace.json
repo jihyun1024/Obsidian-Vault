@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Background - Flask"
+              "title": "Building a Web Service"
             }
           }
         ],
@@ -139,13 +139,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Background - Flask 의 개요"
+              "title": "Building a Web Service 의 개요"
             }
           },
           {
@@ -202,21 +202,20 @@
   },
   "active": "1af9af8338b04449",
   "lastOpenFiles": [
+    "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
+    "Attached file/Pasted image 20260109021020.png",
+    "Attached file/Pasted image 20260109021010.png",
+    "Attached file/Pasted image 20260109020914.png",
+    "Attached file/Pasted image 20260109014802.png",
     "Attached file/Pasted image 20260108233112.png",
     "Attached file/Pasted image 20260108233102.png",
     "Attached file/Pasted image 20260108223050.png",
     "Attached file/Pasted image 20260108223035.png",
     "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
-    "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
     "2. Area/국민대학교 수업 정리/2025년 2학기/알고리즘 분석/2주차 수업.md",
     "2. Area/국민대학교 수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
     "Attached file/Pasted image 20260107011017.png",
     "Attached file/Pasted image 20260107011004.png",
-    "Attached file/Pasted image 20260107004918.png",
-    "Attached file/Pasted image 20260107002849.png",
-    "Attached file/Pasted image 20260106232430.png",
-    "Attached file/Pasted image 20260106220454.png",
-    "Attached file/Pasted image 20260106211444.png",
     "3. Resource/Dreamhack/Building a Web Service/Background - HTML.md",
     "3. Resource/Dreamhack/Building a Web Service/Mitigration - Same Origin Policy.md",
     "3. Resource/Dreamhack/Building a Web Service/Exercise - Cookie & Session.md",
