@@ -39,7 +39,11 @@ tags:
 [[Background - HTML]]
 ### Flask로 웹 서버 코딩하는 방법 익히기
 [[Background - Flask]]
-### HTML & Flask
+### HTML & Flask를 사용해 게시판 웹 서비스 구축해보기
+[[Background- 데이터베이스]]
+[[실습 - 로그인 기능 구현하기]]
+[[실습 - 깔끔한 코드 패턴 만들기]]
+[[실습 - 게시판 기능 구현하기]]
 
 
 ## 선수 지식
