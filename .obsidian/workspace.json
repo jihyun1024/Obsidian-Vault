@@ -139,13 +139,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. Area/국민대학교 수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "알고리즘 분석 의 개요"
+              "title": "Background - Flask 의 개요"
             }
           },
           {
@@ -200,11 +200,16 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "74ab6798f7193281",
+  "active": "1af9af8338b04449",
   "lastOpenFiles": [
+    "Attached file/Pasted image 20260108233112.png",
+    "Attached file/Pasted image 20260108233102.png",
+    "Attached file/Pasted image 20260108223050.png",
+    "Attached file/Pasted image 20260108223035.png",
+    "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
+    "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
     "2. Area/국민대학교 수업 정리/2025년 2학기/알고리즘 분석/2주차 수업.md",
     "2. Area/국민대학교 수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
-    "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
     "Attached file/Pasted image 20260107011017.png",
     "Attached file/Pasted image 20260107011004.png",
     "Attached file/Pasted image 20260107004918.png",
@@ -213,10 +218,6 @@
     "Attached file/Pasted image 20260106220454.png",
     "Attached file/Pasted image 20260106211444.png",
     "3. Resource/Dreamhack/Building a Web Service/Background - HTML.md",
-    "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
-    "Attached file/Pasted image 20260106192452.png",
-    "Attached file/Pasted image 20260106185556.png",
-    "Attached file/Pasted image 20260106183719.png",
     "3. Resource/Dreamhack/Building a Web Service/Mitigration - Same Origin Policy.md",
     "3. Resource/Dreamhack/Building a Web Service/Exercise - Cookie & Session.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
@@ -238,7 +239,6 @@
     "2. Area/도서/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리/x64dbg 디버거를 활용한 리버싱과 시스템 해킹의 원리.md",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Image Uploader.md",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/interpret.md",
     "3. Resource/Dreamhack/Building a Web Service",
     "3. Resource/Dreamhack/Linux 101",
     "3. Resource/리버스 엔지니어링/Wireshark/실습 파일/kookminuniv_capture.pcapng",

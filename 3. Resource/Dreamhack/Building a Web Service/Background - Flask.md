@@ -590,20 +590,121 @@ if __name__ == '__main__':
 하지만 실제 대부분의 웹 서버는 사용자와 상호작용을 할 수 있어야 한다. 로그인 기능을 예시로 들면, 사용자가 ID와 PW를 가지고 로그인을 시도하면 웹 서버가 이를 확인하고 맞는 경우 "로그인 성공" 메시지를, 틀린 경우 "로그인 실패" 메시지를 보여줘야 한다. 게시판 기능도 마찬가지다.
 사용자가 글을 작성하거나 댓글을 달 수 있어야 하고, 이를 서버가 저장하고 있다가 사용자에게 보여줘야 한다. 
 
-그렇다면, Flask에서는 어떻게 사용자로부터 입력을 받아 처리하는 것일까?
-
 
 ### 실습: URL 경로 매개변수를 통한 입력 처리
 ---
+이번 실습에서는 **URL 경로 매개변수(URL Path Parameter)** 를 통해 사용자로부터 입력을 어떻게 받는지 배운다. 
+
+>[!example] URL 경로 매개변수(URL Path Parameter)란?
+>데이터를 URL 경로의 일부로 포함시켜 서버에 전달하는 방식이다. 
+>
+>예를 들어 다음의 URL이 있다고 가정하자. 
+>```
+>https://example.com/products/123
+>```
+>
+>이 때, `/products`는 상품 목록을 나타내는 경로, `123`은 특정 상품의 ID를 나타내는 <u>매개변수</u>의 인자값이다. 이 때 `123`이 위치한 곳이 경로 매개변수이며, `123` 대신에 `456`을 넣으면 상품의 ID가 `456`인 특정 상품을 조회할 수 있다.
+
+이번 장에서도 순서대로 *app.py*와 *templates/result.html*을 설명을 위해 사용한다. 
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/welcome/<name>')
+def get_welcome_name(name):
+	return render_template('result.html', name=name)
+	
+	
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=31337)
+```
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URL Path Parameter Example</title>
+	</head>
+	<body>
+		<h1>URL Path Parameter Example</h1>
+		<h2>Hello, {{ name }}!</h2>
+	</body>
+</html>
+```
+
+구동한 웹 서버를 브라우저를 통해 `http://127.0.0.1:31337/welcome/` 뒤에 아무 이름이나 넣고 돌려 보면 다음의 결과들이 나온다. 
+
+![[Pasted image 20260108223035.png|350]]![[Pasted image 20260108223050.png|350]]
 
 ### 실습: URL 쿼리 매개변수를 통한 입력 처리
 ---
+이번 실습에서는 **URL 경로 매개변수(URL Path Parameter)** 를 통해 사용자로부터 입력을 어떻게 받는지 배운다. 
+
+>[!example] URL 쿼리 매개변수(URL Query Parameter)란?
+>URL의 `?` 뒤에 오는 매개변수로, 사용자가 데이터를 서버로 전달하는 방식 중 하나이다.
+>
+>예를 들어 다음의 URL이 있다고 가정하자. 
+>```
+>http://example.com/search?query=flask&page=2
+>```
+>여기서 `?` 뒤에 오는 `query`가 **매개변수 키(Key)** 를 나타내며, `flask`가 **매개변수 값(Value)** 이다. `&`으로 이어진 `page=2`는 또 다른 매개변수 키-값 쌍을 의미한다.
+
+이번 장에서도 순서대로 *app.py*와 *templates/result.html*을 설명을 위해 사용한다. 
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/welcome')
+def get_welcome():
+	# request.args: 사용자로부터 전달받은 쿼리 매개변수를 담고 있는 객체
+	# 해당 객체의 get 메서드를 사용해 user_name이라는 매개변수를 가져와
+	# user_name에 대입
+	user_name = request.args.get('user_name')
+	return render_template('result.html', name=user_name)
+	
+	
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=31337)
+```
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>URL Query Parameter Example</title>
+	</head>
+	<body>
+		<h1>URL Query Parameter Example</h1>
+		<h2>Hello, {{ name }}!</h2>
+	</body>
+</html>
+```
+
+구동한 웹 서버를 브라우저를 통해 `http://127.0.0.1:31337/welcome?user_name=` 뒤에 아무 이름이나 넣고 돌려 보면 다음의 결과들이 나온다. 
+
+![[Pasted image 20260108233102.png|350]]![[Pasted image 20260108233112.png|350]]
 
 ### `<form>` 태그를 통한 POST 데이터 입력 처리
 ---
+HTML의 `<form>` 태그는 사용자가 브라우저 상에서 데이터를 입력한 후 서버로 전송할 수 있는 양식을 웹 페이지에 만든다. 사용자가 `<form>` 태그로 만들어진 양식을 통해 값을 입력해 서버에 전달하면, 서버는 해당 데이터를 알아서 처리해 필요한 작업을 수행할 수 있다. 
+
+해당 기능을 사용하면, 로그인 기능 또한 구현할 수 있다. 
+
 
 ### `<form>` 태그를 통한 POST 데이터 입력 처리 - `<form>` 태그
 ---
+`<form>` 태그에 대해 먼저 알아본 뒤, 사용자의 입력 값이 어떤 식으로 서버에 전달되는지, 그리고 서버는 전달받은 데이터를 어떻게 Python 코드로 처리하는지 알아보자. 
+
+`<form>` 태그는 웹 페이지에 사용자가 값을 입력할 수 있는 양식을 만든다. 이때, 데이터 전송을 위해서 필요한 속성들이 있다. 
+
+| 속성       | 설명                                                                                                  |
+| -------- | --------------------------------------------------------------------------------------------------- |
+| `action` | 입력 값을 전송할 URL을 지정하는 속성                                                                              |
+| `method` | 입력 값을 전송할 때 사용하는 HTTP 메시지의 메서드를 설정한다. GET 메서드와 POST 메서드가 올 수 있는데, <u>이번 장에서는 POST 메서드만 사용</u>할 것이다. |
 
 ### `<form>` 태그를 통한 POST 데이터 입력 처리 - 서버에서 처리하기
 ---
