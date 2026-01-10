@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Background- 데이터베이스.md",
-                "mode": "source",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Background- 데이터베이스"
+              "title": "Building a Web Service"
             }
           }
         ],
@@ -139,13 +139,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Background- 데이터베이스.md",
+                "file": "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Background- 데이터베이스 의 개요"
+              "title": "Building a Web Service 의 개요"
             }
           },
           {
@@ -200,13 +200,20 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "1af9af8338b04449",
+  "active": "74ab6798f7193281",
   "lastOpenFiles": [
-    "Attached file/Pasted image 20260110233910.png",
-    "Attached file/Pasted image 20260110232749.png",
-    "Attached file/Pasted image 20260110214455.png",
+    "3. Resource/Dreamhack/Building a Web Service/Background - 데이터베이스.md",
     "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
-    "Background- 데이터베이스.md",
+    "Attached file/Pasted image 20260111022540.png",
+    "Attached file/Pasted image 20260111022432.png",
+    "Attached file/Pasted image 20260111022231.png",
+    "Attached file/Pasted image 20260111022017.png",
+    "Attached file/Pasted image 20260111015251.png",
+    "Attached file/Pasted image 20260111015103.png",
+    "Attached file/Pasted image 20260111014444.png",
+    "Attached file/Pasted image 20260111000831.png",
+    "Attached file/Pasted image 20260110235623.png",
+    "Attached file/Pasted image 20260110233910.png",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/{role-admin}.md",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/templates/register.html",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/templates/login.html",
@@ -217,19 +224,11 @@
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/app.py",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Symbol.md",
-    "Attached file/Pasted image 20260109050926.png",
     "Templetes/Dreamhack 풀이 템플릿.md",
     "Templetes/Dreamhack 워게임 풀이 템플릿.md",
     "3. Resource/Dreamhack/Building a Web Service/Exercise - Cookie.md",
     "3. Resource/Dreamhack/Assembly Language/Assembly Language.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - Flask.md",
-    "Attached file/Pasted image 20260109021020.png",
-    "Attached file/Pasted image 20260109021010.png",
-    "Attached file/Pasted image 20260109020914.png",
-    "Attached file/Pasted image 20260109014802.png",
-    "Attached file/Pasted image 20260108233112.png",
-    "Attached file/Pasted image 20260108233102.png",
-    "Attached file/Pasted image 20260108223050.png",
     "2. Area/국민대학교 수업 정리/2025년 2학기/알고리즘 분석/2주차 수업.md",
     "2. Area/국민대학교 수업 정리/2025년 2학기/알고리즘 분석/알고리즘 분석.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - HTML.md",
