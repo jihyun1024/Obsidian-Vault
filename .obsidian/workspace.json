@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "실습 - 게시판 기능 구현하기.md",
+                "file": "3. Resource/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
                 "mode": "source",
                 "source": false
               },
@@ -153,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "실습 - 게시판 기능 구현하기.md",
+                "file": "3. Resource/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -214,10 +214,11 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "af77f4be74c9a0cf",
+  "active": "74ab6798f7193281",
   "lastOpenFiles": [
+    "Attached file/Pasted image 20260118201057.png",
     "3. Resource/Dreamhack/Building a Web Service/실습 - 깔끔한 코드 패턴 만들기.md",
-    "실습 - 게시판 기능 구현하기.md",
+    "3. Resource/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
     "Attached file/Pasted image 20260117192834.png",
     "3. Resource/Dreamhack/Building a Web Service/실습 - 로그인 기능 구현하기.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - 데이터베이스.md",
