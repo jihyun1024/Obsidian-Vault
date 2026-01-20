@@ -32,23 +32,9 @@
               "icon": "lucide-file",
               "title": "Cryptography"
             }
-          },
-          {
-            "id": "af77f4be74c9a0cf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "3. Resource/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "실습 - 게시판 기능 구현하기"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -153,13 +139,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3. Resource/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
+                "file": "3. Resource/Dreamhack/Cryptography/Cryptography.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "실습 - 게시판 기능 구현하기 의 개요"
+              "title": "Cryptography 의 개요"
             }
           },
           {
@@ -214,37 +200,37 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "af77f4be74c9a0cf",
+  "active": "1af9af8338b04449",
   "lastOpenFiles": [
+    "3. Resource/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
+    "3. Resource/Dreamhack/Cryptography/Cryptography.md",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/__pycache__/db.cpython-313.pyc",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/__pycache__",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/register_failure.html",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/register.html",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/post_edit_failure.html",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/post_edit.html",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/post_delete_failure.html",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/post_delete.html",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/posts_new.html",
+    "3. Resource/Dreamhack/Building a Web Service/Web_Develop/templates/posts.html",
+    "Attached file/Pasted image 20260121003627.png",
+    "Attached file/Pasted image 20260121003429.png",
+    "Attached file/Pasted image 20260121003138.png",
+    "Attached file/Pasted image 20260121003051.png",
+    "Attached file/Pasted image 20260121003009.png",
+    "Attached file/Pasted image 20260121001457.png",
+    "Attached file/Pasted image 20260121001447.png",
     "Attached file/Pasted image 20260120231958.png",
     "Attached file/Pasted image 20260120231717.png",
     "Attached file/Pasted image 20260118201057.png",
     "3. Resource/Dreamhack/Building a Web Service/실습 - 깔끔한 코드 패턴 만들기.md",
-    "3. Resource/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
-    "Attached file/Pasted image 20260117192834.png",
     "3. Resource/Dreamhack/Building a Web Service/실습 - 로그인 기능 구현하기.md",
     "3. Resource/Dreamhack/Building a Web Service/Background - 데이터베이스.md",
-    "Attached file/Pasted image 20260117151939.png",
-    "Attached file/Pasted image 20260117151316.png",
-    "Attached file/Pasted image 20260117151223.png",
-    "Attached file/Pasted image 20260117150816.png",
-    "Attached file/Pasted image 20260116205257.png",
     "3. Resource/Dreamhack/Building a Web Service/Building a Web Service.md",
-    "3. Resource/Dreamhack/Cryptography/Cryptography.md",
-    "Attached file/Pasted image 20260115180855.png",
-    "Attached file/Pasted image 20260115180655.png",
-    "3. Resource/Dreamhack/Cryptography",
     "3. Resource/Dreamhack/Dreamhack 학습.md",
     "3. Resource/Dreamhack/Assembly Language/Assembly Traning - 구구단 구현하기.md",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/{role-admin}.md",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/templates/register.html",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/templates/login.html",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/templates/index.html",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/templates",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/requirements.txt",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/Dockerfile",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}/app.py",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/{role-admin}",
     "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)/Symbol.md",
     "Templetes/Dreamhack 풀이 템플릿.md",
     "Templetes/Dreamhack 워게임 풀이 템플릿.md",
@@ -261,7 +247,6 @@
     "3. Resource/Dreamhack/Building a Web Service/Background - Cookie & Session.md",
     "3. Resource/Dreamhack/Building a Web Service/Exercise - devtools-sources.md",
     "3. Resource/Dreamhack/Building a Web Service/Tools - Browser DevTools.md",
-    "3. Resource/Dreamhack/Dreamhack 문제풀이 모음/Dreamhack CTF Season 7 Round 24 (Div 2)",
     "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }
