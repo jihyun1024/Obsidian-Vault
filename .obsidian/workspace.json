@@ -18,8 +18,23 @@
               "icon": "lucide-git-fork",
               "title": "그래프 뷰"
             }
+          },
+          {
+            "id": "93fa747b1c6ecd31",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Web Hacking"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -123,12 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "Web Hacking 의 개요"
             }
           },
           {
@@ -179,17 +195,23 @@
       "command-palette:명령어 팔레트 열기": false,
       "omnisearch:Omnisearch": false,
       "obsidian-book-search-plugin:Create new book note": true,
-      "markdown-importer:마크다운 형식 불러오기 열기": false
+      "markdown-importer:마크다운 형식 불러오기 열기": false,
+      "card-board:CardBoard": false
     }
   },
-  "active": "a7a4178884aebea3",
+  "active": "74ab6798f7193281",
   "lastOpenFiles": [
+    "2. 해킹/Dreamhack/Web Hacking/ClientSide - XSS.md",
+    "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
+    "2. 해킹/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
+    "2. 해킹/Dreamhack/Building a Web Service/Background - Web Browser.md",
+    "Attached file/Pasted image 20260125014758.png",
+    "2. 해킹/해킹을 위한 팁/Netcat.md",
     "4. 암호학/CNG/RNG with CNG.md",
     "4. 암호학/CNG/RSA with CNG.md",
     "4. 암호학/CNG/AES with CNG.md",
     "4. 암호학/CNG/CNG (Cryptography Next Generation).md",
     "4. 암호학/ARX 구조.md",
-    "2. 해킹/해킹을 위한 팁/Netcat.md",
     "3. 국민대학교 수업 정리/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
     "Attached file/Pasted image 20260123014417.png",
     "Attached file/Pasted image 20260123013912.png",
@@ -214,11 +236,9 @@
     "2. 해킹/리버스 엔지니어링.md",
     "2. 해킹/네트워크 포렌식/네트워크 포렌식.md",
     "2. 해킹/네트워크 포렌식/Puzzle 1. Ann's Bad AIM.md",
-    "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
     "2. 해킹/Dreamhack/Building a Web Service/Building a Web Service.md",
     "2. 해킹/Dreamhack/Cryptography/Cryptography.md",
     "2. 해킹/Dreamhack/Web Hacking",
-    "2. 해킹/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__/db.cpython-313.pyc",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/register_failure.html",
@@ -227,9 +247,6 @@
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/post_edit.html",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/post_delete_failure.html",
     "Attached file/Pasted image 20260121003627.png",
-    "Attached file/Pasted image 20260121003429.png",
-    "2. 해킹/Dreamhack/Building a Web Service/실습 - 깔끔한 코드 패턴 만들기.md",
-    "2. 해킹/Dreamhack/Building a Web Service/실습 - 로그인 기능 구현하기.md",
     "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }
