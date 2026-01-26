@@ -201,8 +201,10 @@
   },
   "active": "74ab6798f7193281",
   "lastOpenFiles": [
-    "2. 해킹/Dreamhack/Web Hacking/ClientSide - XSS.md",
+    "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS.md",
+    "Attached file/Pasted image 20260126233044.png",
     "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
+    "2. 해킹/Dreamhack/Web Hacking/ClientSide - XSS.md",
     "2. 해킹/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
     "2. 해킹/Dreamhack/Building a Web Service/Background - Web Browser.md",
     "Attached file/Pasted image 20260125014758.png",
@@ -236,8 +238,6 @@
     "2. 해킹/리버스 엔지니어링.md",
     "2. 해킹/네트워크 포렌식/네트워크 포렌식.md",
     "2. 해킹/네트워크 포렌식/Puzzle 1. Ann's Bad AIM.md",
-    "2. 해킹/Dreamhack/Building a Web Service/Building a Web Service.md",
-    "2. 해킹/Dreamhack/Cryptography/Cryptography.md",
     "2. 해킹/Dreamhack/Web Hacking",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__/db.cpython-313.pyc",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__",
@@ -246,7 +246,6 @@
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/post_edit_failure.html",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/post_edit.html",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/post_delete_failure.html",
-    "Attached file/Pasted image 20260121003627.png",
     "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }
