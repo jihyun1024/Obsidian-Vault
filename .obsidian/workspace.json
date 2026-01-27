@@ -6,35 +6,19 @@
       {
         "id": "2df4ceca6b034e46",
         "type": "tabs",
+        "dimension": 99.99999999999999,
         "children": [
           {
-            "id": "a7a4178884aebea3",
+            "id": "906c7ade8060b800",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "graph",
               "state": {},
-              "pinned": true,
               "icon": "lucide-git-fork",
               "title": "그래프 뷰"
             }
-          },
-          {
-            "id": "93fa747b1c6ecd31",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Web Hacking"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -138,13 +122,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Web Hacking 의 개요"
+              "title": "개요"
             }
           },
           {
@@ -201,9 +184,11 @@
   },
   "active": "74ab6798f7193281",
   "lastOpenFiles": [
+    "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS_2.md",
+    "Attached file/Pasted image 20260127152728.png",
     "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS.md",
-    "Attached file/Pasted image 20260126233044.png",
     "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
+    "Attached file/Pasted image 20260126233044.png",
     "2. 해킹/Dreamhack/Web Hacking/ClientSide - XSS.md",
     "2. 해킹/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
     "2. 해킹/Dreamhack/Building a Web Service/Background - Web Browser.md",
@@ -222,7 +207,6 @@
     "Attached file/Pasted image 20260123013101.png",
     "Attached file/Pasted image 20260123012945.png",
     "Attached file/Pasted image 20260123012911.png",
-    "Attached file/Pasted image 20260123005155.png",
     "3. Resource/디지털 포렌식/해킹을 위한 팁/무제",
     "2. 해킹/해킹을 위한 팁",
     "2. 해킹/해킹을 위한 팁/Ghidra.md",
@@ -237,7 +221,6 @@
     "2. 해킹/해킹을 위한 팁/GDB/GDB.md",
     "2. 해킹/리버스 엔지니어링.md",
     "2. 해킹/네트워크 포렌식/네트워크 포렌식.md",
-    "2. 해킹/네트워크 포렌식/Puzzle 1. Ann's Bad AIM.md",
     "2. 해킹/Dreamhack/Web Hacking",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__/db.cpython-313.pyc",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__",
