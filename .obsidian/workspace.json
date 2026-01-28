@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. 해킹/Dreamhack/Web Hacking/ClientSide - CSRF.md",
+                "file": "2. 해킹/Dreamhack/Web Hacking/Exercise - CSRF.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ClientSide - CSRF"
+              "title": "Exercise - CSRF"
             }
           }
         ],
@@ -136,13 +136,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. 해킹/Dreamhack/Web Hacking/ClientSide - CSRF.md",
+                "file": "2. 해킹/Dreamhack/Web Hacking/Exercise - CSRF.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ClientSide - CSRF 의 개요"
+              "title": "Exercise - CSRF 의 개요"
             }
           },
           {
@@ -199,14 +199,19 @@
   },
   "active": "74ab6798f7193281",
   "lastOpenFiles": [
-    "2. 해킹/Dreamhack/Web Hacking/ClientSide - XSS.md",
-    "2. 해킹/Dreamhack/Web Hacking/ClientSide - CSRF.md",
-    "Attached file/Pasted image 20260128231400.png",
+    "Attached file/Pasted image 20260129024251.png",
+    "Attached file/Pasted image 20260129024058.png",
+    "Attached file/Pasted image 20260129023756.png",
+    "Attached file/Pasted image 20260129023406.png",
+    "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS.md",
+    "2. 해킹/Dreamhack/Web Hacking/Exercise - CSRF.md",
     "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
+    "2. 해킹/Dreamhack/Web Hacking/ClientSide - CSRF.md",
+    "2. 해킹/Dreamhack/Web Hacking/ClientSide - XSS.md",
+    "Attached file/Pasted image 20260128231400.png",
     "2. 해킹/Dreamhack/Dreamhack 학습.md",
     "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS_2.md",
     "Attached file/Pasted image 20260127152728.png",
-    "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS.md",
     "Attached file/Pasted image 20260126233044.png",
     "2. 해킹/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
     "2. 해킹/Dreamhack/Building a Web Service/Background - Web Browser.md",
@@ -221,9 +226,6 @@
     "Attached file/Pasted image 20260123014417.png",
     "Attached file/Pasted image 20260123013912.png",
     "Attached file/Pasted image 20260123013851.png",
-    "Attached file/Pasted image 20260123013110.png",
-    "Attached file/Pasted image 20260123013101.png",
-    "Attached file/Pasted image 20260123012945.png",
     "3. Resource/디지털 포렌식/해킹을 위한 팁/무제",
     "2. 해킹/해킹을 위한 팁",
     "2. 해킹/해킹을 위한 팁/Ghidra.md",
@@ -235,7 +237,6 @@
     "2. 해킹/Dreamhack/Linux 101/Linux 101.md",
     "2. 해킹/해킹을 위한 팁/GDB/GDB 기초 사용 방법.md",
     "2. 해킹/해킹을 위한 팁/GDB/GDB.md",
-    "2. 해킹/리버스 엔지니어링.md",
     "2. 해킹/Dreamhack/Web Hacking",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__/db.cpython-313.pyc",
     "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__",
