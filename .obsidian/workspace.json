@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
-                "mode": "preview",
+                "file": "6. 도서 및 논문 정리/논문/논문 요약 방법.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Web Hacking"
+              "title": "논문 요약 방법"
             }
           }
         ],
@@ -136,13 +136,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
+                "file": "6. 도서 및 논문 정리/논문/논문 요약 방법.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Web Hacking 의 개요"
+              "title": "논문 요약 방법 의 개요"
             }
           },
           {
@@ -199,7 +199,25 @@
   },
   "active": "c7a9807c60dea05f",
   "lastOpenFiles": [
-    "2. 해킹/Dreamhack/Web Hacking/Exercise - CSRF.md",
+    "6. 도서 및 논문 정리/논문/Papers/Psychology/자기결정 기초심리욕구와 게임지속 참여의도의 관계 - 리그오브레전드 5개 역할군의 차이를 중심으로.md",
+    "Attached file/Pasted image 20260130035519.png",
+    "Attached file/Pasted image 20260130035139.png",
+    "Attached file/Pasted image 20260130034905.png",
+    "Attached file/Pasted image 20260130034335.png",
+    "6. 도서 및 논문 정리/논문/Concepts/Psychology",
+    "6. 도서 및 논문 정리/논문/Concepts/Psychology/자기결정 이론.md",
+    "6. 도서 및 논문 정리/논문/Concepts/Psychology/분수효과.md",
+    "6. 도서 및 논문 정리/논문/Concepts/Psychology/낙수효과.md",
+    "6. 도서 및 논문 정리/논문/논문 요약 방법.md",
+    "6. 도서 및 논문 정리/논문/Papers/Psychology",
+    "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
+    "6. 도서 및 논문 정리/논문/Resources",
+    "6. 도서 및 논문 정리/논문/Concepts",
+    "6. 도서 및 논문 정리/논문/Papers",
+    "6. 도서 및 논문 정리/논문",
+    "6. 도서 및 논문 정리/도서",
+    "무제",
+    "1. Project/Dreamhack/Web Hacking/Exercise - CSRF.md",
     "Templetes/논문 요약 템플릿.md",
     "Templetes/수업 정리 템플릿.md",
     "Templetes/도서 정리 템플릿.md",
@@ -209,18 +227,15 @@
     "Attached file/Pasted image 20260129024058.png",
     "Attached file/Pasted image 20260129023756.png",
     "Attached file/Pasted image 20260129023406.png",
-    "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS.md",
-    "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
-    "2. 해킹/Dreamhack/Web Hacking/ClientSide - CSRF.md",
-    "2. 해킹/Dreamhack/Web Hacking/ClientSide - XSS.md",
+    "1. Project/Dreamhack/Web Hacking/Exercise - XSS.md",
+    "1. Project/Dreamhack/Web Hacking/ClientSide - CSRF.md",
+    "1. Project/Dreamhack/Web Hacking/ClientSide - XSS.md",
     "Attached file/Pasted image 20260128231400.png",
-    "2. 해킹/Dreamhack/Dreamhack 학습.md",
-    "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS_2.md",
+    "1. Project/Dreamhack/Dreamhack 학습.md",
+    "1. Project/Dreamhack/Web Hacking/Exercise - XSS_2.md",
     "Attached file/Pasted image 20260127152728.png",
-    "Attached file/Pasted image 20260126233044.png",
-    "2. 해킹/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
-    "2. 해킹/Dreamhack/Building a Web Service/Background - Web Browser.md",
-    "Attached file/Pasted image 20260125014758.png",
+    "1. Project/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
+    "1. Project/Dreamhack/Building a Web Service/Background - Web Browser.md",
     "2. 해킹/해킹을 위한 팁/Netcat.md",
     "4. 암호학/CNG/RNG with CNG.md",
     "4. 암호학/CNG/RSA with CNG.md",
@@ -228,23 +243,7 @@
     "4. 암호학/CNG/CNG (Cryptography Next Generation).md",
     "4. 암호학/ARX 구조.md",
     "3. 국민대학교 수업 정리/2025년 2학기/보안네트워크 프로그래밍/보안네트워크 프로그래밍.md",
-    "Attached file/Pasted image 20260123014417.png",
-    "Attached file/Pasted image 20260123013912.png",
     "3. Resource/디지털 포렌식/해킹을 위한 팁/무제",
-    "2. 해킹/해킹을 위한 팁",
-    "2. 해킹/해킹을 위한 팁/Ghidra.md",
-    "6. 도서 정리/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 기드라 실전 가이드.md",
-    "6. 도서 정리/리버스 엔지니어링 기드라 실전 가이드/부록(리버스 엔지니어링 기드라 실전 가이드).md",
-    "6. 도서 정리/리버스 엔지니어링 기드라 실전 가이드/기드라 입문.md",
-    "6. 도서 정리/리버스 엔지니어링 기드라 실전 가이드/리버스 엔지니어링 입문.md",
-    "6. 도서 정리/리버스 엔지니어링 기드라 실전 가이드/Ghidra를 이용한 리버스 엔지니어링 연습.md",
-    "2. 해킹/Dreamhack/Web Hacking",
-    "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__/db.cpython-313.pyc",
-    "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/__pycache__",
-    "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/register_failure.html",
-    "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/register.html",
-    "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/post_edit_failure.html",
-    "2. 해킹/Dreamhack/Building a Web Service/Web_Develop/templates/post_edit.html",
     "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }
