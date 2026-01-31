@@ -8,31 +8,16 @@
         "type": "tabs",
         "children": [
           {
-            "id": "906c7ade8060b800",
+            "id": "e52c7cdf3ff18c97",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "그래프 뷰"
-            }
-          },
-          {
-            "id": "60319feb5000f8a3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5. 도서 및 논문 정리/논문/Concepts/Psychology/자기결정 이론.md",
-                "mode": "preview",
-                "source": false
-              },
               "icon": "lucide-file",
-              "title": "자기결정 이론"
+              "title": "새 탭"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -136,13 +121,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5. 도서 및 논문 정리/논문/Concepts/Psychology/자기결정 이론.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "자기결정 이론 의 개요"
+              "title": "개요"
             }
           },
           {
@@ -197,12 +181,17 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "60319feb5000f8a3",
+  "active": "74ab6798f7193281",
   "lastOpenFiles": [
+    "1. Project/Dreamhack/Web Hacking/Exercise - CSRF_2.md",
+    "1. Project/Dreamhack/Web Hacking/Exercise - CSRF.md",
+    "1. Project/Dreamhack/Web Hacking/ClientSide - XSS.md",
+    "1. Project/Dreamhack/Web Hacking/Exercise - XSS.md",
+    "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
+    "5. 도서 및 논문 정리/논문/Concepts/Psychology/자기결정 이론.md",
     "5. 도서 및 논문 정리/논문/Concepts/Cryptography/ARX 구조.md",
     "5. 도서 및 논문 정리/논문/Concepts/Economics",
     "5. 프로그래밍 언어/무제.md",
-    "5. 도서 및 논문 정리/논문/Concepts/Psychology/자기결정 이론.md",
     "5. 도서 및 논문 정리/논문/Concepts/Economics/낙수효과.md",
     "5. 도서 및 논문 정리/논문/논문 요약 방법.md",
     "5. 도서 및 논문 정리/논문/Papers/Psychology/자기결정 기초심리욕구와 게임지속 참여의도의 관계 - 리그오브레전드 5개 역할군의 차이를 중심으로.md",
@@ -213,14 +202,12 @@
     "5. 도서 및 논문 정리/논문/Concepts/Psychology",
     "5. 도서 및 논문 정리/논문/Concepts/Economics/분수효과.md",
     "5. 도서 및 논문 정리/논문/Papers/Psychology",
-    "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
     "5. 도서 및 논문 정리/논문/Resources",
     "5. 도서 및 논문 정리/논문/Concepts",
     "5. 도서 및 논문 정리/논문/Papers",
     "5. 도서 및 논문 정리/논문",
     "5. 도서 및 논문 정리/도서",
     "무제",
-    "1. Project/Dreamhack/Web Hacking/Exercise - CSRF.md",
     "Templetes/논문 요약 템플릿.md",
     "Templetes/수업 정리 템플릿.md",
     "Templetes/도서 정리 템플릿.md",
@@ -230,9 +217,7 @@
     "Attached file/Pasted image 20260129024058.png",
     "Attached file/Pasted image 20260129023756.png",
     "Attached file/Pasted image 20260129023406.png",
-    "1. Project/Dreamhack/Web Hacking/Exercise - XSS.md",
     "1. Project/Dreamhack/Web Hacking/ClientSide - CSRF.md",
-    "1. Project/Dreamhack/Web Hacking/ClientSide - XSS.md",
     "Attached file/Pasted image 20260128231400.png",
     "1. Project/Dreamhack/Dreamhack 학습.md",
     "1. Project/Dreamhack/Web Hacking/Exercise - XSS_2.md",
