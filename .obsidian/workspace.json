@@ -11,10 +11,14 @@
             "id": "e52c7cdf3ff18c97",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "새 탭"
+              "title": "Web Hacking"
             }
           }
         ]
@@ -121,12 +125,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "Web Hacking 의 개요"
             }
           },
           {
@@ -181,13 +186,17 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "74ab6798f7193281",
+  "active": "e52c7cdf3ff18c97",
   "lastOpenFiles": [
+    "1. Project/Dreamhack/Web Hacking/Background - Relational DBMS.md",
+    "1. Project/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
+    "1. Project/Dreamhack/Building a Web Service/Background - 데이터베이스.md",
+    "Attached file/Pasted image 20260204232830.png",
+    "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
     "1. Project/Dreamhack/Web Hacking/Exercise - CSRF_2.md",
     "1. Project/Dreamhack/Web Hacking/Exercise - CSRF.md",
     "1. Project/Dreamhack/Web Hacking/ClientSide - XSS.md",
     "1. Project/Dreamhack/Web Hacking/Exercise - XSS.md",
-    "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
     "5. 도서 및 논문 정리/논문/Concepts/Psychology/자기결정 이론.md",
     "5. 도서 및 논문 정리/논문/Concepts/Cryptography/ARX 구조.md",
     "5. 도서 및 논문 정리/논문/Concepts/Economics",
@@ -221,14 +230,10 @@
     "Attached file/Pasted image 20260128231400.png",
     "1. Project/Dreamhack/Dreamhack 학습.md",
     "1. Project/Dreamhack/Web Hacking/Exercise - XSS_2.md",
-    "Attached file/Pasted image 20260127152728.png",
     "1. Project/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
     "1. Project/Dreamhack/Building a Web Service/Background - Web Browser.md",
     "2. 해킹/해킹을 위한 팁/Netcat.md",
     "5. 도서 및 논문 정리/논문/Concepts/Cryptography/CNG/RNG with CNG.md",
-    "5. 도서 및 논문 정리/논문/Concepts/Cryptography/CNG/RSA with CNG.md",
-    "5. 도서 및 논문 정리/논문/Concepts/Cryptography/CNG/AES with CNG.md",
-    "5. 도서 및 논문 정리/논문/Concepts/Cryptography/CNG/CNG (Cryptography Next Generation).md",
     "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }
