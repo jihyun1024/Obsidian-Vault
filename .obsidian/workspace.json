@@ -11,10 +11,14 @@
             "id": "e52c7cdf3ff18c97",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "그래프 뷰"
+              "type": "markdown",
+              "state": {
+                "file": "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Web Hacking"
             }
           }
         ]
@@ -121,12 +125,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "개요"
+              "title": "Web Hacking 의 개요"
             }
           },
           {
