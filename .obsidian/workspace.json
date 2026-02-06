@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "2df4ceca6b034e46",
+        "id": "93f066eac9994676",
         "type": "tabs",
         "children": [
           {
-            "id": "e52c7cdf3ff18c97",
+            "id": "53f2049f5f1ffb5d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ServerSide - SQL Injection.md",
+                "file": "1. Project/Dreamhack/Web Hacking/ServerSide - SQL Injection.md",
                 "mode": "source",
                 "source": false
               },
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ServerSide - SQL Injection.md",
+                "file": "1. Project/Dreamhack/Web Hacking/ServerSide - SQL Injection.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -186,10 +186,12 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "e52c7cdf3ff18c97",
+  "active": "74ab6798f7193281",
   "lastOpenFiles": [
+    "1. Project/Dreamhack/Web Hacking/ServerSide - SQL Injection.md",
+    "Attached file/Pasted image 20260206224703.png",
+    "Attached file/Pasted image 20260206222256.png",
     "1. Project/Dreamhack/Web Hacking/Web Hacking.md",
-    "ServerSide - SQL Injection.md",
     "1. Project/Dreamhack/Web Hacking/Background - Relational DBMS.md",
     "1. Project/Dreamhack/Building a Web Service/실습 - 게시판 기능 구현하기.md",
     "1. Project/Dreamhack/Building a Web Service/Background - 데이터베이스.md",
@@ -226,14 +228,11 @@
     "Attached file/Pasted image 20260129024251.png",
     "Attached file/Pasted image 20260129024058.png",
     "Attached file/Pasted image 20260129023756.png",
-    "Attached file/Pasted image 20260129023406.png",
     "1. Project/Dreamhack/Web Hacking/ClientSide - CSRF.md",
-    "Attached file/Pasted image 20260128231400.png",
     "1. Project/Dreamhack/Dreamhack 학습.md",
     "1. Project/Dreamhack/Web Hacking/Exercise - XSS_2.md",
     "1. Project/Dreamhack/Building a Web Service/Background - Web & HTTPS.md",
     "1. Project/Dreamhack/Building a Web Service/Background - Web Browser.md",
-    "2. 해킹/해킹을 위한 팁/Netcat.md",
     "2. Area/도서/도서 목록_CANVAS.canvas"
   ]
 }
