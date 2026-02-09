@@ -8,13 +8,6 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "tag:#수업_정리  ",
-      "color": {
-        "a": 1,
-        "rgb": 880205
-      }
-    },
-    {
       "query": "tag:#Dreamhack",
       "color": {
         "a": 1,
@@ -22,10 +15,17 @@
       }
     },
     {
-      "query": "",
+      "query": "tag:#3학년_2학기  ",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 12986922
+      }
+    },
+    {
+      "query": "tag:#4학년_1학기  ",
+      "color": {
+        "a": 1,
+        "rgb": 1760206
       }
     }
   ],
@@ -39,6 +39,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 216,
-  "scale": 0.13744661125108637,
+  "scale": 0.13744661125108903,
   "close": true
 }
