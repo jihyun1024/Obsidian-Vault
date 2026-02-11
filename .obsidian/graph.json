@@ -27,6 +27,13 @@
         "a": 1,
         "rgb": 1760206
       }
+    },
+    {
+      "query": "tag:#논문  ",
+      "color": {
+        "a": 1,
+        "rgb": 255
+      }
     }
   ],
   "collapse-display": true,
