@@ -5,7 +5,6 @@ link:
 category:
 author:
 journal:
-math_level:
 ---
 ## 1. 논문의 핵심 요약
 ---

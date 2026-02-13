@@ -1,11 +1,10 @@
 ---
 tags:
   - 논문
-link:
-category:
-author:
-journal:
-math_level:
+link: https://www.dbpia.co.kr/journal/detail?nodeId=T13732828
+category: Crypto
+author: 김태훈
+journal: 석사학위논문
 ---
 ## 1. 논문의 핵심 요약
 ---
