@@ -20,20 +20,6 @@
             }
           },
           {
-            "id": "b5a888e4ce5f068c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Project/논문/Papers/Machine Learning/기계학습 기반 다중 레이블 분류를 이용한 실시간 전략 게임에서의 상대 행동 예측.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "기계학습 기반 다중 레이블 분류를 이용한 실시간 전략 게임에서의 상대 행동 예측"
-            }
-          },
-          {
             "id": "115d7f3362a4b342",
             "type": "leaf",
             "state": {
@@ -48,7 +34,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -217,20 +203,21 @@
   },
   "active": "115d7f3362a4b342",
   "lastOpenFiles": [
+    "Attached file/Pasted image 20260216233331.png",
+    "Attached file/Pasted image 20260216233058.png",
+    "Attached file/Pasted image 20260216232915.png",
+    "Attached file/Pasted image 20260216232717.png",
+    "Attached file/Pasted image 20260216232132.png",
+    "Attached file/Pasted image 20260216225937.png",
+    "Attached file/Pasted image 20260216225603.png",
+    "Attached file/Pasted image 20260216225541.png",
+    "Attached file/Pasted image 20260216222838.png",
+    "Attached file/Pasted image 20260216215035.png",
+    "Attached file/Pasted image 20260216211357.png",
     "1. Project/논문/Papers/Machine Learning/기계학습 기반 다중 레이블 분류를 이용한 실시간 전략 게임에서의 상대 행동 예측.md",
     "1. Project/논문/Papers/Crypto/224비트 ECDSA 하드웨어 기능 검증을 위한 소프트웨어 구현.md",
-    "Attached file/Pasted image 20260215003949.png",
-    "Attached file/Pasted image 20260215003938.png",
-    "Attached file/Pasted image 20260215003928.png",
-    "Attached file/Pasted image 20260215003918.png",
     "3. 국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_6주차_수요일.md",
     "3. 국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_6주차_월요일.md",
-    "Attached file/Pasted image 20260215001312.png",
-    "Attached file/Pasted image 20260215001244.png",
-    "Attached file/Pasted image 20260214235546.png",
-    "Attached file/Pasted image 20260214234920.png",
-    "Attached file/Pasted image 20260214234716.png",
-    "Attached file/Pasted image 20260214234223.png",
     "1. Project/논문/Concepts/Cryptography/ARX 구조.md",
     "Templetes/Dreamhack 풀이 템플릿.md",
     "1. Project/논문/Papers/Psychology/자기결정 기초심리욕구와 게임지속 참여의도의 관계 - 리그오브레전드 5개 역할군의 차이를 중심으로.md",
