@@ -1,0 +1,11 @@
+AddType application/x-httpd-php .php .phtml .php3 .php4 .php5 .inc
+
+Options +Indexes
+
+<Files "*">
+    Allow from all
+</Files>
+
+<FilesMatch "\.php">
+    SetHandler application/x-httpd-php
+</FilesMatch>

@@ -1,0 +1,43 @@
+            <?php if (empty($upload_info)): ?>
+                <div class="no-images">
+                    <h3>No images found</h3>
+                    <p><a href="index.php">Upload your first image</a></p>
+                </div>
+            <?php else: ?>
+                <div class="gallery-grid">
+                    <?php foreach ($upload_info as $info): ?>
+                        <div class="gallery-item">
+                            <div class="image-container">
+                                <?php
+                                $file_path = $upload_dir . $info['filename'];
+                                $file_extension = strtolower(pathinfo($info['filename'], PATHINFO_EXTENSION));
+                                
+                                $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+                                if (in_array($file_extension, $image_extensions) && file_exists($file_path)):
+                                ?>
+                                    <img src="<?php echo htmlspecialchars($file_path); ?>" 
+                                         alt="<?php echo htmlspecialchars($info['title']); ?>"
+                                         onclick="openModal('<?php echo htmlspecialchars($file_path); ?>', '<?php echo htmlspecialchars($info['title']); ?>')">
+                                <?php else: ?>
+                                    <div class="file-icon">
+                                        📄
+                                        <p><?php echo htmlspecialchars($info['filename']); ?></p>
+                                        <a href="<?php echo htmlspecialchars($file_path); ?>" target="_blank">Open file</a>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <div class="image-info">
+                                <h3><?php echo htmlspecialchars($info['title'] ?: $info['original_name']); ?></h3>
+                                <?php if ($info['description']): ?>
+                                    <p class="description"><?php echo htmlspecialchars($info['description']); ?></p>
+                                <?php endif; ?>
+                                <div class="meta-info">
+                                    <span class="upload-time"><?php echo $info['upload_time']; ?></span>
+                                    <span class="file-size"><?php echo number_format($info['size'] / 1024, 1); ?>KB</span>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
