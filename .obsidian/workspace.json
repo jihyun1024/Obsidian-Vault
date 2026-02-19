@@ -18,8 +18,37 @@
               "icon": "lucide-git-fork",
               "title": "그래프 뷰"
             }
+          },
+          {
+            "id": "805a01cf710b63fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "5. 도서 및 논문 정리/논문/Papers/Crypto/타원곡선 암호의 최적화 구현, 부채널 대응기법 동향분석 및 벤치마킹.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "타원곡선 암호의 최적화 구현, 부채널 대응기법 동향분석 및 벤치마킹"
+            }
+          },
+          {
+            "id": "53aee1a81abf2c72",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "5. 도서 및 논문 정리/논문/Papers/Crypto/224비트 ECDSA 하드웨어 기능 검증을 위한 소프트웨어 구현.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "224비트 ECDSA 하드웨어 기능 검증을 위한 소프트웨어 구현"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -125,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. 해킹/Dreamhack/Web Hacking/Background - Non Relational DBMS.md",
+                "file": "5. 도서 및 논문 정리/논문/Papers/Crypto/타원곡선 암호의 최적화 구현, 부채널 대응기법 동향분석 및 벤치마킹.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Background - Non Relational DBMS 의 개요"
+              "title": "타원곡선 암호의 최적화 구현, 부채널 대응기법 동향분석 및 벤치마킹 의 개요"
             }
           },
           {
@@ -186,15 +215,18 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "74ab6798f7193281",
+  "active": "805a01cf710b63fe",
   "lastOpenFiles": [
+    "5. 도서 및 논문 정리/논문/Papers/Crypto/224비트 ECDSA 하드웨어 기능 검증을 위한 소프트웨어 구현.md",
+    "5. 도서 및 논문 정리/논문/Papers/Crypto/타원곡선 암호의 최적화 구현, 부채널 대응기법 동향분석 및 벤치마킹.md",
+    "5. 도서 및 논문 정리/논문/Papers/Crypto/A Public-Key Cryptosystem and a Signature Scheme Based on Discrete Logarithms.md",
+    "2. 해킹/Dreamhack/Web Hacking/Background - Non Relational DBMS.md",
     "Attached file/Pasted image 20260219233500.png",
     "Attached file/Pasted image 20260219232417.png",
     "Attached file/Pasted image 20260219232402.png",
     "Attached file/Pasted image 20260219225744.png",
     "Attached file/Pasted image 20260219221925.png",
     "2. 해킹/Dreamhack/Web Hacking/Web Hacking.md",
-    "2. 해킹/Dreamhack/Web Hacking/Background - Non Relational DBMS.md",
     "2. 해킹/Dreamhack/Web Hacking/ServerSide - SQL Injection.md",
     "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS_2.md",
     "2. 해킹/Dreamhack/Web Hacking/Exercise - XSS.md",
@@ -212,10 +244,8 @@
     "Attached file/Pasted image 20260218202743.png",
     "5. 도서 및 논문 정리/논문/Concepts/Economics/낙수효과.md",
     "5. 도서 및 논문 정리/논문/Papers/Psychology/자기결정 기초심리욕구와 게임지속 참여의도의 관계 - 리그오브레전드 5개 역할군의 차이를 중심으로.md",
-    "5. 도서 및 논문 정리/논문/Papers/Crypto/224비트 ECDSA 하드웨어 기능 검증을 위한 소프트웨어 구현.md",
     "Attached file/Pasted image 20260216233331.png",
     "Attached file/Pasted image 20260216233058.png",
-    "Attached file/Pasted image 20260216232915.png",
     "5. 도서 및 논문 정리/논문/Papers/Machine Learning/기계학습 기반 다중 레이블 분류를 이용한 실시간 전략 게임에서의 상대 행동 예측.md",
     "3. 국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_6주차_수요일.md",
     "3. 국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_6주차_월요일.md",
@@ -223,7 +253,6 @@
     "Templetes/Dreamhack 풀이 템플릿.md",
     "3. 국민대학교 수업 정리/2025년 2학기/양자보안/수업 정리/양자보안_4주차_수요일.md",
     "Templetes/논문 요약 템플릿.md",
-    "5. 도서 및 논문 정리/논문/Concepts/Psychology/자기결정 이론.md",
     "5. 도서 및 논문 정리/논문/Resources/자기결정 기초심리욕구와 게임지속 참여의도의 관계_리그오브레전드 5개 역할군의 차이를 중심으로.pdf",
     "1. Project/논문/Resources/자기결정 기초심리욕구와 게임지속 참여의도의 관계  리그오브레전드 5개 역할군의 차이를 중심.pdf",
     "5. 도서 및 논문 정리/논문/Concepts/Mathematics/Calculus",
