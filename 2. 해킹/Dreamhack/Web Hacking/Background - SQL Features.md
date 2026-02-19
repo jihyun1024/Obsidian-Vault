@@ -1,11 +1,9 @@
 # 들어가며
----
 [[ServerSide - SQL Injection|SQL Injection]] 공격을 사용하면 실행될 쿼리를 조작해 관리자 권한을 획득하고, 데이터베이스에 저장된 데이터를 획득할 수 있다. 
 
 [[Background - 데이터베이스|데이터베이스]]는 데이터에 쉽게 접근할 수 있도록 다양한 문법을 지원한다. 예를 들어, 데이터를 조회할 때 두 개 이상의 쿼리를 함께 실행해 두 조건을 모두 만족하는 데이터만 가져올 수 있다. 이런 문법은 개발자 관점에서는 데이터에 접근할 때 훨씬 간편해지나, 문제는 공격자 입장에서도 더욱 다양한 조건으로 원하는 데이터를 검색할 수 있다. 
 
 # SQL Features
----
 ## UNION
 **UNION**은 다수의 `SELECT` 구문의 결과를 결합하는 절이다. 해당 절을 통해 다른 테이블에 접근하거나 원하는 쿼리 결과를 생성해 애플리케이션에서 처리하는 다른 데이터를 조작할 수 있으며, 이는 **애플리케이션이 데이터베이스 쿼리의 결과를 출력하는 경우 유용하게 사용할 수 있다.**
 
@@ -36,8 +34,8 @@ Conversion failed when converting the varchar value 'ABC' to data type int.
 */
 	  ```
 
-### UNION-based SQL Injection Lab
 ---
+### UNION-based SQL Injection Lab
 지금까지 배운 `UNION` 절의 내용을 토대로, `UNION`을 사용한 SQL Injection을 실습해본다.
 [이 링크](https://learn.dreamhack.io/labs/79046f1c-3944-4ada-9481-f96e092d3988)를 열어 Lab 환경으로 갈 수 있다. 
 
@@ -62,6 +60,7 @@ SELECT upw FROM user_table WHERE uid='admin'
 
 따라서, 두 번째 `SELECT` 구문은 우리가 원하는 대로 동작하게 된다. 
 
+---
 ## 서브 쿼리
 **서브 쿼리 (Subquery)** 는 한 쿼리 내에 또 다른 쿼리를 사용하는 것을 말한다. 서브 쿼리를 사용하기 위해서는 **쿼리 내에서 괄호 안에 구문을 삽입**해야 하며, `SELECT` **구문만** 사용할 수 있다.
 
@@ -82,8 +81,8 @@ SELECT 1,2,3,(SELECT 456);
 */
 ```
 
-### 서브 쿼리 사용 예시
 ---
+### 서브 쿼리 사용 예시
 **COLUMNS 절**
 `SELECT` 구문의 컬럼 절에서 서브 쿼리를 사용할 때는 **단일 행**과 **단일 컬럼**이 반환되도록 해야 한다. 아래는 여러 개의 행과 컬럼을 반환하는 서브 쿼리를 실행한 모습으로, 결과를 살펴보면 여러 개의 행 또는 컬럼을 반환하며 에러가 발생하는 것을 확인할 수 있다. 
 
@@ -129,8 +128,8 @@ SELECT * FROM users WHERE username IN (SELECT "admin" UNION SELECT "guest");
 */
 ```
 
-### Subquery-based SQL Injection Lab
 ---
+### Subquery-based SQL Injection Lab
 지금까지 배운 서브 쿼리에 대한 내용을 토대로, 서브 쿼리를 사용한 SQL Injection을 실습해본다. [이 링크](https://learn.dreamhack.io/labs/baee1e1a-30d2-4dfa-8887-616b8dd914a2)를 열어 Lab 환경으로 갈 수 있다. 
 
 해당 Lab에서의 쿼리는 `INSERT INTO board (name, text) VALUES ('', '')`으로 `SELECT`가 기본적으로 사용되지 않기 때문에, 서브 쿼리를 통해 `SELECT`를 사용해야 한다. 
@@ -148,7 +147,7 @@ SELECT * FROM users WHERE username IN (SELECT "admin" UNION SELECT "guest");
 ', (SELECT upw FROM user_table WHERE uid='admin')) #'
 ```
 
-
+---
 ## Application Logic
 <u>SQL Injection은 애플리케이션 내부에서 사용하는 데이터베이스의 데이터를 조작하는 기법이다.</u> 만약, 특정한 쿼리를 실행했을 때 쿼리의 실행 결과가 애플리케이션에서 보여지지 않는다면? 그 때는 공격자 입장에서 데이터베이스의 정보를 추측하기 어렵다. 
 
@@ -189,8 +188,8 @@ app.run(host='0.0.0.0', port=8000)
 
 해당 로직에서 SQL Injection 취약점이 발생할 수 있으며, 다음 두 가지 방법으로 공격이 가능하다
 
-### UNION을 사용한 공격
 ---
+### UNION을 사용한 공격
 `UNION` 절을 사용하면 두 개의 `SELECT` 구문을 사용할 수 있기 때문에 참을 반환할 수 있다. 
 
 아래는 SQL Injection으로 새로운 쿼리를 삽입한 모습이며, 공격 코드를 삽입하면 `UNION` 절에서 `"admin"`을 반환하기 때문에 애플리케이션에서 참을 반환한다.
@@ -200,9 +199,8 @@ app.run(host='0.0.0.0', port=8000)
 ==> True
 ```
 
-
-### 비교 구문을 사용한 공격
 ---
+### 비교 구문을 사용한 공격
 위에서처럼 애플리케이션에서 `"admin"`을 반환해 관리자 권한으로 로그인하는 방법도 있지만, r관리자 계정의 비밀번호를 아예 알아내는 방법으로도 로그인할 수 있다. 
 
 **SQL에서는 `IF`문으로 비교 구문을 만들 수 있다.** 따라서, 해당 구문으로 관리자 계정의 비밀번호를 한 글자씩 알아낼 수 있으며 아래는 비교 구문을 통해 관리자 계정의 비밀번호를 알아내는 공격 쿼리이다. 
@@ -220,9 +218,8 @@ app.run(host='0.0.0.0', port=8000)
 
 참고로, `substr()` 함수가 어떤 의미이고, 어떤 역할을 하는지 궁금하면 [[Background - SQL DML]] 강의의 Lab에서 사용했으니, 보고 오자.
 
-
-### Blind SQL Injection Lab
 ---
+### Blind SQL Injection Lab
 지금까지 배운 내용을 기반으로 Blind SQL Injection을 실습해본다. [이 링크](https://learn.dreamhack.io/labs/5c249803-825c-4c00-baee-ca70427ce084)를 열어 Lab 환경으로 갈 수 있다. 
 
 먼저, 메인 쿼리를 살펴보면, `SELECT * FROM user_table WHERE uid='' and upw=''`으로, 기존의 SQL Injection 취약점을 실습했던 Lab에서의 쿼리와 동일하다. 
@@ -255,9 +252,8 @@ admin' AND substr(upw, 6, 1) = 'a' // true
 
 따라서, Blind SQL Injection으로 알아낸 `admin`의 `upw`는 `banana`라는 것을 알 수 있었다. 
 
-
-# 마치며
 ---
+# 마치며
 이번 강의에서는 SQL의 문법과 애플리케이션의 결과 처리 방식을 응용한 SQL Injection 공격을 배웠다. 특히, 애플리케이션에서 반환하는 값을 사용한 기법은 어려운 버전의 SQL Injection 공격을 수행할 때 자주 사용되므로, 강의에서 다뤘던 내용을 여러 번 복습해 보고 문제도 여러 개 풀어보는 것이 중요하다. 
 
 SQL Injection은 문법을 응용한 공격 기법인 만큼, 다양한 SQL의 절을 사용해보면서 쿼리를 만들어보는 것이 매우 중요하다. 

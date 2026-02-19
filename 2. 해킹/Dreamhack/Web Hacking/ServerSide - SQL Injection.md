@@ -1,5 +1,4 @@
 ## 들어가며
----
 [[Background - Relational DBMS]]에서 DBMS에 대해 알아봤다. DBMS에서 관리하는 데이터베이스에는 회원의 계정, 비밀 게시물 등의 민감한 정보가 있을 수 있다. 공격자는 데이터베이스 파일 탈취, SQL Injection 공격 등으로 해당 경로를 확보하고 악용하여 금전적인 이득을 얻을 수 있다. 따라서 임의 정보 소유자 이외의 사용자에게 해당 정보가 노출되지 않도록 해야 한다.  
 
 이번 강의에서는 DBMS에서 사용하는 쿼리를 임의로 조작해 데이터베이스의 정보를 획득하는 **SQL Injection** 기법에 대해 배운다. 
@@ -12,9 +11,8 @@
 
 이 그림처럼, DBMS에서 사용하는 질의 구문인 SQL을 삽입하는 공격을 SQL Injection이라 한다. 
 
-
-## SQL Injection
 ---
+## SQL Injection
 SQL은 DBMS에 데이터를 질의하는 언어로, [[Building a Web Service]] 부분에서 다뤄 본 경험이 있을 것이다. 웹 서비스는 사용자의 입력을 SQL 구문에 포함해 요청하는 경우가 있다. 
 
 예를 들어, 아래 쿼리는 로그인 할 때 애플리케이션이 DBMS에 질의하는 쿼리이다. 
@@ -33,9 +31,8 @@ SELECT * FROM accounts WHERE username='admin'
 
 쿼리문을 보면 `password` 조건문이 사라진 것을 확인할 수 있는데, 이 쿼리를 통해 질의하면 DBMS는 ID가 admin인 계정의 비밀번호를 비교하지 않고 해당 계정의 정보를 반환하기 때문에 공격자는 admin 계정으로 로그인할 수 있다. 
 
-
-### Blind SQL Injection
 ---
+### Blind SQL Injection
 앞서 SQL Injection을 통해서 의도하지 않은 결과를 반환해 인증을 우회하는 것에 성공했다. 해당 공격은 인증 우회 이외에도 데이터베이스의 데이터를 알아낼 수 있는데, 이 때 사용하는 방식이 **Blind SQL Injection**이다. Blind SQL Injection은 스무고개 비슷한 원리로 동작해 데이터를 알아낸다. 
 
 예를 들어, 이런 귀여운 춘식이 사진이 중요한 금고 안에 있다고 해 보자. 
@@ -58,9 +55,8 @@ A4. 맞습니다.
 
 이처럼 질의 결과를 사용자가 직접 확인하지 못할 때 참/거짓 반환 형태로 데이터를 획득하는 공격 기법을 Blind SQL Injection이라고 한다. 
 
-
-### Blind SQL Injection 예시
 ---
+### Blind SQL Injection 예시
 아래는 Blind SQL Injection에 사용할 수 있는 쿼리이다. 
 
 ```sql
@@ -75,8 +71,8 @@ SELECT * FROM user_table WHERE uid='admin' and substr(upw,2,1)='e'-- ' and upw='
 
 쿼리를 살펴보면, 두 개의 조건이 있는 것을 확인할 수 있으며,`substr()` 함수에 대해 알면 이해가 쉬울 것이다.  
 
-#### substr
 ---
+#### substr
 해당 함수는 문자열에서 지정한 위치에서 길이까지의 값을 가져온다. 
 
 ```sql
@@ -89,9 +85,8 @@ substr('ABCD', 2, 2) = 'BC'
 
 이처럼 쿼리문의 반환 결과를 통해 admin 계정의 비밀번호를 획득할 수 있다. 또한, `substr`  외에도 각 DBMS에서 제공하는 내장 함수를 잘 이용해 원하는 데이터를 추출할 수 있다. 
 
-
-### SQL Injection 실습
 ---
+### SQL Injection 실습
 지금까지 배운 내용을 [SQL Injection Lab](https://learn.dreamhack.io/labs/acbf4054-7b6d-4e7d-a562-f2374b5d5d01)을 통해 확인해 볼 수 있다. 
 
 해당 Lab에서 사용했던 SQL Injection은 모듈의 Login 상자에서 **uid**에 `admin' --`을 입력해 뒤의 비밀번호 검증 부분을 주석처리하는 방식으로 공격을 수행해 로그인에 성공했다. 즉, SQL의 주석 구문인 `#`, `--`을 SQL Query에 넣어 `uid`만 일치해도 로그인할 수 있도록 한 것이다. 
@@ -104,9 +99,8 @@ admin' and substr(upw, 1, 1)='원하는 알파벳'--
 
 참고로, 해당 Blind SQL Injection 문제에서 `admin`의 비밀번호는 `berry` 였다.
 
-
-### Blind SQL Injection 공격 스크립트
 ---
+### Blind SQL Injection 공격 스크립트
 Blind SQL Injection은 한 바이트 = 한 글자씩 비교하면서 공격하는 방식이기 때문에 다른 공격에 비해 많은 시간을 들여야 한다. 이런 귀찮음을 해결하기 위해 공격을 자동화하는 스크립트를 사용할 수 있다. 
 
 공격 스크립트를 작성하기에 앞서 유용한 라이브러리를 알아보자. Python은 HTTP 통신을 위한 다양한 모듈이 존재하는데, 대표적으로 `requests` 모듈이 있다. 해당 모듈은 다양한 메서드를 사용해 HTTP 요청을 보낼 수 있으며, 응답 또한 확인할 수 있다. 
@@ -152,9 +146,8 @@ for i in range(1, 5):
 
 GET, POST 메서드 이외에도 다양한 메서드를 사용해 요청을 전송할 수 있으며, 자세한 기능은 **Requests 모듈 공식 문서**인 https://docs.python-requests.org/en/master/ 에서 확인할 수 있다.
 
-
-### Blind SQL Injection 공격 스크립트 작성
 ---
+### Blind SQL Injection 공격 스크립트 작성
 HTTP GET request로 파라미터를 전달받는 홈페이지에 Blind SQL Injection을 시도한다고 생각해 보자. 공격하기에 앞서, 아스키 문자 범위 중 사용자가 입력 가능한 모든 문자의 범위를 지정해야 한다. 
 
 비밀번호의 경우, 알파벳과 숫자 그리고 특수 문자의 조합으로 이뤄지며, 이는 아스키 범위의 출력 가능한 모든 문자로 Python에서의 `string` 모듈을 사용해 `string.printable`로 접근할 수 있다. 이를 고려해 작성한 스크립트는 다음과 같다.
@@ -204,9 +197,8 @@ http://example.com/login?uid=admin%27+and+substr%28upw%2C1%2C1%29%3D%273%27--+&u
 http://example.com/login?uid=admin%27+and+substr%28upw%2C1%2C1%29%3D%274%27--+&upw=
 ```
 
-
-## 마치며
 ---
+## 마치며
 이번 강의에서는 웹 해킹 하면 매우 많이 언급되는 SQL Injection과 이를 응용하는 Blind SQL Injection에 대해 알아봤다. 
 
 Lab에서는 데이터를 조회하는 `SELECT` 명령어만을 사용했지만, `UPDATE`와 `DELETE`에서 SQL Injection이 발생하면 임의 데이터를 갱신하거나 삭제할 수 있다. 

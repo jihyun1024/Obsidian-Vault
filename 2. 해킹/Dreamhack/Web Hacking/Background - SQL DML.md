@@ -1,18 +1,15 @@
 ## 들어가며
----
 [[ServerSide - SQL Injection]] 강의에서 배웠듯이, SQL에서는 **Data Definition Language(DDL), Data Manipulation Language(DML), Data Control Language(DCL)** 이렇게 세 가지의 질의 언어를 제공한다. 
 
 그 중 이번 강의에서는 데이터베이스에서 데이터에 대해 CRUD를 수행하는 구문인 DML에 대해 배운다. 우리가 웹 서비스에서 사용하는 대부분의 기능은 DML을 통해 수행된다 해도 과언이 아닐 정도로 가장 많이 사용되는 구문이다. 
 
 그만큼, DML 구문을 사용하는 목적과 그 형태를 알고 있다면 SQL Injection 공격을 보다 쉽고 빠르게 이해할 수 있다. 
 
-
-## SQL DML
 ---
+## SQL DML
 SQL DML에서 CRUD(Create, Read, Update, Delete)를 수행하는 각각의 구문에 대해 알아보자. 
 
 ### SELECT
----
 **SELECT**는 데이터를 조회하는 구문으로, 다음은 [MySQL 공식 페이지](https://dev.mysql.com/doc/refman/8.4/en/select.html)에서 제공하는 `SELECT` 구문의 예시이다. 
 
 ```sql
@@ -88,9 +85,8 @@ ORDER BY uid DESC
 LIMIT 5
 ```
 
-
-### INSERT
 ---
+### INSERT
 **INSERT**는 데이터를 추가하는 구문으로, 다음은 [MySQL 공식 홈페이지](https://dev.mysql.com/doc/refman/8.4/en/insert.html)에서 제공하는 `INSERT` 구문의 예시이다. 
 
 ```sql
@@ -173,9 +169,8 @@ INSERT
 
 ![[Pasted image 20260209222542.png]]
 
-
-### UPDATE
 ---
+### UPDATE
 **UPDATE**는 데이터를 수정하는 구문으로, 다음은 [MySQL 공식 홈페이지](https://dev.mysql.com/doc/refman/8.4/en/update.html)에서 제공하는 `UPDATE` 구문의 예시이다. 
 
 ```sql
@@ -221,9 +216,8 @@ UPDATE board
 	WHERE title = 'title 1';
 ```
 
-
-### DELETE
 ---
+### DELETE
 **DELETE**는 데이터를 삭제하는 구문으로, 다음은 [MySQL 공식 홈페이지](https://dev.mysql.com/doc/refman/8.4/en/delete.html)에서 제공하는 `DELETE` 구문의 예시이다. 
 
 ```sql
@@ -253,16 +247,14 @@ DELETE FROM board
 	WHERE title = 'title 1';
 ```
 
-
-## SQL DML Lab
 ---
+## SQL DML Lab
 지금까지 배운 내용을 [SQL DML Lab](https://learn.dreamhack.io/labs/dbe0c2d2-0aa9-4a2d-9903-344edc12dd1f)을 통해 확인해 볼 수 있다. 
 
 `SELECT`, `INSERT`, `UPDATE`, `DELETE` 구문을 전부 배웠지만, Lab에서 실습해보면서 동시에 저번에 실습으로 만들어 본 [[Building a Web Service#HTML & Flask를 사용해 게시판 웹 서비스 구축해보기|HTML & Flask를 사용한 웹 서비스 구축]] 부분의 *app.py* 코드를 열심해 복습하는 것이 SQL 학습에 도음이 많이 될 것이다. 
 
-
-## 마치며
 ---
+## 마치며
 이번 강의에서는 DML과 간단한 서브 쿼리에 대해 MySQL 공식 홈페이지를 참고하면서 공부했다. 일반적으로 사용자의 입력값은 DML 구문의 일부로 사용되기 때문에 다른 질의 언어에 대해서는 다루지 않았다. 
 
 공격자는 SQL Injection을 수행하려면 기존에 실행될 쿼리를 이해하고, 이와 동시에 특정한 조건을 생성해 또 다른 쿼리를 만들어낼 수 있어야 한다. 따라서, 앞으로 심화된 공격 기법을 이해하기 위해서는 가장 기본이 되는 SQL 쿼리를 직접 실습해보고 경험을 늘려나가는 것이 필수적이다. 
